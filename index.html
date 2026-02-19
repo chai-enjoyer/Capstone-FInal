@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capstone Project Preparation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="topbar-brand">Capstone Prep</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="var l=document.querySelector('.topbar-links');l.classList.toggle('open');this.textContent=l.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="topbar-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="quiz-setup.html">Quiz</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="lectures.html">Lectures</a>
+      <a href="summary.html">Summary</a>
+    </div>
+  </nav>
+
+  <main class="container fade-in">
+    <section class="hero">
+      <h1>Capstone Project Preparation</h1>
+      <p class="hero-sub">Software Engineering — Final Exam Preparation</p>
+    </section>
+
+    <p class="notice">This resource may be incomplete or contain inaccuracies — always verify with official course materials.</p>
+
+    <!-- User Summary -->
+    <div class="user-summary" id="user-summary" style="display:none">
+      <h3>Your Progress</h3>
+      <div class="user-summary-grid">
+        <div class="user-summary-stat">
+          <div class="stat-value" id="us-quizzes">0</div>
+          <div class="stat-label">Quizzes</div>
+        </div>
+        <div class="user-summary-stat">
+          <div class="stat-value" id="us-avg">—</div>
+          <div class="stat-label">Avg Score</div>
+        </div>
+        <div class="user-summary-stat">
+          <div class="stat-value" id="us-best">—</div>
+          <div class="stat-label">Best</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Grid -->
+    <div class="card-grid">
+      <a href="quiz-setup.html" class="card-link">
+        <div class="card">
+          <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+          <h2>Quiz</h2>
+          <p>405 questions · Practice &amp; Exam · Timed</p>
+        </div>
+      </a>
+      <a href="flashcards.html" class="card-link">
+        <div class="card">
+          <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="14" rx="2"/><path d="M2 10h20"/><path d="M6 6V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg></div>
+          <h2>Flashcards</h2>
+          <p>431 cards · Flip to reveal · Filter by topic</p>
+        </div>
+      </a>
+      <a href="lectures.html" class="card-link">
+        <div class="card">
+          <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
+          <h2>Lectures</h2>
+          <p>All lecture PDFs · In-browser viewer</p>
+        </div>
+      </a>
+      <a href="summary.html" class="card-link">
+        <div class="card">
+          <div class="card-icon"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+          <h2>Summary</h2>
+          <p>Key concepts · Quick review · Tables</p>
+        </div>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    // Load user progress from localStorage
+    (function() {
+      const history = JSON.parse(localStorage.getItem('quizHistory') || '[]');
+      if (history.length === 0) return;
+
+      const wrap = document.getElementById('user-summary');
+      wrap.style.display = '';
+
+      document.getElementById('us-quizzes').textContent = history.length;
+
+      const scores = history.map(h => h.pct);
+      const avg = Math.round(scores.reduce((a, b) => a + b, 0) / scores.length);
+      document.getElementById('us-avg').textContent = avg + '%';
+      document.getElementById('us-best').textContent = Math.max(...scores) + '%';
+    })();
+  </script>
+  <footer style="text-align:center;padding:48px 0 18px;user-select:none">
+    <span style="display:inline-block;width:40px;height:16px;cursor:default;position:relative">
+      <span style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);white-space:nowrap;font-size:11px;letter-spacing:.04em;color:transparent;transition:color .4s;display:inline-flex;align-items:center;gap:4px" onmouseenter="this.style.color='#444'" onmouseleave="this.style.color='transparent'"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="10" rx="2"/><path d="M4 10V8a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2"/><line x1="2" y1="14" x2="22" y2="14"/></svg>butter</span>
+    </span>
+  </footer>
+</body>
+</html>

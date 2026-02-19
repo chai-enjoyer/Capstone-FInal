@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards — Capstone Project Preparation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="topbar-brand">Capstone Prep</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="var l=document.querySelector('.topbar-links');l.classList.toggle('open');this.textContent=l.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="topbar-links">
+      <a href="index.html">Home</a>
+      <a href="quiz-setup.html">Quiz</a>
+      <a href="flashcards.html" class="active">Flashcards</a>
+      <a href="lectures.html">Lectures</a>
+      <a href="summary.html">Summary</a>
+    </div>
+  </nav>
+
+  <main class="container fade-in" id="flashcard-page">
+    <h1>Flashcards</h1>
+    <p class="notice">Flashcard content may be incomplete — cross-check answers with course materials.</p>
+
+    <!-- Category filter -->
+    <div class="filter-bar" id="fc-category-pills"></div>
+
+    <!-- Controls -->
+    <div class="fc-controls">
+      <span class="text-secondary" id="fc-counter">0 / 0</span>
+      <span class="badge" id="fc-category-label"></span>
+      <button class="btn btn-ghost btn-sm" id="fc-shuffle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></svg>Shuffle</button>
+    </div>
+
+    <!-- Progress -->
+    <div class="progress-bar" style="margin-bottom:1.5rem">
+      <div class="progress-fill" id="fc-progress-fill"></div>
+    </div>
+
+    <!-- Card -->
+    <div class="flashcard-wrap">
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-front">
+          <span class="fc-label">Question</span>
+          <p id="fc-front-text"></p>
+        </div>
+        <div class="flashcard-back">
+          <span class="fc-label">Answer</span>
+          <p id="fc-back-text"></p>
+        </div>
+      </div>
+    </div>
+    <p class="text-secondary text-center" style="margin-top:.75rem">Click card or press Space to flip · Arrow keys to navigate</p>
+
+    <!-- Nav -->
+    <div class="quiz-nav">
+      <button class="btn btn-secondary" id="fc-prev">← Previous</button>
+      <button class="btn btn-primary" id="fc-next">Next →</button>
+    </div>
+  </main>
+
+  <script src="js/flashcard-data.js"></script>
+  <script src="js/flashcards.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Results — Capstone Project Preparation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="topbar-brand">Capstone Prep</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="var l=document.querySelector('.topbar-links');l.classList.toggle('open');this.textContent=l.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="topbar-links">
+      <a href="index.html">Home</a>
+      <a href="quiz-setup.html" class="active">Quiz</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="lectures.html">Lectures</a>
+      <a href="summary.html">Summary</a>
+    </div>
+  </nav>
+
+  <main class="container fade-in" id="result-page">
+    <h1>Results</h1>
+
+    <div class="result-wrap">
+      <div class="result-score-block" id="result-score-block">
+        <span class="result-pct" id="result-pct">0%</span>
+        <div class="result-label" id="result-label">0 / 0</div>
+      </div>
+    </div>
+
+    <div class="stats-grid" id="result-stats"></div>
+
+    <div class="card">
+      <h3>Category Breakdown</h3>
+      <div id="category-breakdown"></div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" id="retry-btn">Try Again</button>
+      <button class="btn btn-secondary" id="home-btn">Home</button>
+    </div>
+  </main>
+
+  <script src="js/quiz-data.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

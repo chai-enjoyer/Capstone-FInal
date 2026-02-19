@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Setup — Capstone Prep</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="topbar-brand">Capstone Prep</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="var l=document.querySelector('.topbar-links');l.classList.toggle('open');this.textContent=l.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="topbar-links">
+      <a href="index.html">Home</a>
+      <a href="quiz-setup.html" class="active">Quiz</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="lectures.html">Lectures</a>
+      <a href="summary.html">Summary</a>
+    </div>
+  </nav>
+
+  <main class="container fade-in" id="quiz-setup-page">
+    <h1>Quiz</h1>
+    <p class="notice">Quiz questions may contain errors — always verify answers with official course materials.</p>
+
+    <!-- Mode -->
+    <div class="card">
+      <h3>Mode</h3>
+      <div class="mode-select">
+        <label class="mode-option">
+          <input type="radio" name="mode" value="practice" checked>
+          <span class="mode-card">
+            <strong>Practice</strong>
+            <small>Hints &amp; explanations</small>
+          </span>
+        </label>
+        <label class="mode-option">
+          <input type="radio" name="mode" value="exam">
+          <span class="mode-card">
+            <strong>Exam</strong>
+            <small>Timed, no hints</small>
+          </span>
+        </label>
+      </div>
+    </div>
+
+    <!-- Questions & Timer in one card -->
+    <div class="card">
+      <h3>Settings</h3>
+      <div class="setting-row">
+        <label>Questions</label>
+        <div class="stepper">
+          <button type="button" id="count-minus">−</button>
+          <span id="count-value">25</span>
+          <button type="button" id="count-plus">+</button>
+        </div>
+      </div>
+      <div class="setting-row" id="timer-row" style="display:none">
+        <label>Minutes</label>
+        <div class="stepper">
+          <button type="button" id="time-minus">−</button>
+          <span id="time-value">30</span>
+          <button type="button" id="time-plus">+</button>
+        </div>
+      </div>
+      <div style="padding-top:8px">
+        <span class="text-secondary" style="font-size:13px">Available: <strong id="available-count" style="color:var(--text)">0</strong></span>
+      </div>
+    </div>
+
+    <!-- Categories — collapsible, all ON by default -->
+    <div class="card">
+      <h3>Categories</h3>
+      <div class="filter-bar" id="category-pills"></div>
+    </div>
+
+    <!-- Difficulty -->
+    <div class="card">
+      <h3>Difficulty</h3>
+      <div class="filter-bar">
+        <button class="pill diff-pill active" data-value="easy">Easy</button>
+        <button class="pill diff-pill active" data-value="medium">Medium</button>
+        <button class="pill diff-pill active" data-value="hard">Hard</button>
+        <button class="pill diff-pill active" data-value="expert">Expert</button>
+      </div>
+    </div>
+
+    <button class="btn btn-primary btn-block" id="start-quiz">Start Quiz</button>
+  </main>
+
+  <script src="js/quiz-data.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

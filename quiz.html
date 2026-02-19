@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — Capstone Project Preparation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="topbar-brand">Capstone Prep</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="var l=document.querySelector('.topbar-links');l.classList.toggle('open');this.textContent=l.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="topbar-links">
+      <a href="index.html">Home</a>
+      <a href="quiz-setup.html" class="active">Quiz</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="lectures.html">Lectures</a>
+      <a href="summary.html">Summary</a>
+    </div>
+  </nav>
+
+  <main class="container fade-in" id="quiz-page">
+    <!-- Top bar -->
+    <div class="quiz-topbar">
+      <div class="quiz-progress">
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <span class="text-secondary" id="answered-count">0/0</span>
+      </div>
+      <span class="timer" id="timer" style="display:none">30:00</span>
+    </div>
+
+    <!-- Quiz Area -->
+    <div id="quiz-area" class="card quiz-card">
+      <div class="quiz-meta">
+        <span id="q-number" class="text-secondary">1 / 25</span>
+        <span id="q-category" class="badge">Category</span>
+        <span id="q-difficulty" class="tag tag-easy">easy</span>
+        <span id="q-type" class="badge badge-outline">Select 1</span>
+      </div>
+
+      <h2 class="quiz-question" id="q-text">Loading…</h2>
+
+      <div class="quiz-options" id="options"></div>
+
+      <!-- Hint -->
+      <div id="hint-wrap" style="display:none">
+        <button class="btn btn-ghost btn-sm" id="hint-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:4px"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7V17h8v-2.3A7 7 0 0 0 12 2z"/></svg>Show Hint</button>
+        <p class="quiz-hint" id="hint-text" style="display:none"></p>
+      </div>
+
+      <!-- Explanation -->
+      <div class="quiz-explanation" id="explanation-wrap" style="display:none">
+        <strong>Explanation</strong>
+        <p id="explanation-text"></p>
+      </div>
+    </div>
+
+    <!-- Nav -->
+    <div class="quiz-nav">
+      <button class="btn btn-secondary" id="prev-btn">← Previous</button>
+      <button class="btn btn-primary" id="next-btn">Next →</button>
+      <button class="btn btn-primary" id="finish-btn" style="display:none">Finish</button>
+    </div>
+  </main>
+
+  <script src="js/quiz-data.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>

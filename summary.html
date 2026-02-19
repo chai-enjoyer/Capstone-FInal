@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summary — Capstone Project Preparation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="topbar">
+    <a href="index.html" class="topbar-brand">Capstone Prep</a>
+    <button class="burger" id="burger" aria-label="Menu" onclick="var l=document.querySelector('.topbar-links');l.classList.toggle('open');this.textContent=l.classList.contains('open')?'\u2715':'\u2630'">☰</button>
+    <div class="topbar-links">
+      <a href="index.html">Home</a>
+      <a href="quiz-setup.html">Quiz</a>
+      <a href="flashcards.html">Flashcards</a>
+      <a href="lectures.html">Lectures</a>
+      <a href="summary.html" class="active">Summary</a>
+    </div>
+  </nav>
+
+  <main class="container fade-in">
+    <h1>Quick Summary</h1>
+    <p class="notice">This summary may not cover all topics — use it alongside official lecture notes.</p>
+
+    <!-- TOC -->
+    <div class="card">
+      <h3>Contents</h3>
+      <ol class="summary-toc">
+        <li><a href="#process">Software Processes &amp; Models</a></li>
+        <li><a href="#waterfall">The Waterfall Model</a></li>
+        <li><a href="#incremental">Incremental Development</a></li>
+        <li><a href="#reuse">Integration &amp; Configuration (Reuse)</a></li>
+        <li><a href="#requirements">Requirements Engineering</a></li>
+        <li><a href="#modeling">System Modeling &amp; UML</a></li>
+        <li><a href="#structural">Structural &amp; Behavioral Models</a></li>
+        <li><a href="#mde">Model-Driven Engineering (MDE/MDA)</a></li>
+        <li><a href="#safety">Safety Engineering</a></li>
+        <li><a href="#dependability">Dependability, Reliability &amp; V&amp;V</a></li>
+      </ol>
+    </div>
+
+    <!-- 1. Software Processes -->
+    <section id="process" class="card">
+      <h2>1. Software Processes &amp; Models</h2>
+      <ul class="summary-list">
+        <li><strong>Software Process</strong> — A structured set of activities required to develop a software system.</li>
+        <li><strong>Four Universal Activities</strong> — Specification, Design &amp; Implementation, Validation, Evolution.</li>
+        <li><strong>Process Models</strong> — Abstract representations describing a process from a specific perspective.</li>
+      </ul>
+
+      <h3>Process Description Components</h3>
+      <table class="summary-table">
+        <thead><tr><th>Component</th><th>Description</th></tr></thead>
+        <tbody>
+          <tr><td>Products</td><td>Tangible outcomes — architectures, interface specs, data models</td></tr>
+          <tr><td>Roles</td><td>Responsibilities assigned — Architect, Developer, Project Manager</td></tr>
+          <tr><td>Pre/Post-conditions</td><td>Logical statements that must hold before/after an activity</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Plan-Driven vs. Agile</h3>
+      <table class="summary-table">
+        <thead><tr><th>Approach</th><th>Planning</th><th>Progress Measurement</th></tr></thead>
+        <tbody>
+          <tr><td>Plan-Driven</td><td>All activities planned in advance</td><td>Track against the plan</td></tr>
+          <tr><td>Agile</td><td>Incremental, evolving planning</td><td>Flexibility over roadmap</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top:8px;color:var(--text-secondary);font-size:13px"><em>Most practical processes are hybrids — the goal is finding the right balance of discipline and agility.</em></p>
+    </section>
+
+    <!-- 2. Waterfall -->
+    <section id="waterfall" class="card">
+      <h2>2. The Waterfall Model</h2>
+      <p>The archetype of plan-driven development. Standard for <strong>large, multi-site systems engineering</strong> projects.</p>
+      <ol class="summary-list">
+        <li><strong>Requirements Analysis &amp; Definition</strong> — Freeze system services, constraints, goals</li>
+        <li><strong>System &amp; Software Design</strong> — Partition requirements, establish architecture</li>
+        <li><strong>Implementation &amp; Unit Testing</strong> — Realize design as program units</li>
+        <li><strong>Integration &amp; System Testing</strong> — Combine units, test for emergent properties</li>
+        <li><strong>Operation &amp; Maintenance</strong> — Deploy and evolve as new requirements emerge</li>
+      </ol>
+      <p style="margin-top:8px"><strong>Critical flaw:</strong> Inflexible Partitioning — struggles to accommodate change. Only appropriate when requirements are stable and well-understood.</p>
+    </section>
+
+    <!-- 3. Incremental -->
+    <section id="incremental" class="card">
+      <h2>3. Incremental Development</h2>
+      <p>Interleaves specification, development, and validation. System produced as a series of versions.</p>
+      <table class="summary-table">
+        <thead><tr><th>Benefit</th><th>Business Outcome</th></tr></thead>
+        <tbody>
+          <tr><td>Reduced Cost of Change</td><td>Less rework compared to Waterfall</td></tr>
+          <tr><td>Enhanced Customer Feedback</td><td>Stakeholders comment on working demos</td></tr>
+          <tr><td>Rapid Delivery</td><td>Customers gain value from early increments</td></tr>
+        </tbody>
+      </table>
+      <h3>Pain Points</h3>
+      <ul class="summary-list">
+        <li><strong>Process Visibility</strong> — Managers struggle because constant documentation isn't cost-effective</li>
+        <li><strong>Structure Degradation</strong> — Frequent changes corrupt architecture; requires <em>refactoring</em></li>
+      </ul>
+    </section>
+
+    <!-- 4. Reuse -->
+    <section id="reuse" class="card">
+      <h2>4. Integration &amp; Configuration (Reuse)</h2>
+      <p>Modern systems are assembled from existing, configurable elements rather than built from scratch.</p>
+      <h3>Types of Reusable Software</h3>
+      <div class="tag-grid">
+        <span class="badge">COTS (Commercial off-the-shelf)</span>
+        <span class="badge">Component Frameworks (.NET, J2EE)</span>
+        <span class="badge">Web Services (remote invocation)</span>
+      </div>
+      <h3>Trade-offs</h3>
+      <ul class="summary-list">
+        <li><strong>Benefit:</strong> Reduces cost and risk</li>
+        <li><strong>Cost:</strong> Requirement Compromises — system may not meet 100% of user needs</li>
+        <li><strong>Cost:</strong> Loss of Control — external vendors manage updates to reused elements</li>
+      </ul>
+    </section>
+
+    <!-- 5. Requirements Engineering -->
+    <section id="requirements" class="card">
+      <h2>5. Requirements Engineering</h2>
+      <p>Produces the Requirements Document through three sub-activities:</p>
+      <ol class="summary-list">
+        <li><strong>Elicitation &amp; Analysis</strong> — What stakeholders expect</li>
+        <li><strong>Specification</strong> — Defining requirements in detail</li>
+        <li><strong>Validation</strong> — Checking if requirements are realistic</li>
+      </ol>
+      <h3>Design &amp; Implementation Model</h3>
+      <table class="summary-table">
+        <thead><tr><th>Activity</th><th>Output</th></tr></thead>
+        <tbody>
+          <tr><td>Architectural Design</td><td>System Architecture</td></tr>
+          <tr><td>Database Design</td><td>Database Specification</td></tr>
+          <tr><td>Interface Design</td><td>Interface Specification</td></tr>
+          <tr><td>Component Design</td><td>Component Specification</td></tr>
+        </tbody>
+      </table>
+      <h3>Validation &amp; Verification (V&amp;V)</h3>
+      <ul class="summary-list">
+        <li><strong>Component Testing</strong> — Individual functions/objects tested independently</li>
+        <li><strong>System Testing</strong> — Whole system; finds <em>emergent properties</em></li>
+        <li><strong>Customer Testing</strong> — Validating with real customer data</li>
+        <li><strong>Debugging</strong> — Finding/correcting faults (distinct from V&amp;V)</li>
+      </ul>
+    </section>
+
+    <!-- 6. System Modeling -->
+    <section id="modeling" class="card">
+      <h2>6. System Modeling &amp; UML</h2>
+      <p>Developing abstract representations of a system using <strong>UML</strong> (Unified Modeling Language).</p>
+
+      <h3>Model Fidelity Levels</h3>
+      <table class="summary-table">
+        <thead><tr><th>Use Case</th><th>Fidelity</th><th>Characteristics</th></tr></thead>
+        <tbody>
+          <tr><td>Discussion</td><td>Low</td><td>Incomplete models OK — supports dialogue</td></tr>
+          <tr><td>Documentation</td><td>Medium</td><td>Accurate but need not be complete</td></tr>
+          <tr><td>Implementation Generation (MDE)</td><td>High</td><td>Must be correct and complete</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Four System Perspectives</h3>
+      <table class="summary-table">
+        <thead><tr><th>Perspective</th><th>Focus</th><th>UML Diagrams</th></tr></thead>
+        <tbody>
+          <tr><td>External</td><td>Context/environment</td><td>Context Models</td></tr>
+          <tr><td>Interaction</td><td>System ↔ environment exchanges</td><td>Use Case &amp; Sequence Diagrams</td></tr>
+          <tr><td>Structural</td><td>Organization of components</td><td>Class Diagrams</td></tr>
+          <tr><td>Behavioral</td><td>Dynamic event response</td><td>State &amp; Activity Diagrams</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Context Models — Mentcare (MHC-PMS)</h3>
+      <p>Mentcare sits at the center, interacting with external entities:</p>
+      <div class="tag-grid">
+        <span class="badge">Patient Record System</span>
+        <span class="badge">Admissions System</span>
+        <span class="badge">Prescription System</span>
+        <span class="badge">Appointments System</span>
+        <span class="badge">HC Statistics System</span>
+        <span class="badge">Management Reporting</span>
+      </div>
+      <p style="margin-top:8px"><strong>Key insight:</strong> System boundary placement is often a <em>political judgment</em> — influenced by organizational pressures, not just technical needs.</p>
+    </section>
+
+    <!-- 7. Structural & Behavioral Models -->
+    <section id="structural" class="card">
+      <h2>7. Structural &amp; Behavioral Models</h2>
+
+      <h3>Class Diagrams</h3>
+      <p>Define system objects with attributes, operations, and associations.</p>
+      <p><strong>Consultation Class Example:</strong></p>
+      <ul class="summary-list">
+        <li><strong>Attributes:</strong> Doctors, Date, Time, Clinic, Reason, Medication, Treatment, Voice notes, Transcript</li>
+        <li><strong>Operations:</strong> New(), Prescribe(), RecordNotes(), Transcribe()</li>
+      </ul>
+
+      <h3>Complexity Management</h3>
+      <table class="summary-table">
+        <thead><tr><th>Technique</th><th>Purpose</th><th>Benefit</th></tr></thead>
+        <tbody>
+          <tr><td>Generalization (Inheritance)</td><td>Superclasses hold common features; subclasses add specific ones</td><td>Changes only need to examine the superclass</td></tr>
+          <tr><td>Aggregation</td><td>"Part-of" relationships; compositions of classes</td><td>Shows structural dependencies</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Behavioral Models: Stimuli Types</h3>
+      <table class="summary-table">
+        <thead><tr><th>Type</th><th>Characteristics</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Data-Driven</td><td>Controlled by data input, minimal external events</td><td>End-to-end processing pipelines</td></tr>
+          <tr><td>Event-Driven</td><td>Finite states, stimuli trigger transitions</td><td>Microwave oven, phone switching</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Microwave Oven State Machine</h3>
+      <ul class="summary-list">
+        <li>States: <em>Waiting → Half Power → Full Power → Set Time → Enabled → Operation → Disabled</em></li>
+        <li>Superstates group related states for complexity management</li>
+        <li>Stimuli trigger transitions between states (e.g., "full power" button, timer, door open)</li>
+      </ul>
+    </section>
+
+    <!-- 8. MDE/MDA -->
+    <section id="mde" class="card">
+      <h2>8. Model-Driven Engineering (MDE/MDA)</h2>
+      <p>Software development approach where models (not programs) are the primary output.</p>
+
+      <h3>Three Model Types (MDA)</h3>
+      <table class="summary-table">
+        <thead><tr><th>Model</th><th>Full Name</th><th>Purpose</th></tr></thead>
+        <tbody>
+          <tr><td>CIM</td><td>Computation Independent Model</td><td>Domain concepts, no computation details</td></tr>
+          <tr><td>PIM</td><td>Platform Independent Model</td><td>System operations without platform specifics</td></tr>
+          <tr><td>PSM</td><td>Platform Specific Model</td><td>Tailored to specific implementation platform</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Key Concepts</h3>
+      <ul class="summary-list">
+        <li><strong>Model Transformations:</strong> CIM → PIM → PSM → Code (automated translations)</li>
+        <li><strong>Executable UML:</strong> UML models can be compiled directly into executable code</li>
+        <li><strong>Promise:</strong> Raise abstraction level, reduce implementation errors</li>
+        <li><strong>Limitation:</strong> Complete automation is still challenging for complex systems</li>
+      </ul>
+    </section>
+
+    <!-- 9. Safety Engineering -->
+    <section id="safety" class="card">
+      <h2>9. Safety Engineering</h2>
+      <p><strong>Safety</strong> — ability to operate without causing human injury/death or environmental damage. A <em>system property</em>, not a component feature.</p>
+
+      <h3>The Reliability vs. Safety Paradox</h3>
+      <p>A system can be <strong>100% reliable yet fundamentally unsafe</strong>. Three causes:</p>
+      <ol class="summary-list">
+        <li>Specification Errors — design itself contains a flaw</li>
+        <li>Hardware Failures — spurious inputs overwhelm the specification</li>
+        <li>Context-Sensitive Commands — correct command at wrong time</li>
+      </ol>
+
+      <h3>Safety-Critical System Classification</h3>
+      <table class="summary-table">
+        <thead><tr><th>Type</th><th>Description</th><th>Example</th></tr></thead>
+        <tbody>
+          <tr><td>Primary</td><td>Failure directly threatens human life</td><td>Insulin Pump Control System</td></tr>
+          <tr><td>Secondary</td><td>Failure causes faults in other systems</td><td>Mentcare System, Grid Control</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Safety Terminology</h3>
+      <table class="summary-table">
+        <thead><tr><th>Term</th><th>Definition</th><th>Insulin Pump Example</th></tr></thead>
+        <tbody>
+          <tr><td>Accident (Mishap)</td><td>Unplanned event → death/injury/damage</td><td>Insulin overdose</td></tr>
+          <tr><td>Hazard</td><td>Condition with potential for accident</td><td>Blood glucose sensor failure</td></tr>
+          <tr><td>Damage</td><td>Loss measure from a mishap</td><td>Serious injury or death</td></tr>
+          <tr><td>Risk</td><td>Probability × severity</td><td>Low to Medium</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Risk Triangle</h3>
+      <div class="tag-grid">
+        <span class="badge" style="border-color:var(--red);color:var(--red)">Intolerable — must be eliminated</span>
+        <span class="badge" style="border-color:var(--orange);color:var(--orange)">ALARP — As Low As Reasonably Practical</span>
+        <span class="badge" style="border-color:var(--green);color:var(--green)">Acceptable — negligible consequences</span>
+      </div>
+
+      <h3>Hazard-Driven Strategies</h3>
+      <table class="summary-table">
+        <thead><tr><th>Strategy</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>Eradicate (Avoidance)</td><td>Design so hazards cannot arise</td></tr>
+          <tr><td>Intercept (Detection)</td><td>Identify hazards in real-time, mitigate before accident</td></tr>
+          <tr><td>Insulate (Damage Limitation)</td><td>Minimize fallout (relief valves, fail-safe modes)</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Insulin Pump Safety Requirements (SR1–SR6)</h3>
+      <ol class="summary-list">
+        <li><strong>SR1:</strong> Shall not deliver a single dose &gt; specified maximum</li>
+        <li><strong>SR2:</strong> Shall not deliver daily cumulative dose &gt; maximum</li>
+        <li><strong>SR3:</strong> Hardware diagnostics ≥ 4 times per hour</li>
+        <li><strong>SR4:</strong> Exception handlers for all identified exceptions</li>
+        <li><strong>SR5:</strong> Audible alarm on any hardware/software anomaly</li>
+        <li><strong>SR6:</strong> Delivery suspended in alarm state until manual reset</li>
+      </ol>
+
+      <h3>Agile Liability for Safety-Critical Systems</h3>
+      <ul class="summary-list">
+        <li><strong>Regulatory Compliance:</strong> Regulations demand extensive documentation; agile's "software over documentation" creates liability</li>
+        <li><strong>Architectural Debt:</strong> Agile's interleaved development prevents holistic hazard analysis</li>
+      </ul>
+    </section>
+
+    <!-- 10. Dependability & V&V -->
+    <section id="dependability" class="card">
+      <h2>10. Dependability, Reliability &amp; V&amp;V</h2>
+
+      <h3>Fault → Error → Failure Chain</h3>
+      <ul class="summary-list">
+        <li><strong>Fault:</strong> Root cause (defect in code/spec)</li>
+        <li><strong>Error:</strong> Incorrect internal state caused by a fault</li>
+        <li><strong>Failure:</strong> Observable deviation from expected behavior</li>
+      </ul>
+
+      <h3>Advanced V&amp;V Techniques</h3>
+      <table class="summary-table">
+        <thead><tr><th>Technique</th><th>Purpose</th><th>Limitation</th></tr></thead>
+        <tbody>
+          <tr><td>Formal Methods</td><td>Mathematical specification; finds spec errors, race conditions</td><td>Extremely expensive; proofs can contain errors</td></tr>
+          <tr><td>Model Checking</td><td>Explores all paths through a model; verifies properties</td><td>State space explosion for large systems</td></tr>
+          <tr><td>Static Analysis</td><td>Parses code without execution; finds error patterns</td><td>False positives; cannot find all runtime errors</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Static Analysis Fault Categories</h3>
+      <table class="summary-table">
+        <thead><tr><th>Category</th><th>Examples</th></tr></thead>
+        <tbody>
+          <tr><td>Data Faults</td><td>Variables used before initialization; declared but never used</td></tr>
+          <tr><td>Control Faults</td><td>Unreachable code; unconditional branches into loops</td></tr>
+          <tr><td>I/O Faults</td><td>Variables output twice with no intervening assignment</td></tr>
+          <tr><td>Interface Faults</td><td>Parameter type/number mismatches; uncalled procedures</td></tr>
+          <tr><td>Storage Mgmt Faults</td><td>Unassigned pointers; pointer arithmetic errors</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+  </main>
+
+  <button class="go-top" id="go-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+  <script>
+    (function() {
+      const gt = document.getElementById('go-top');
+      if (gt) window.addEventListener('scroll', () => {
+        gt.classList.toggle('visible', window.scrollY > 300);
+      });
+    })();
+  </script>
+</body>
+</html>
