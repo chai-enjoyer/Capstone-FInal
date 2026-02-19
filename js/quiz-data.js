@@ -174,7 +174,7 @@ const QUIZ_DATA = [
     explanation: "Use case diagrams are specifically designed to model the high-level interactions between a system and external actors (users or other systems). They provide a clear view of the system's functional requirements from an external perspective. This makes them an ideal tool for early-stage stakeholder discussions regarding system scope."
   },
   {
-    id: 111,
+    id: 16,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -182,10 +182,10 @@ const QUIZ_DATA = [
     options: ["Because it determines which programming language the pharmacy department must adopt.", "Because shifting the boundary can redistribute the workload and professional influence of the pharmacy staff.", "Because it is a requirement mandated by government political bodies rather than engineers.", "Because system boundaries are only relevant for public sector software projects."],
     correct: [1],
     hint: "Think about how internalizing a function affects the people who used to perform it manually.",
-    explanation: "As noted in the lecture, defining boundaries is not a neutral technical task but a political one. If a function is moved 'inside' the system, the automated software may reduce the manual workload of a specific department, potentially decreasing their administrative influence or changing their operational role. Conversely, keeping it 'outside' preserves the status quo of that department’s responsibilities. Therefore, boundary placement often becomes a negotiation point among organizational stakeholders."
+    explanation: "defining boundaries is not a neutral technical task but a political one. If a function is moved 'inside' the system, the automated software may reduce the manual workload of a specific department, potentially decreasing their administrative influence or changing their operational role. Conversely, keeping it 'outside' preserves the status quo of that department’s responsibilities. Therefore, boundary placement often becomes a negotiation point among organizational stakeholders."
   },
   {
-    id: 112,
+    id: 17,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -196,7 +196,7 @@ const QUIZ_DATA = [
     explanation: "Context models are established to define the scope of the development project by identifying what is inside and what is outside the system. When a system like 'Management Reporting' is placed outside the central boundary, it signifies an external dependency. This means the Mentcare system must interface with it, but the internal workings of the reporting system are beyond the scope of the current development project. Recognizing these external systems is vital for defining the system's environmental requirements."
   },
   {
-    id: 113,
+    id: 18,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -207,18 +207,7 @@ const QUIZ_DATA = [
     explanation: "The position of the system boundary has a profound effect on system requirements. By moving 'Admissions' inside the boundary, the engineering team takes on the responsibility of modeling and implementing the complex logic, data structures, and workflows associated with patient admission. This increases the internal scope and complexity of the project. This shift demonstrates how boundary definition directly dictates the workload of the development team."
   },
   {
-    id: 114,
-    category: "System Modeling & Boundaries",
-    difficulty: "medium",
-    type: "single",
-    question: "Analyze the Mentcare system context model (Image 11). Which of the following is NOT an external system dependency identified in this specific model?",
-    options: ["HC statistics system", "Appointments system", "Patient record class", "Prescription system"],
-    correct: [2],
-    hint: "Distinguish between a 'system' in a context model and a 'class' in a structural model.",
-    explanation: "The context model for Mentcare identifies external *systems* such as HC statistics, Appointments, and Prescriptions. A 'Patient record class' is an internal structural detail of a system, not an external system shown in a context model. While there is a 'Patient record system' listed as an external dependency, the 'class' represents a lower level of abstraction. Confusing these two levels can lead to errors in both architectural scope and structural design."
-  },
-  {
-    id: 115,
+    id: 19,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -229,29 +218,18 @@ const QUIZ_DATA = [
     explanation: "Context models use links to show other systems that are used by or depend on the system being developed. In this case, the 'HC statistics system' is an external entity that depends on the data output from Mentcare. This link alerts engineers that any changes to Mentcare’s data format could affect the statistics system, necessitating careful interface management. This high-level view is the first step in understanding the system's interoperability requirements."
   },
   {
-    id: 116,
-    category: "System Modeling & Boundaries",
-    difficulty: "medium",
-    type: "single",
-    question: "Which system in the Mentcare context model (Image 11) is most likely responsible for handling the external reporting required by government health agencies?",
-    options: ["Admissions system", "HC statistics system", "Appointments system", "Patient record system"],
-    correct: [1],
-    hint: "Think about which name implies aggregate data reporting.",
-    explanation: "The HC statistics system is shown as an external dependency in the Mentcare model. Its name implies that it handles health care statistics, which typically involves the collection and reporting of data for external agencies or public health tracking. This differs from the Patient record system, which manages individual clinical data. Identifying these specialized external systems helps architects determine the nature of the data exchange needed."
-  },
-  {
-    id: 117,
+    id: 20,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
     question: "True or False: The primary purpose of a context model is to show the sequence of interactions between the system and its users.",
     options: ["True", "False"],
     correct: [1],
-    hint: "Recall the 'Key points' about context models (Image 57).",
+    hint: "Recall the 'Key points' about context models.",
     explanation: "False. Context models simply show the other systems in the environment and the system's position relative to them. They do not show the detailed sequence of interactions; that is the role of interaction models like sequence diagrams or use cases. Context models are used to establish high-level scope and boundaries rather than dynamic behavioral flows. Mistaking context for behavior can lead to a failure in defining static architectural dependencies."
   },
   {
-    id: 118,
+    id: 21,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -262,19 +240,7 @@ const QUIZ_DATA = [
     explanation: "When functionality previously handled by an external system is moved into the system being developed, the system boundary expands. This internalization means the scheduling logic, database tables for appointments, and user interfaces for booking must now be part of the Mentcare project. This change increases the development team's responsibility and the overall complexity of the software. It perfectly illustrates how boundary placement is a key architectural decision."
   },
   {
-    id: 119,
-    category: "System Modeling & Boundaries",
-    difficulty: "medium",
-    type: "multi",
-    selectCount: 3,
-    question: "In the Mentcare context model, which systems are depicted as external entities that Mentcare likely interacts with? (Select all that apply)",
-    options: ["Management reporting system", "Prescription system", "Consultation class", "Admissions system"],
-    correct: [0, 1, 3],
-    hint: "Look at the boxes surrounding Mentcare in Image 11.",
-    explanation: "The Mentcare context model explicitly identifies Management reporting, Prescriptions, and Admissions as external systems. These represent the surrounding technical ecosystem that Mentcare must navigate. The 'Consultation class' is a structural element within the system and would not appear on a high-level context diagram. Correctly distinguishing between external systems and internal structures is essential for clear architectural communication."
-  },
-  {
-    id: 120,
+    id: 22,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -285,7 +251,7 @@ const QUIZ_DATA = [
     explanation: "Defining a system boundary is a political judgment because it can increase or decrease the influence of different parts of an organization. If a function stays outside the system, the department currently managing it manually or with their own tools retains control and importance. If it is internalized, they may lose autonomy or even their reason for existing as a separate unit. This organizational friction is a standard part of the software engineering process."
   },
   {
-    id: 121,
+    id: 23,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -296,7 +262,7 @@ const QUIZ_DATA = [
     explanation: "Context models are intentionally simple; they show that a relationship exists but do not detail the nature, direction, or timing of data exchanges. To see the timing of messages, an engineer would need to look at an interaction model like a sequence diagram. Context models focus purely on environmental positioning and scope. This abstraction helps stakeholders focus on high-level dependencies without getting bogged down in implementation details."
   },
   {
-    id: 122,
+    id: 24,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
@@ -304,43 +270,21 @@ const QUIZ_DATA = [
     options: ["The choice of color for the user interface.", "The decision to include or exclude an external billing system from the scope.", "The number of states in the microwave oven state machine.", "The version of the UML tool being used by the team."],
     correct: [1],
     hint: "Boundary placement directly impacts requirements.",
-    explanation: "As stated in the lecture, the position of the system boundary has a profound effect on requirements. Deciding whether the system must handle its own billing or simply send data to an external billing system changes the entire functional scope of the project. If included, hundreds of requirements related to accounting, invoices, and payments are added. This is a primary example of how boundary decisions dictate the scale of development."
+    explanation: "the position of the system boundary has a profound effect on requirements. Deciding whether the system must handle its own billing or simply send data to an external billing system changes the entire functional scope of the project. If included, hundreds of requirements related to accounting, invoices, and payments are added. This is a primary example of how boundary decisions dictate the scale of development."
   },
   {
-    id: 123,
-    category: "System Modeling & Boundaries",
-    difficulty: "medium",
-    type: "single",
-    question: "If you are using a context model to 'facilitate discussions about software design,' what is a common risk according to the MDE critique (Image 55)?",
-    options: ["The model will be too detailed for implementation.", "The abstractions useful for discussion may not be the right abstractions for implementation.", "The model will automatically generate faulty code.", "The context model will force the system to be platform-specific."],
-    correct: [1],
-    hint: "Consider the gap between high-level talk and low-level code.",
-    explanation: "Models are excellent for facilitating high-level stakeholder discussions, but the critique of MDE reminds us that these abstractions are often insufficient for the realities of implementation. A context model shows 'what' relates to 'what' but ignores the technical constraints, protocols, and data structures required for a real interface. This gap between the discussion model and the implementation model is a major challenge in software engineering. Bridging this gap requires transitioning to more detailed structural and behavioral models."
-  },
-  {
-    id: 124,
-    category: "System Modeling & Boundaries",
-    difficulty: "medium",
-    type: "single",
-    question: "Which system in the Mentcare context model likely provides the initial data for a patient being admitted to the hospital?",
-    options: ["Prescription system", "Admissions system", "Management reporting system", "HC statistics system"],
-    correct: [1],
-    hint: "The name of the system usually reflects its primary function.",
-    explanation: "In a healthcare environment, the Admissions system is the standard point of entry for patient data. The context model shows Mentcare linked to this system, implying a dependency where Mentcare receives patient details once they are admitted. Understanding this flow is crucial for engineers to design the correct data-import interfaces. This illustrates how context models map out the logical flow of information within an organizational ecosystem."
-  },
-  {
-    id: 125,
+    id: 25,
     category: "System Modeling & Boundaries",
     difficulty: "medium",
     type: "single",
     question: "True or False: A system context model is often used in conjunction with other models, such as business process models, to show the activities within an organization.",
     options: ["True", "False"],
     correct: [0],
-    hint: "Recall the 'Process perspective' slide (Image 12).",
+    hint: "",
     explanation: "True. Context models are high-level and often need to be supplemented by process models (like activity diagrams) to show how people and systems interact in real-world workflows. While the context model shows the static environment, the process model shows the dynamic activities. Together, they provide a more complete picture of how the software fits into the organizational fabric. This multi-perspective approach is a hallmark of the Sommerville framework."
   },
   {
-    id: 227,
+    id: 26,
     category: "System Modeling & Boundaries",
     difficulty: "hard",
     type: "multi",
@@ -352,19 +296,7 @@ const QUIZ_DATA = [
     explanation: "The source identifies three primary roles for context models: defining the system boundary (inside vs. outside), showing systems that are used by the developed system, and showing systems that depend on it. Listing internal Java attributes is a task for structural modeling (class diagrams), not context modeling. A context model is an 'abstract view' of the environment, not a detailed implementation plan. Mastering this distinction is crucial for higher-level architectural design. It ensures the architect remains focused on the system's external strategic position."
   },
   {
-    id: 230,
-    category: "System Modeling & Boundaries",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "According to the 'System Boundaries' lecture materials, which factors are specifically noted as influencing the placement of a system's boundary? (Select all that apply)",
-    options: ["Organizational workload distribution.", "The programming language specified in the Platform Specific Model (PSM).", "Political judgments regarding organizational influence.", "The need to define what is inside and outside the system."],
-    correct: [0, 2, 3],
-    hint: "",
-    explanation: "The source explicitly states that boundaries define what is 'inside and outside,' are 'political judgments,' and are influenced by pressures to 'increase/decrease influence or workload.' Programming languages are technical details of a PSM and do not typically drive high-level context boundary decisions. The architect must prioritize organizational and functional scope before technical implementation details. This ensures the system architecture remains resilient to organizational changes. These factors highlight the socio-technical complexity of modern systems engineering."
-  },
-  {
-    id: 248,
+    id: 27,
     category: "System Modeling & Boundaries",
     difficulty: "hard",
     type: "multi",
@@ -376,7 +308,7 @@ const QUIZ_DATA = [
     explanation: "In a UML class box, the middle section contains 'Attributes,' which are the specific data elements associated with the class. Operations are the behaviors listed in the bottom section. Stimuli are concepts from behavioral modeling (data or events), not structural class components. Architects must be precise with UML terminology to ensure models are correctly interpreted by developers. Attributes define the 'state' that an object can hold. These specific elements allow the system to track the 'when' of a consultation."
   },
   {
-    id: 251,
+    id: 28,
     category: "System Modeling & Boundaries",
     difficulty: "hard",
     type: "multi",
@@ -388,7 +320,7 @@ const QUIZ_DATA = [
     explanation: "The range '1..4' establishes a minimum (1) and maximum (4) requirement for the association. This is a static structural rule used in MHC-PMS to manage clinical workflows. It is not a stimulus; stimuli are events or data that drive behavioral models. Structural constraints like this are vital for resource planning in healthcare systems. They ensure the software logic mirrors the reality of hospital staffing. Distinguishing between static constraints and dynamic stimuli is a hallmark of architectural mastery."
   },
   {
-    id: 269,
+    id: 29,
     category: "System Modeling & Boundaries",
     difficulty: "hard",
     type: "multi",
@@ -397,10 +329,10 @@ const QUIZ_DATA = [
     options: ["A user pressing the 'Start' button in a microwave.", "A phone receiver being moved to an 'off hook' position.", "A timer reaching zero to trigger an alarm.", "The arrival of a large payroll data file for batch processing."],
     correct: [0, 1, 2],
     hint: "",
-    explanation: "The lecture defines events as things that 'happen' to trigger processing (like button presses, hardware state changes, or timers). The arrival of a data file is specifically categorized as a 'Data' stimulus in the behavioral models section. While events *can* have associated data, the primary stimulus type for a large data file is 'Data.' Distinguishing these stimulus types helps the architect choose between event-driven or data-driven modeling styles. This choice impacts the responsiveness and scalability of the architecture. It is a fundamental classification in system behavior."
+    explanation: "events as things that 'happen' to trigger processing (like button presses, hardware state changes, or timers). The arrival of a data file is specifically categorized as a 'Data' stimulus in the behavioral models section. While events *can* have associated data, the primary stimulus type for a large data file is 'Data.' Distinguishing these stimulus types helps the architect choose between event-driven or data-driven modeling styles. This choice impacts the responsiveness and scalability of the architecture. It is a fundamental classification in system behavior."
   },
   {
-    id: 275,
+    id: 30,
     category: "System Modeling & Boundaries",
     difficulty: "hard",
     type: "multi",
@@ -409,10 +341,10 @@ const QUIZ_DATA = [
     options: ["They are primarily controlled by data input.", "They have relatively little external event processing.", "They focus on showing end-to-end processing of information.", "They rely exclusively on state machine modeling for all patient data."],
     correct: [0, 1, 2],
     hint: "",
-    explanation: "The lecture notes on data-driven modeling state that business systems are 'primarily driven by data' and focus on 'end-to-end processing.' They contrast this with event-driven systems (like microwave ovens) which are more state-based. While business systems *could* use state machines, they are primarily modeled as data-processing systems in the context of behavioral modeling. This categorization ensures the architect focuses on the flow of information. It is the most effective way to analyze requirements for high-volume data systems. This reflects the core mission of information management."
+    explanation: "business systems are 'primarily driven by data' and focus on 'end-to-end processing.' They contrast this with event-driven systems (like microwave ovens) which are more state-based. While business systems *could* use state machines, they are primarily modeled as data-processing systems in the context of behavioral modeling. This categorization ensures the architect focuses on the flow of information. It is the most effective way to analyze requirements for high-volume data systems. This reflects the core mission of information management."
   },
   {
-    id: 288,
+    id: 31,
     category: "System Modeling & Boundaries",
     difficulty: "hard",
     type: "multi",
@@ -424,30 +356,7 @@ const QUIZ_DATA = [
     explanation: "The diagram shows only two paths out of the 'Waiting' state: one triggered by the 'Half power' button and one by the 'Full power' button. Other buttons like 'Start' are invalid in this state because the power level has not been set. 'Door open' triggers a transition to 'Disabled' from other states, but the diagram does not show an explicit arc from 'Waiting' for it. This demonstrates that not every stimulus is valid in every state. It is the architect's job to define these constraints. This prevents the system from responding to illogical user inputs."
   },
   {
-    id: 302,
-    category: "System Modeling & Boundaries",
-    difficulty: "hard",
-    type: "single",
-    question: "A developer writes a line of code for a healthcare hub that adds an hour to a transmission time but forgets to include a check if the result exceeds 23:59. According to Lecture 9, this specific piece of code is a:",
-    options: ["System fault", "System error", "System failure", "System event"],
-    correct: [0],
-    hint: "",
-    explanation: "The lecture defines a System Fault as 'a characteristic... that can lead to a system error.' The code itself (the omission of the check) is the fault. It is the static 'bug' waiting to be triggered. Once that code executes and creates an invalid time value, it becomes an 'error' (an invalid state). If that error then leads to the system not delivering a service, it is a 'failure.' Understanding this hierarchy is essential for effective system testing. You look for faults to prevent errors and failures. It is the architectural approach to quality assurance."
-  },
-  {
-    id: 308,
-    category: "System Modeling & Boundaries",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "For 'most complex systems,' the lecture argues that implementation is not the major problem. Which tasks are identified as being 'more significant'? (Select all that apply)",
-    options: ["Requirements engineering", "Security and dependability", "Integration with legacy systems", "Automatic code generation"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The 'Adoption of MDA' section lists these three tasks (plus 'testing') as being more significant than implementation. Automated code generation is a *tool* of MDA, but the lecture suggests that it doesn't solve these harder, higher-level problems. This is a critical insight: modeling for code generation is only a small part of the architectural challenge. The 'real' work remains the difficult socio-technical tasks of understanding requirements and ensuring safety. This explains why MDE hasn't solved all of software engineering's woes. It prioritizes the intellectual over the manual labor."
-  },
-  {
-    id: 310,
+    id: 32,
     category: "System Modeling & Boundaries",
     difficulty: "hard",
     type: "multi",
@@ -459,18 +368,18 @@ const QUIZ_DATA = [
     explanation: "The 'MDA transformations' diagram shows 'Language specific patterns' as input for the final PSM-to-Code translator. The 'Multiple platform-specific models' diagram further specifies these as 'Java code generator' and 'C# code generator' patterns. 'Domain specific guidelines' are for CIM-to-PIM, and 'Platform specific rules' are for PIM-to-PSM. Understanding where each set of 'rules' is injected is vital for configuring an MDA toolchain. It ensures the right technical details are applied at the right time. This is the 'fine-tuning' of the automated transformation process."
   },
   {
-    id: 324,
+    id: 33,
     category: "System Modeling & Boundaries",
     difficulty: "expert",
     type: "single",
     question: "How does the 'System Boundaries' slide define the role of other systems in the context of a new development project?",
     options: ["They are internal components that must be rewritten in the new system.", "They are systems that are used by or depend on the system being developed.", "They are models that have been deprecated and replaced by the new PIM.", "They are external actors who interact with the system only via sequence diagrams."],
     correct: [1],
-    hint: "Refer to the second bullet point on the first slide of the 'System boundaries' section.",
+    hint: "",
     explanation: "The source context is clear: system boundaries show 'other systems that are used or depend on the system being developed.' This establishing of a 'neighborhood' is essential for defining the operational environment. It allows the architect to identify the external interfaces that must be built and the dependencies that must be managed. For instance, in Mentcare, the 'Patient record system' is used by Mentcare, while the 'HC statistics system' depends on it. This dual perspective ensures that both input and output dependencies are captured during the requirements phase. Without this environmental map, the system would be an isolated silo, unable to integrate with the existing organizational infrastructure."
   },
   {
-    id: 326,
+    id: 34,
     category: "System Modeling & Boundaries",
     difficulty: "expert",
     type: "single",
@@ -481,7 +390,7 @@ const QUIZ_DATA = [
     explanation: "Establishing system boundaries is about defining 'what is inside and what is outside the system.' This definition is technically critical because it dictates the scope of development. Anything inside the boundary is a requirement the team must fulfill; anything outside is an interface requirement. This distinction prevents 'requirements crawl' and ensures that the team focuses on its actual responsibilities. As the source notes, this has a 'profound effect' on the system requirements. A clear boundary allows for accurate cost estimation and project planning. Without it, the project's goals remain ambiguous, leading to potential failure during integration."
   },
   {
-    id: 385,
+    id: 35,
     category: "System Modeling & Boundaries",
     difficulty: "expert",
     type: "single",
@@ -492,7 +401,7 @@ const QUIZ_DATA = [
     explanation: "This is a vital reality check for architects. Proponents of MDE often focus on the 'miracle' of automated code generation (solving the implementation problem). But as the source correctly notes, for most large, messy enterprise systems, writing the code is the easy part. The 'hard' parts—figuring out what the user needs (requirements), ensuring the system won't crash (dependability), keeping hackers out (security), and making it talk to 30-year-old mainframe systems (legacy integration)—are not solved by MDA. If you automate the generation of a system with the wrong requirements, you just have a 'faster way to build the wrong thing.' This is why MDE hasn't 'solved' software engineering. An architect must focus their energy on these 'more significant' problems, regardless of their implementation style."
   },
   {
-    id: 401,
+    id: 36,
     category: "System Modeling & Boundaries",
     difficulty: "expert",
     type: "single",
@@ -501,23 +410,12 @@ const QUIZ_DATA = [
     correct: [2],
     hint: "Look at the 'System fault' definition and the specific 'inclusion of code' mentioned.",
     explanation: "The 'System fault' is explicitly defined as the 'inclusion of the code... without a check.' By adding that check, the 'characteristic' that made the system dangerous has been removed. The fault is the 'bug' in the static design. Once the code is corrected, the system is no longer 'faulty.' This prevents the 'dynamic' system error from ever occurring. This illustrates the architect's primary job: to identify and remove faults in the 'structural' and 'logic' models before the system is ever 'executed.' This proactive approach to quality is what distinguishes professional software engineering. It focuses on the source of the problem rather than the symptoms. It's the highest form of system modeling mastery."
-  },
-  {
-    id: 403,
-    category: "System Modeling & Boundaries",
-    difficulty: "expert",
-    type: "single",
-    question: "A system variable holds an incorrect value, but the system continues to operate and the user sees no problems. According to the 'Lecture 9' snippet, what is this situation called?",
-    options: ["A latent System Fault.", "An unmanifested System Error.", "A successful System Failure.", "A rodent-driven System Boundary."],
-    correct: [1],
-    hint: "Think about the 'bad state' vs 'bad service' distinction.",
-    explanation: "The source defines an 'error' as an 'erroneous system state.' If a variable is wrong (the state is incorrect), then by definition, a system error exists. However, if the system continues to deliver its service and the user doesn't notice (unexpected behavior hasn't happened yet), then a 'failure' has not occurred. This is a common and dangerous situation: the system is 'corrupted' but still running. It's like a ticking time bomb. An expert architect builds 'error detection' mechanisms specifically to find these 'unmanifested' errors and fix them before they lead to a full system failure. This 'defense-in-depth' approach is the core of dependable system modeling. It ensures the system is resilient to its own internal faults. This is the final, mastery-level takeaway of the assessment."
   }
   // ═══ Context Models & Mentcare ═══
 
 ,
   {
-    id: 16,
+    id: 37,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -528,30 +426,7 @@ const QUIZ_DATA = [
     explanation: "Context models are intended to provide a macro-level view of the system's operational environment. They highlight how the system being developed is positioned relative to other existing systems and processes. This prevents integration issues by identifying external interfaces early in the lifecycle."
   },
   {
-    id: 17,
-    category: "Context Models & Mentcare",
-    difficulty: "easy",
-    type: "multi",
-    selectCount: 3,
-    question: "According to the Mentcare context diagram, which of the following systems are directly connected to Mentcare? (Select all that apply)",
-    options: ["Management reporting system", "HC statistics system", "Global logistics tracker", "Admissions system"],
-    correct: [0, 1, 3],
-    hint: "Recall the diagram showing MHC-PMS at the center with six branches.",
-    explanation: "The Mentcare (MHC-PMS) context diagram includes six specific external systems: Management reporting, HC statistics, Patient record, Admissions, Prescription, and Appointments. 'Global logistics tracker' is not part of the mental health care environment described in the source. Identifying these specific systems is key to understanding the MHC-PMS domain."
-  },
-  {
-    id: 18,
-    category: "Context Models & Mentcare",
-    difficulty: "easy",
-    type: "single",
-    question: "In the Mentcare ecosystem, which system is specifically responsible for hospital entry and check-in processes?",
-    options: ["Appointments system", "Admissions system", "Prescription system", "HC statistics system"],
-    correct: [1],
-    hint: "Think about the medical term for entering a hospital for care.",
-    explanation: "The Admissions system is identified in the Mentcare context diagram as a primary external dependency. It manages the logistics of patient hospital entry, which then feeds relevant data into the Mentcare management system. This relationship ensures that the clinical staff has up-to-date info on currently admitted patients."
-  },
-  {
-    id: 19,
+    id: 38,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -562,7 +437,7 @@ const QUIZ_DATA = [
     explanation: "The 'HC statistics system' serves as an environmental reporting node in the Mentcare context. It consumes data from the patient management system to generate high-level statistics used for healthcare planning and analysis. This system focuses on population-level data rather than individual clinical care."
   },
   {
-    id: 20,
+    id: 39,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -573,7 +448,7 @@ const QUIZ_DATA = [
     explanation: "The Prescription system is the dedicated external entity for managing medication orders within the Mentcare context. Mentcare interacts with this system to ensure that prescriptions are documented and fulfilled correctly. This separation of concerns allows for specialized systems to handle different aspects of patient care."
   },
   {
-    id: 21,
+    id: 40,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -584,7 +459,7 @@ const QUIZ_DATA = [
     explanation: "Context models are designed to illustrate the system boundary and the interactions with the environment. They do not delve into the 'how' of internal processing but rather the 'where' of the system's location among other systems. This perspective is vital for managing external constraints during the architectural design phase."
   },
   {
-    id: 22,
+    id: 41,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -595,51 +470,18 @@ const QUIZ_DATA = [
     explanation: "The 'Management reporting system' is an external dependency that provides administrative and operational data to hospital directors. Mentcare provides the raw clinical data that this system then processes into high-level reports. This connection allows hospital management to track system performance and patient care trends."
   },
   {
-    id: 23,
-    category: "Context Models & Mentcare",
-    difficulty: "easy",
-    type: "single",
-    question: "The 'Appointments system' in the Mentcare context diagram is specifically tasked with:",
-    options: ["Scheduling and managing patient visit times", "Diagnosing psychiatric conditions automatically", "Calculating the dosage for medication", "Printing the physical patient ID cards"],
-    correct: [0],
-    hint: "What is the standard administrative function of an appointments system?",
-    explanation: "The Appointments system is a discrete external entity that coordinates when patients see clinicians. Mentcare must interact with this system to ensure that the patient management flow matches the clinical schedule. This is a classic example of two systems needing synchronized data to function effectively."
-  },
-  {
-    id: 24,
-    category: "Context Models & Mentcare",
-    difficulty: "easy",
-    type: "single",
-    question: "In the Mentcare context, the 'Patient record system' serves as the primary repository for:",
-    options: ["Aggregated national health statistics", "Centralized clinical patient history", "Hospital facility maintenance logs", "Software developer commit history"],
-    correct: [1],
-    hint: "Look for the system dedicated to long-term clinical 'records'.",
-    explanation: "The Patient record system is the core external database for historical clinical information. Mentcare interacts with this system to retrieve and store patient data, ensuring a longitudinal record of care. This centralized approach prevents data fragmentation across different hospital departments."
-  },
-  {
-    id: 25,
+    id: 42,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
     question: "True or False: A context model is the best tool for showing the internal interaction sequence between system objects.",
     options: ["True", "False"],
     correct: [1],
-    hint: "Distinguish between context models and interaction models like sequence diagrams.",
+    hint: "",
     explanation: "Context models only show external relationships and system boundaries. For modeling the internal interactions between system objects, sequence diagrams or other interaction models are required. Understanding the limitations of each model type is essential for choosing the right tool for the job."
   },
   {
-    id: 26,
-    category: "Context Models & Mentcare",
-    difficulty: "easy",
-    type: "single",
-    question: "Reviewing the Mentcare context diagram, which of the following is NOT a defined external dependency?",
-    options: ["Admissions system", "HC statistics system", "Automated inventory management system", "Prescription system"],
-    correct: [2],
-    hint: "Carefully check the six specific labels in the Mentcare diagram.",
-    explanation: "The source identifies six specific systems: Management reporting, HC statistics, Patient record, Admissions, Prescription, and Appointments. 'Automated inventory management' is a plausible healthcare system but is not listed as a connection in the Sommerville case study. Accurate recall of these entities is required for domain mastery."
-  },
-  {
-    id: 27,
+    id: 43,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -650,7 +492,7 @@ const QUIZ_DATA = [
     explanation: "Context models reveal the web of dependencies that surround a system. Knowing which systems your software depends on allows you to plan for integration testing and assess the impact of external failures. This is a foundational step in building a dependable and interconnected architecture."
   },
   {
-    id: 28,
+    id: 44,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -661,18 +503,7 @@ const QUIZ_DATA = [
     explanation: "Context models are synonymous with the environmental perspective. They depict the system as a 'black box' within its larger ecosystem, focusing on the external systems and processes it touches. This high-level view is essential for understanding the system's role within an organization."
   },
   {
-    id: 29,
-    category: "Context Models & Mentcare",
-    difficulty: "easy",
-    type: "single",
-    question: "If a General Practitioner (GP) writes clinical notes in their own office, where is that data eventually stored in the Mentcare context?",
-    options: ["HC statistics system", "Admissions system", "Patient record system", "Management reporting system"],
-    correct: [2],
-    hint: "Records are the primary repository for clinical notes and patient history.",
-    explanation: "The Patient record system is the intended destination for clinical data in the Mentcare environment. It acts as the authoritative source for patient history, which clinicians access via Mentcare. This ensures that GP notes are available to hospital specialists when the patient is treated elsewhere."
-  },
-  {
-    id: 30,
+    id: 45,
     category: "Context Models & Mentcare",
     difficulty: "easy",
     type: "single",
@@ -683,7 +514,7 @@ const QUIZ_DATA = [
     explanation: "MHC-PMS stands for Mental Health Care - Patient Management System. This specific name defines the domain (mental health) and the purpose (patient management) of the software. Accurate terminology is essential for professional communication in software engineering."
   },
   {
-    id: 211,
+    id: 46,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -694,18 +525,7 @@ const QUIZ_DATA = [
     explanation: "The source explicitly identifies system boundaries as a 'political judgment' rather than a purely technical one. By moving the Admissions system inside the Mentcare boundary, the development team absorbs the responsibility for its logic, thereby increasing their workload. Conversely, this shift also increases their organizational influence, as they now control a larger portion of the clinical workflow. Distractors suggesting this simplifies requirements are incorrect because the source states that the boundary position has a 'profound effect' on requirements, usually increasing internal complexity when the boundary expands. This decision is strategic and impacts the overall workload distribution within the organization."
   },
   {
-    id: 213,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "During a requirements workshop, clinical managers pressure the architect to include 'Management reporting' inside the Mentcare boundary, while the IT department wants it kept external to 'decrease their workload.' Which architectural concept from the lecture best describes this conflict?",
-    options: ["The use of Sequence Diagrams to define object life cycles across boundaries.", "The transition from a Computation Independent Model (CIM) to a Platform Independent Model (PIM).", "The political nature of system boundaries used to distribute organizational workload and influence.", "The application of generalization to manage complexity in domain abstractions."],
-    correct: [2],
-    hint: "",
-    explanation: "The source context explicitly states that 'Defining a system boundary is a political judgment.' There are often pressures to adjust boundaries to either increase or decrease the 'influence or workload' of different organizational parts. In this scenario, the IT department is using the boundary to shield themselves from additional development and maintenance responsibilities. The clinical managers, however, seek to increase the system's (and likely their own) influence by centralizing reporting. This conflict illustrates why the architect must navigate socio-technical pressures when establishing the 'inside and outside' of a system."
-  },
-  {
-    id: 215,
+    id: 47,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -716,7 +536,7 @@ const QUIZ_DATA = [
     explanation: "This decision reflects the 'political judgment' described in the source, where boundaries are used to manage workload. By keeping Appointments external, the Mentcare team avoids the 'workload' of developing and maintaining that system's core logic. However, by establishing high-frequency data exchange, Mentcare still receives the 'stimuli' (appointment data) needed for clinical operations. This allows the team to maintain a leaner scope while still satisfying functional dependencies. It is a strategic balance between influence and operational burden."
   },
   {
-    id: 216,
+    id: 48,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -727,18 +547,7 @@ const QUIZ_DATA = [
     explanation: "The source states that the 'position of the system boundary has a profound effect on the system requirements.' When a functional requirement (issuing prescriptions) moves from an external system to an internal one, the boundary must be redrawn. This isn't just a cosmetic change to a diagram; it introduces entirely new functional and non-functional requirements to Mentcare. The system must now manage prescription data, security, and state, which it previously ignored. This illustrates the high stakes of boundary definition in the software engineering process."
   },
   {
-    id: 217,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "In the provided Mentcare context model, why is it architecturally significant that both the 'HC statistics system' and 'Management reporting system' are depicted as external to the central core?",
-    options: ["It proves that these systems have no impact on the clinical requirements of Mentcare.", "It defines them as part of the environment, indicating they either 'use' or 'depend on' Mentcare's clinical data.", "It indicates that these systems are modeled as state machines rather than data-driven models.", "It shows that they are J2EE platforms while Mentcare is a .NET platform."],
-    correct: [1],
-    hint: "",
-    explanation: "Context models 'show how a system that is being modeled is positioned in an environment with other systems.' By placing HC Statistics and Management Reporting outside, the architect identifies them as external entities that interact with the system. The source notes that context models show other systems that are 'used or depend on the system being developed.' This helps the architect understand the external scope and the data flows (outputs) the system must provide. It clarifies the 'inside vs. outside' distinction necessary for requirements engineering."
-  },
-  {
-    id: 218,
+    id: 49,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -749,29 +558,7 @@ const QUIZ_DATA = [
     explanation: "The architect can justify the separation as a 'political judgment' to manage 'workload distribution.' By keeping the Patient record system external, the Mentcare team limits its scope of responsibility to its own clinical logic. The source notes that boundaries are often developed to 'decrease the influence or workload' of organizational units. This modularity allows both systems to evolve independently as long as the interface (the association) remains stable. It is a strategic decision to prevent scope creep within the Mentcare project."
   },
   {
-    id: 219,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "If the Mentcare development team wants to 'increase their influence' within the hospital's IT hierarchy, which boundary modification would be most effective based on the lecture's principles?",
-    options: ["Redrawing the boundary to include the 'Prescription system' and 'Admissions system' within the core Mentcare system.", "Deleting all associations in the context model to make the system self-contained.", "Converting all internal class diagrams into state machine models.", "Moving the entire system to a Platform Specific Model (PSM) for Linux."],
-    correct: [0],
-    hint: "",
-    explanation: "The source context highlights that system boundaries are political judgments that can 'increase/decrease the influence... of different parts of an organization.' By absorbing external systems like Prescription and Admissions, the Mentcare team takes control of more business-critical functions. This increases their technical and political influence as other departments become more dependent on the Mentcare core. However, this comes at the cost of increased workload and complexity. This trade-off is central to the role of a software systems architect."
-  },
-  {
-    id: 220,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "A stakeholder argues that 'Admissions' should be internal to Mentcare, but the Lead Architect disagrees to 'decrease the workload' of the Mentcare team. Which specific concept from the lecture identifies this as a valid architectural strategy?",
-    options: ["The definition of system boundaries as a political judgment related to workload distribution.", "The implementation of multiplicity in class diagrams to manage doctor-patient ratios.", "The transition from PIM to PSM during model transformation.", "The use of state machines to ensure the 'Disabled' state is unreachable."],
-    correct: [0],
-    hint: "",
-    explanation: "The source context is explicit: 'Defining a system boundary is a political judgment.' It further notes that there are pressures to develop boundaries that 'decrease the workload' of certain organizational parts. The architect's decision is not just a preference; it is the application of a core principle that boundaries define the scope of technical and administrative labor. By keeping 'Admissions' external, the architect protectively limits the project's functional footprint. This demonstrates an understanding of the socio-technical nature of system modeling."
-  },
-  {
-    id: 221,
+    id: 50,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -782,19 +569,7 @@ const QUIZ_DATA = [
     explanation: "A change in the requirements of an external system that 'depends on' the core system directly impacts that core system's requirements. The move to real-time updates changes the stimulus-response behavior of Mentcare, as it must now push data more frequently. This would be modeled in the behavioral view, which shows 'what happens or what is supposed to happen when a system responds to a stimulus.' Distractors suggesting the model remains unchanged ignore the 'profound effect' of boundary dependencies mentioned in the source. This scenario emphasizes the interconnectedness of systems in a context model."
   },
   {
-    id: 222,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Which external systems are explicitly depicted as interacting with Mentcare in the provided context model? (Select all that apply)",
-    options: ["Management reporting system", "HC statistics system", "Prescription system", "Insulin pump controller"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The Mentcare context model image specifically lists Management reporting, HC statistics, and Prescription systems as external entities. Additionally, the image shows Admissions, Appointments, and Patient record systems. The Insulin pump controller is a separate example used in the lecture for behavioral modeling, but it is not part of the Mentcare system's environmental model. Distinguishing between different case studies (Mentcare vs. Insulin Pump) is a basic requirement for model fidelity. Architects must maintain clarity on which context model they are currently evaluating."
-  },
-  {
-    id: 223,
+    id: 51,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "multi",
@@ -806,7 +581,7 @@ const QUIZ_DATA = [
     explanation: "The source context states that the boundary position has a 'profound effect on the system requirements.' It also explicitly links boundary definition to political judgments regarding 'influence or workload.' Moving 'Appointments' inside adds its logic to Mentcare's scope, thus changing requirements and increasing workload. While internal class multiplicity *might* eventually change to accommodate new logic, it is not a fundamental 'profound' result of the boundary shift itself as defined in the source. The shift is primarily a matter of scope, influence, and labor."
   },
   {
-    id: 224,
+    id: 52,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "multi",
@@ -818,19 +593,7 @@ const QUIZ_DATA = [
     explanation: "Models are 'abstract views' that help manage complexity. By keeping the record system external, the architect defines a clear interface, allowing for modularity where one can be replaced without rewriting the other. The context model also 'shows other systems that are used or depend on' the developed system, which clarifies the architectural relationship. There is no 'mandate' that systems cannot share boundaries; rather, boundaries are strategic tools used by the designer. This modularity is a hallmark of professional systems architecture."
   },
   {
-    id: 225,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Which external systems from the Mentcare context model likely provide 'stimuli' that trigger internal processing in Mentcare? (Select all that apply)",
-    options: ["Admissions system", "Prescription system", "HC statistics system", "Appointments system"],
-    correct: [0, 1, 3],
-    hint: "",
-    explanation: "Systems like Admissions, Prescription, and Appointments typically provide data or trigger events (e.g., a new patient arrives, a prescription request is made, a meeting is scheduled) that the core clinical system must process. These are 'stimuli from its environment' as defined in the behavioral modeling section. Conversely, the HC statistics system is primarily a data consumer (a dependent) that receives output rather than providing input stimuli to the clinical core. Understanding the direction of stimulus flow is vital for defining system interactions. This distinction separates data-driven inputs from data-driven outputs."
-  },
-  {
-    id: 226,
+    id: 53,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "multi",
@@ -842,7 +605,7 @@ const QUIZ_DATA = [
     explanation: "According to the source, boundaries can be manipulated to 'decrease the influence' of a specific organizational unit. By moving domain logic (like Prescriptions or Clinical Analytics) outside the Mentcare boundary, the Mentcare team loses control and responsibility for those functions. This effectively 'shrinks' their domain of influence. Distractors that suggest expanding the boundary (adding management or records) would actually *increase* influence by giving the team control over more data and processes. This reflects the political reality of technical scope."
   },
   {
-    id: 228,
+    id: 54,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "multi",
@@ -854,74 +617,7 @@ const QUIZ_DATA = [
     explanation: "The source context is clear: boundary position has a 'profound effect' on requirements and is a 'political judgment' involving workload. Expanding the boundary necessarily increases functional scope. Distractors suggesting behavioral modeling is no longer needed are incorrect; internalizing a system simply changes where that behavior is modeled (from external stimulus to internal interaction). Redrawing boundaries is a core activity in managing the complexity of requirements engineering. It requires both technical and organizational foresight."
   },
   {
-    id: 229,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "In the Mentcare context model, 'Associations' (the lines between systems) represent which of the following? (Select all that apply)",
-    options: ["Usage relationships where Mentcare uses an external system.", "Dependency relationships where an external system uses Mentcare's data.", "Inheritance hierarchies where Mentcare is a subclass of the Patient Record system.", "The political boundaries of responsibility between different organizational units."],
-    correct: [0, 1, 3],
-    hint: "",
-    explanation: "Associations in a context model denote usage or dependency between the core system and its environment. They also mark the boundary points that represent political judgments about workload and influence. Inheritance is a feature of structural class diagrams, not context models, and would be an incorrect application of architectural notation here. The lines on the context model are high-level abstractions of interaction, not detailed class relationships. This distinction is vital for maintaining the correct level of abstraction in system modeling."
-  },
-  {
-    id: 231,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "In the MHC-PMS structural model, a 'Hospital Doctor' class has a '1..4' multiplicity association with the 'Consultation' class. If a specific instance of a Hospital Doctor is found in the running system to be associated with 5 separate Consultation objects, what is the architectural diagnosis?",
-    options: ["This is a valid use of dynamic inheritance during system execution.", "The system is in a state of structural inconsistency, violating its multiplicity constraints.", "The doctor has successfully transitioned to the 'Full power' state.", "The model has been correctly translated into a Platform Specific Model (PSM) for Java."],
-    correct: [1],
-    hint: "",
-    explanation: "Multiplicity in a class diagram defines the allowable range of links between object instances. The MHC-PMS diagram explicitly sets a '1..4' range for Hospital Doctors running Consultations. Having 5 associations for a single doctor object directly violates the static architecture defined in the structural model. This could lead to system errors if the underlying code only allocated resources for four consultations. Such violations represent a failure to implement the structural rules established during the design phase."
-  },
-  {
-    id: 233,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "In the MHC-PMS class diagram, the 'Patient' class has a '1' multiplicity at the 'referred-by' association with 'General practitioner'. If a Patient object exists without a link to any General practitioner, what is the state of the system architecture?",
-    options: ["The model is consistent because '1' means the link is optional.", "The model is structurally invalid because a multiplicity of '1' implies a mandatory relationship.", "The system has successfully moved to the 'Disabled' state to prevent a crash.", "The model has correctly applied the principle of platform independence."],
-    correct: [1],
-    hint: "",
-    explanation: "Multiplicity '1' in a UML class diagram indicates that exactly one instance of the association must exist for every object of the class. If a Patient object exists without a link to a General Practitioner, it violates this mandatory constraint. Architects use these constraints to ensure data integrity and enforce business rules (e.g., every patient must have a primary GP). Distractors suggesting '1' is optional confuse UML notation with other less rigorous standards. This strictness is vital for building dependable healthcare systems."
-  },
-  {
-    id: 234,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "A senior architect is designing a specialized 'Emergency Surgeon' subclass within the MHC-PMS. While the general 'Hospital Doctor' class has a '1..4' consultation limit, the 'Emergency Surgeon' must be restricted to '1..1' to ensure focus during surgery. How does the architect resolve this apparent contradiction in inheritance?",
-    options: ["By removing the inheritance relationship and duplicating the data in both classes.", "By overriding the multiplicity constraint in the subclass to specialize its behavior.", "By moving all surgical consultations to the 'HC statistics system' boundary.", "By using a .NET translator to manually set the doctor's state to 'Busy'."],
-    correct: [1],
-    hint: "",
-    explanation: "Generalization allows for complexity management by defining common traits in a higher-level class. However, subclasses often specialize those traits. In this scenario, the 'Emergency Surgeon' inherits the general characteristics of a doctor but requires a more restrictive constraint for clinical safety. The architect manages this by specializing the multiplicity in the subclass. This is a common application of generalization where lower-level classes deviate from general characteristics to satisfy specific domain requirements. It maintains the shared data (like ID or Name) while enforcing stricter logic for the specialized role."
-  },
-  {
-    id: 235,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "The 'Condition' class in MHC-PMS is associated with 'Patient' with a multiplicity of '1..*'. What does this specific structural constraint tell us about the system's business logic?",
-    options: ["A patient can be admitted even if they have no diagnosed medical conditions.", "The system must enforce that every patient is associated with at least one diagnosis.", "A single condition can only be shared by a maximum of one patient.", "Conditions are inherited from the higher-level 'Consultation' class."],
-    correct: [1],
-    hint: "",
-    explanation: "The '1..*' notation in UML stands for 'one or more.' In the MHC-PMS diagram, this association on the 'Condition' side means that a Patient object cannot exist in a valid state without being linked to at least one instance of a Condition. This reflects a clinical requirement where a system for mental healthcare (PMS) must track the specific conditions being treated for every patient. Distractors suggesting that the patient can exist without a diagnosis or that conditions are inherited are logical errors or misunderstandings of UML syntax. The constraint is an anchor for the system's data integrity."
-  },
-  {
-    id: 237,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "In the structural model of the MHC-PMS, the 'Consultation' class is linked to 'Medication' with a '1..*' multiplicity on the medication side. What is the 'So What?' of this design decision for the final software implementation?",
-    options: ["The system must allow a consultation to proceed even if no medications are prescribed.", "The implementation must ensure that a record of at least one medication is linked to every consultation instance.", "Medications are only valid if they are inherited from the 'Hospital Doctor' class.", "The medication logic must be moved to an external 'Prescription system' to manage workload."],
-    correct: [1],
-    hint: "",
-    explanation: "The '1..*' constraint mandates 'one or more' medications per consultation. In the real world, this might be a system rule where a psychiatric consultation must result in at least one prescription (or a record of 'No medication' as a specific entry). If the code allows a consultation object to be saved without this link, it would violate the design's structural integrity. This ensures that the system captures critical clinical data as intended. Distractors that suggest 1..* is optional or that it relates to inheritance are fundamental misunderstandings of the UML diagram provided."
-  },
-  {
-    id: 239,
+    id: 55,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -932,7 +628,7 @@ const QUIZ_DATA = [
     explanation: "A '1' to '1' association in UML mandates a strict one-to-one mapping between object instances. Allowing two patients to share a record violates this static rule, which was likely established to prevent clinical data from being mixed between individuals. Such a move by a developer would disregard the safety and privacy constraints defined in the structural model. The source highlights that class diagrams define the static structure; violating these rules leads to unpredictable and often dangerous system behavior. This demonstrates why architects must oversee implementation consistency."
   },
   {
-    id: 240,
+    id: 56,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -943,77 +639,7 @@ const QUIZ_DATA = [
     explanation: "Generalization is implemented using class inheritance mechanisms (like in Java), where 'the attributes and operations associated with higher-level classes are also associated with the lower-level classes.' This is the primary benefit of the technique—it allows for systemic updates. If 'Medical Staff' is updated, all subclasses, including the GP, automatically receive those updates. This reduces manual work and ensures consistency across the static architecture. The source emphasizes this as a key way to manage complexity and track the impact of proposed changes."
   },
   {
-    id: 242,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "The MHC-PMS class diagram specifies that a Patient can be 'referred-to' a Consultant. Which specific information does this structural link provide to a systems engineer?",
-    options: ["The dynamic timing of when a referral event occurs in the running code.", "The static existence of a clinical relationship between the Patient and Consultant classes and its multiplicity.", "The internal state of the Consultant when the patient arrives (e.g., 'Busy').", "The platform-specific Java code needed to generate the referral form."],
-    correct: [1],
-    hint: "",
-    explanation: "Associations in class diagrams provide a 'link between classes that indicates that there is some relationship.' This is a static view of the system's organization and architecture. It defines 'what' exists, not 'when' it happens (which would be in a behavioral model). It also provides constraints through multiplicity (e.g., a patient can be referred to one or more consultants). Distractors suggesting it shows dynamic timing or internal states are confusing structural models with behavioral or state machine models. The structural model is the 'map' of the system's entities."
-  },
-  {
-    id: 243,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "According to the lecture, what is the primary architectural benefit of using generalization in a system as complex as MHC-PMS? (Select all that apply)",
-    options: ["It provides a technique to manage complexity through common classification.", "It allows subclasses to automatically inherit attributes and operations from higher-level classes.", "It makes it easier to identify which classes are affected by proposed structural changes.", "It eliminates the need for behavioral models by defining all data upfront."],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The source identifies generalization as an 'everyday technique that we use to manage complexity' and explicitly mentions its role in inheritance. It also notes that by examining generalizations, an architect can see the scope of impact for proposed changes. Behavioral models are complementary to structural models, not eliminated by them; they show 'what happens,' while structural models show 'organization.' Using generalization correctly is key to building a maintainable and scalable architectural framework. It represents a transition from rote data entry to strategic domain modeling."
-  },
-  {
-    id: 244,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "In the MHC-PMS diagram, which classes are directly associated with the 'Consultation' entity, indicating a mandatory or frequent interaction? (Select all that apply)",
-    options: ["Patient", "Hospital Doctor", "Medication", "HC statistics system"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The provided MHC-PMS class diagram shows direct lines (associations) between 'Consultation' and 'Patient,' 'Hospital Doctor,' and 'Medication.' It also shows an association with 'Treatment.' The 'HC statistics system' is an external entity in the context model, not a class in the internal structural diagram. Distinguishing between context models (external) and class diagrams (internal) is essential for architectural clarity. These associations define the core functional links within the psychiatric management system. Each association represents a real-world clinical interaction that must be modeled."
-  },
-  {
-    id: 246,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "In the context of early-stage software engineering, which of the following are examples of real-world objects modeled as classes in the MHC-PMS? (Select all that apply)",
-    options: ["Patient", "Prescription", "Hospital Doctor", "J2EE Translator"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The source explicitly states that early-stage objects represent 'something in the real world,' citing 'a patient, a prescription, doctor, etc.' as examples. A J2EE Translator is a technical component of the Model-Driven Architecture (MDA) process, not a real-world clinical object. Identifying the correct domain objects is the first step in creating a structural model that stakeholders can validate. These classes form the backbone of the system's static architecture. They represent the 'what' of the system before it is translated into technical code."
-  },
-  {
-    id: 250,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Multiplicity in the MHC-PMS structural model can be expressed in which of the following ways? (Select all that apply)",
-    options: ["1 (Exactly one)", "1..* (One or more)", "1..4 (A specific range)", "CIM (Computation Independent)"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The MHC-PMS class diagram provided in the source uses all three of these multiplicity notations to define the rules of associations. CIM is a type of model in the MDA framework and is not a notation for multiplicity. Multiplicity is the primary way architects enforce business rules within a structural model. It defines the 'quantity' constraints that must be reflected in the final implementation. Each value (1, 1..*, 1..4) carries a specific clinical or operational requirement. Precision in these values is non-negotiable for system safety."
-  },
-  {
-    id: 258,
-    category: "Context Models & Mentcare",
-    difficulty: "hard",
-    type: "single",
-    question: "Business systems like MHC-PMS are often categorized as 'Data-processing systems.' What is the primary behavioral characteristic of such systems according to the lecture?",
-    options: ["They respond primarily to external events like 'receiver off hook'.", "They are controlled by the data input to the system with minimal external event processing.", "They rely exclusively on state machine logic to manage patient referrals.", "They avoid end-to-end processing to reduce the risk of sensor corruption."],
-    correct: [1],
-    hint: "",
-    explanation: "The source context on data-driven modeling notes that 'Many business systems are data-processing systems.' These are primarily driven by data input rather than discrete external events. For example, a payroll system processes hours worked (data) rather than waiting for a button press (event) to move states. While they may have some events, the 'end-to-end' data flow is the core architectural concern. This categorization helps the architect choose the right modeling tool (e.g., activity diagrams over statecharts). It reflects the nature of high-volume information management."
-  },
-  {
-    id: 261,
+    id: 57,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -1024,7 +650,7 @@ const QUIZ_DATA = [
     explanation: "Behavioral models are 'models of the dynamic behavior of a system as it is executing.' They focus on responses to stimuli (Data or Events). Structural models, conversely, show the 'organization and architecture' (the static structure, like classes). The source emphasizes that these are complementary views. One shows 'what' the system is, and the other shows 'what it does.' Mixing these views leads to confusing and ineffective models. A professional architect uses both to provide a complete system description."
   },
   {
-    id: 265,
+    id: 58,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -1035,7 +661,7 @@ const QUIZ_DATA = [
     explanation: "The 'Key Points' state: 'Use cases describe interactions between a system and external actors; sequence diagrams add more information to these by showing interactions between system objects.' While the use case says *what* happens at a high level, the sequence diagram shows *how* the internal architecture collaborates to achieve it. It moves from an external actor perspective to an internal technical perspective. This is a critical transition in the design process. It bridges the gap between 'what the user wants' and 'how the code works.' It provides the blueprint for implementation."
   },
   {
-    id: 296,
+    id: 59,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -1046,7 +672,7 @@ const QUIZ_DATA = [
     explanation: "A CIM models the 'important domain abstractions' without reference to how the system will be technically implemented. These are often called 'domain models' and are used for high-level stakeholder agreement. Distinguishing between a CIM and a PIM is important; while both avoid platform details, the CIM is even more abstract, focusing on domain concepts rather than software operation. The PIM would move toward modeling the software structure and its responses to events. The CIM is the architectural starting point for a cross-organizational hub. It ensures all parties agree on the 'abstractions' before technical work begins."
   },
   {
-    id: 303,
+    id: 60,
     category: "Context Models & Mentcare",
     difficulty: "hard",
     type: "single",
@@ -1057,7 +683,7 @@ const QUIZ_DATA = [
     explanation: "A System Failure is defined as 'an event that occurs at some point in time when the system does not deliver' its intended service. While the underlying cause was a fault and the resulting state was an error, the actual 'event' of the service not reaching the user is the failure. This distinction helps architects communicate with stakeholders about system uptime and reliability. Stakeholders care about failures; developers care about faults and errors. A dependable system aims to minimize failures by managing faults and correcting errors. It is the final link in the chain of dependability."
   },
   {
-    id: 311,
+    id: 61,
     category: "Context Models & Mentcare",
     difficulty: "expert",
     type: "single",
@@ -1068,41 +694,7 @@ const QUIZ_DATA = [
     explanation: "Moving a system boundary from an external entity to an internal component is a high-stakes architectural decision. According to the source context, boundaries define what is inside and outside the system, and their placement has a 'profound effect' on requirements. By internalizing the prescription system, the Mentcare team transitions from being a consumer of an interface to the owner of the entire business process. This includes managing complex data integrity, security protocols, and clinical safety rules that were previously handled by an external provider. From a political perspective, this may increase the department's influence but at the cost of significantly increased workload and exposure to requirement volatility. Consequently, the architect must weigh the benefit of control against the massive expansion of the project's functional scope."
   },
   {
-    id: 312,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the Mentcare context diagram, if the 'HC statistics system' were integrated into the core system, how would this most likely affect the organizational 'influence' of the Mentcare department according to the source text?",
-    options: ["It would decrease their influence because they would be forced to follow more rigid reporting standards.", "It would increase their influence by making them the primary gatekeepers of healthcare data interpretation and reporting.", "It would have no effect, as 'influence' is a social factor that cannot be captured in a UML context model.", "It would decrease their workload by eliminating the need for an external data exchange interface."],
-    correct: [1],
-    hint: "Review the 'System boundaries' slide regarding political judgment and influence.",
-    explanation: "The source explicitly notes that defining system boundaries is a 'political judgment' that can increase or decrease the influence of different organizational parts. Currently, the 'HC statistics system' is external, meaning another department likely manages the reporting of data to the government. By bringing this system inside the Mentcare boundary, the Mentcare department gains direct control over how the statistics are generated and presented. This ownership provides them with greater leverage during budget negotiations and policy-making because they control the data assets. However, as the source suggests, this increased influence is usually coupled with an increased workload. The architect must navigate these pressures, as stakeholders may lobby for boundary shifts based on power dynamics rather than technical efficiency."
-  },
-  {
-    id: 313,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Evaluate the Mentcare context model as a tool for business process analysis. What is its primary shortcoming when used as the sole source of process requirements?",
-    options: ["It fails to use the proper UML stereotypes like «system» to distinguish between humans and software.", "It cannot represent the multiplicity between the central Mentcare system and its external partners.", "It provides a static view of dependencies but lacks the dynamic information required to understand how systems interact during a business workflow.", "It is too complex for early-stage stakeholders to understand, leading to frequent errors in boundary placement."],
-    correct: [2],
-    hint: "Check the 'Process perspective' section of the source context.",
-    explanation: "While context models are essential for defining environmental scope, the source context clarifies that they 'simply show the other systems in the environment.' The primary limitation is that they provide no information about how the system is actually used within broader business processes. For example, the Mentcare diagram shows a link to the 'Admissions system,' but it doesn't specify whether admissions occur before or after a consultation. To capture the sequence of events and data flow, an architect must supplement the context model with behavioral models like activity or sequence diagrams. Relying solely on a context model would lead to a system that understands its neighbors but not its role in the organizational workflow. Thus, it serves as a structural foundation that requires dynamic layering to be truly useful."
-  },
-  {
-    id: 314,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "multi",
-    selectCount: 3,
-    question: "Based on the Mentcare context diagram, which external systems represent data sources (producers) that the Mentcare system must consume to provide clinical care?",
-    options: ["Management reporting system", "Patient record system", "Admissions system", "HC statistics system", "Prescription system"],
-    correct: [1, 2, 4],
-    hint: "Analyze which systems in a hospital setting provide the foundational data needed for a mental health care visit.",
-    explanation: "In a robust clinical architecture, the Mentcare system acts as a consumer of critical infrastructure data. The 'Patient record system' is a primary producer, providing the medical history required for any psychiatric evaluation. The 'Admissions system' is also a producer, providing the stimulus that a patient has arrived and is ready for care. Similarly, the 'Prescription system' often acts as an external service that must be queried to ensure medication safety and coordination. In contrast, the 'Management reporting system' and 'HC statistics system' are typically consumers of Mentcare's data, used for downstream administrative and government reporting. Identifying these producer-consumer relationships is a vital step in defining interface protocols and data synchronization requirements."
-  },
-  {
-    id: 315,
+    id: 62,
     category: "Context Models & Mentcare",
     difficulty: "expert",
     type: "single",
@@ -1113,18 +705,7 @@ const QUIZ_DATA = [
     explanation: "The source context highlights that system boundaries are often the result of organizational power struggles. By moving the 'Management reporting system' inside the Mentcare boundary, the Mentcare department becomes the primary authority on how organizational performance is measured and reported. This shift increases their influence because they now control the narrative provided to upper management. However, this increased control comes with the burden of maintaining and securing the reporting logic, reflecting the source's point that boundaries impact both influence and workload. An architect must recognize that such a request is rarely purely technical; it is often a maneuver to centralize organizational power. Understanding this allows the architect to better manage stakeholder expectations and project risks."
   },
   {
-    id: 316,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "How does the use of the «system» stereotype in the Mentcare context diagram serve the needs of a system architect during the early stages of modeling?",
-    options: ["It defines the specific programming language that will be used for each box in the diagram.", "It provides a clear visual distinction between software components and other entities like human actors or manual processes.", "It indicates that the system has already been transformed into a Platform Specific Model (PSM).", "It specifies the multiplicity of associations between the Mentcare system and its environment."],
-    correct: [1],
-    hint: "Look at the labels in the Mentcare diagram and think about UML notation standards.",
-    explanation: "The «system» stereotype is a standard UML convention used to define the nature of a model element. In a high-level context diagram, it identifies that each box represents a discrete software system rather than a person or a physical location. This clarity is critical during the early stages of software engineering when the architect is trying to define the technical ecosystem. By labeling Mentcare and its neighbors this way, the architect ensures that stakeholders understand the diagram as a system-to-system interface map. This prevents confusion between automated processes and human workflows, which are handled in different types of models. Precise labeling is a hallmark of professional modeling that ensures the architecture is accurately communicated to development teams."
-  },
-  {
-    id: 318,
+    id: 63,
     category: "Context Models & Mentcare",
     difficulty: "expert",
     type: "single",
@@ -1135,7 +716,7 @@ const QUIZ_DATA = [
     explanation: "This scenario demonstrates the complementary nature of different system models. The context model establishes that a relationship exists between Mentcare and the 'HC statistics system,' defining the system's environment. However, it cannot show the timing or logic of the data transfer. A behavioral model, specifically a data-driven activity diagram, would be used to model the 'end-to-end processing' of the statistics—showing how clinical data is aggregated, formatted, and finally pushed to the external system. This aligns with the source's 'Key points,' which state that complementary models show different perspectives like structure and behavior. The architect must use both to provide a complete specification of the system's integration requirements."
   },
   {
-    id: 319,
+    id: 64,
     category: "Context Models & Mentcare",
     difficulty: "expert",
     type: "single",
@@ -1146,7 +727,7 @@ const QUIZ_DATA = [
     explanation: "The definition of what is 'inside' and what is 'outside' is the primary purpose of system boundaries. Modeling the 'Patient record system' as an internal class implies that the development team is responsible for its implementation, including its database schema and internal logic. If it is modeled as an external system, it is treated as a service with a defined interface, and the team is only responsible for the interaction. This decision has a 'profound effect' on the project's budget, timeline, and required expertise. An architect must ensure this distinction is clear to avoid 'scope creep,' where a team accidentally takes on the maintenance of a third-party asset. Clear boundaries protect the project's feasibility and define the limits of the software engineer's responsibility."
   },
   {
-    id: 320,
+    id: 65,
     category: "Context Models & Mentcare",
     difficulty: "expert",
     type: "single",
@@ -1157,52 +738,7 @@ const QUIZ_DATA = [
     explanation: "The source context is explicit: 'Defining a system boundary is a political judgment.' This is because the line drawn between the system and its environment determines which department owns which data and processes. In the Mentcare context, a wide boundary that includes reporting and statistics increases the department's influence but also its workload. Conversely, a narrow boundary offloads responsibility but reduces the department's control over its information assets. The system architect must navigate these competing pressures from various stakeholders. The context model, therefore, is not just a technical diagram; it is a negotiated agreement on organizational responsibility. Recognizing this allows the architect to act as a bridge between technical requirements and business strategy."
   },
   {
-    id: 321,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the Mentcare context diagram, what does a single line between the central 'Mentcare' box and an external box like 'Admissions system' represent?",
-    options: ["A one-way data flow from the external system to Mentcare.", "A structural association indicating that some form of relationship or interaction exists between the two systems.", "A state transition where Mentcare becomes the Admissions system.", "A mandatory transformation from a PIM to a PSM for both systems."],
-    correct: [1],
-    hint: "Review the definition of an 'association' in the 'Class diagrams' slide, which applies to high-level system links as well.",
-    explanation: "In system modeling, a line represents an association, which the source defines as a 'link... that indicates that there is some relationship between these classes' (or systems in this context). While the line doesn't specify the details of the protocol, it confirms that Mentcare and the Admissions system must be able to communicate. This association is the starting point for requirements analysis, identifying a need for an interface. The architect will later refine this link using more detailed models to show data directions and sequences. At this level, the line is a placeholder for all interactions, ensuring that no critical environmental dependency is ignored. It is the 'connective tissue' of the system's operational environment."
-  },
-  {
-    id: 322,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Which external system in the Mentcare diagram is most likely to be a 'consumer' of data, depending on Mentcare to function?",
-    options: ["Patient record system", "HC statistics system", "Admissions system", "Appointments system"],
-    correct: [1],
-    hint: "Think about the purpose of a statistics system compared to a clinical management system.",
-    explanation: "A statistics system, by definition, requires data from other systems to perform its aggregation and analysis. In the Mentcare environment, the 'HC statistics system' is an external entity that likely 'depends on' Mentcare to provide raw clinical data about mental health treatments. This relationship identifies a requirement for Mentcare to provide a data export or API for the statistics system. The context model helps identify this 'outbound' dependency early. Failure to recognize this would lead to a system that functions well for doctors but fails to meet the organization's broader reporting needs. Understanding which systems are dependees (like the statistics system) is a key responsibility of the architect when defining system boundaries."
-  },
-  {
-    id: 325,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Evaluate the following statement: 'The Mentcare context model provides a complete description of the system's business processes.' Is this correct according to the source?",
-    options: ["Yes, because it shows all external systems involved in the processes.", "No, because context models simply show environmental systems and lack information on how the system is used in business processes.", "Yes, because it uses the «system» stereotype to define process owners.", "No, because context models are only for structural modeling, while business processes are purely code-based."],
-    correct: [1],
-    hint: "Check the 'Process perspective' text in the source context.",
-    explanation: "The source context explicitly refutes this idea, stating that 'Context models simply show the other systems in the environment' and do not provide information about business processes. A context model is a 'black box' view; it shows the neighbors but not the interactions inside the neighborhood. To understand a business process, such as how a patient is admitted and then prescribed medication, one would need an activity model or a process perspective that shows the 'sequence of actions.' The architect must avoid over-relying on the context model, as it is only the first step in a multi-perspective modeling approach. It defines the 'where' and 'what,' but not the 'how.'"
-  },
-  {
-    id: 327,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "multi",
-    selectCount: 3,
-    question: "In the Mentcare diagram, which external systems are most likely involved in the 'patient referral' workflow that would be modeled later in a behavioral diagram?",
-    options: ["Management reporting system", "Patient record system", "Appointments system", "Admissions system"],
-    correct: [1, 2, 3],
-    hint: "Think about the steps required to get a patient into a clinical system.",
-    explanation: "A 'patient referral' workflow involves identifying the patient, scheduling their visit, and admitting them. In the Mentcare context, this would involve the 'Patient record system' (to get history), the 'Appointments system' (to schedule), and the 'Admissions system' (to check them in). These three external entities are essential parts of the intake process. While the context model shows they are all separate systems, a later behavioral model (like an activity diagram) would show the sequence in which Mentcare interacts with each of them. Identifying these players in the context model is a prerequisite for correctly modeling the intake process. This demonstrates how structural context informs behavioral design."
-  },
-  {
-    id: 328,
+    id: 66,
     category: "Context Models & Mentcare",
     difficulty: "expert",
     type: "single",
@@ -1213,195 +749,7 @@ const QUIZ_DATA = [
     explanation: "By keeping the 'Management reporting system' external, the architect limits the scope of the Mentcare project. This is a common strategy to ensure the project remains manageable and focused on its primary clinical goals. According to the source, boundary placement can decrease the workload of different parts of an organization. In this case, another team would be responsible for the complex logic of administrative reporting, while the Mentcare team only needs to provide a stable data interface. This 'divide and conquer' approach is essential for large-scale system development. It allows specialized teams to focus on their respective domains. This strategic decision is a primary function of the architect during the modeling phase."
   },
   {
-    id: 329,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Based on the Mentcare context model, how many external systems must be integrated to achieve a fully functional operational environment?",
-    options: ["4", "5", "6", "7"],
-    correct: [2],
-    hint: "Count the boxes surrounding Mentcare in the context diagram.",
-    explanation: "The Mentcare context diagram explicitly shows six external systems: Management reporting, Patient record, Admissions, Prescription, Appointments, and HC statistics. Each of these represents a distinct integration point. The number of external connections is a direct indicator of the project's 'integration complexity.' An architect uses this count to estimate the effort required for interface design and testing. In a modern healthcare setting, a system like Mentcare rarely operates in isolation; its value depends on its ability to communicate with this ecosystem. Each of these six lines represents a potential failure point that must be mitigated through robust architectural design. Thus, the context model provides a high-level map of the integration landscape."
-  },
-  {
-    id: 330,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "A senior architect reviews the Mentcare context diagram and notes that it represents a 'star topology.' What is the most likely reason for this architectural choice?",
-    options: ["To make the system inherently event-driven.", "To centralize clinical control and make Mentcare the primary data hub for mental health services.", "To ensure all external systems are transformed into J2EE Platform Specific Models.", "Because context models are restricted to star topologies by the UML specification."],
-    correct: [1],
-    hint: "Think about the 'influence' and 'political judgment' aspect of centralizing data.",
-    explanation: "The 'star' topology, with Mentcare at the center of six external systems, highlights its role as a centralized hub for mental health clinical and administrative data. This centralization is a strategic and political choice. According to the source, boundaries can be used to increase a department's influence. By positioning Mentcare as the central mediator for everything from admissions to statistics, the department ensures its system is mission-critical to the entire hospital. This provides them with significant organizational leverage. However, this also means the system is a 'single point of failure' for many disparate workflows. The architect must recognize that this structural centralization creates a requirement for high dependability and availability."
-  },
-  {
-    id: 332,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the MHC-PMS diagram, evaluate the 'runs' association between 'Hospital Doctor' and 'Consultation'. What happens if a high-complexity consultation requires 6 doctors, given the current multiplicity of '1..4'?",
-    options: ["The system will automatically allow the 6th doctor via the generalization mechanism.", "The system will prevent the entry of more than 4 doctors, causing a failure to accurately record the clinical event.", "The 'Hospital Doctor' class will be transformed into a '.NET specific model' to handle the extra load.", "The multiplicity '1..4' is just a suggestion and has no impact on system implementation."],
-    correct: [1],
-    hint: "Analyze the specific numerical limits defined on the association line.",
-    explanation: "Multiplicities in UML are strict constraints. The '1..4' limit means the system is architecturally designed to support between one and four doctors per consultation. If a real-world event requires six doctors, the system as currently modeled will fail to accommodate that data. This demonstrates how structural modeling dictates the 'operational limits' of the software. An architect must ensure these numbers are based on thorough requirements analysis of all possible clinical scenarios. If the clinic grows or procedures become more complex, this model would require a 'refactoring' to update the multiplicity. This highlights that structural models are not just static pictures; they are the blueprints for data validation logic. Proper multiplicity design prevents 'built-in' obsolescence in the software."
-  },
-  {
-    id: 335,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "multi",
-    selectCount: 4,
-    question: "Based on the MHC-PMS diagram, which classes are directly associated with 'Consultation'? (Select all that apply)",
-    options: ["Patient", "Hospital Doctor", "Medication", "Treatment", "Condition"],
-    correct: [0, 1, 2, 3],
-    hint: "Review the MHC-PMS diagram and follow every line touching the 'Consultation' box.",
-    explanation: "In the MHC-PMS diagram, the 'Consultation' class is a central hub. It has associations with: 'Patient' (attends), 'Hospital Doctor' (runs), 'Medication' (prescribes), and 'Treatment' (prescribes). Note that 'Condition' is *not* directly connected to 'Consultation'; it is associated with 'Patient' (diagnosed-with). This structural choice implies that a consultation is linked to a person, and the person has a history of conditions. To find the conditions related to a consultation, the system must navigate from Consultation -> Patient -> Condition. This 'navigational path' is a key architectural decision that impacts how the software's database queries will be constructed. Understanding these direct vs. indirect links is essential for efficient data modeling and system performance."
-  },
-  {
-    id: 338,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the MHC-PMS diagram, what does the 'referred-to' association between 'Consultant' and 'Patient' signify about the system's accountability model?",
-    options: ["A consultant can refer a patient to a General Practitioner.", "Each patient is assigned to exactly one consultant for their specialized care, while a consultant can have many patients.", "A patient is referred-to many consultants simultaneously for the same condition.", "The 'Consultant' class is a generalization of the 'Patient' class."],
-    correct: [1],
-    hint: "Analyze the '1' and '1..*' multiplicities on the 'referred-to' association line.",
-    explanation: "The multiplicity of '1' on the 'Consultant' end and '1..*' on the 'Patient' end is a critical architectural constraint. It establishes a 'one-to-many' relationship where for every patient, there is a single specialist of record (the Consultant). This ensures clinical accountability: if a patient's care is in question, the system can unambiguously identify the responsible specialist. Simultaneously, it allows a consultant to manage a whole panel of patients. Modeling this relationship is vital for security and access control; for instance, a consultant might only be allowed to view records for patients 'referred-to' them. This demonstrates how structural modeling directly informs the system's functional and non-functional requirements. It provides the static backbone for clinical governance."
-  },
-  {
-    id: 340,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "The 'Generalization' slide mentions squirrels, rats, and rodents. How does this analogy translate into the MHC-PMS diagram?",
-    options: ["A 'Consultation' is a rodent, and 'Patient' is a squirrel.", "Generalization could be used to group 'Hospital Doctor' and 'General Practitioner' under a common 'Medical Professional' class to share attributes like Name and ID.", "The analogy suggests that multiplicities should always be '1..*'.", "It means that structural models should only be used for biological systems."],
-    correct: [1],
-    hint: "Consider which classes in the MHC-PMS share common 'Medical' traits.",
-    explanation: "The rodents analogy (squirrels/rats are rodents) is used to explain how we manage complexity by grouping similar entities. In the MHC-PMS, classes like 'Hospital Doctor,' 'General Practitioner,' and 'Consultant' all share common real-world characteristics—they all have names, credentials, and contact info. An expert architect would recognize this 'scope for generalization.' By creating a 'Medical Professional' superclass, these common attributes are centralized. This not only simplifies the diagram but also the final code, as the common logic is inherited. This reflects the source's assertion that generalization is a tool for managing complexity and facilitating changes. It is a fundamental technique for creating a professional, clean structural model. It ensures the architecture is both robust and easy to understand."
-  },
-  {
-    id: 341,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the MHC-PMS diagram, evaluate the link between 'Patient' and 'Patient record'. What is the strategic significance of the '1' to '1' multiplicity?",
-    options: ["It indicates that many patients share a single medical record to save space.", "It enforces a strict one-to-one mapping, ensuring data integrity where every patient has exactly one unique record.", "It allows a patient to have multiple records across different systems.", "It means the 'Patient record' is an external dependency."],
-    correct: [1],
-    hint: "Recall the 'UML classes and association' slide showing this specific pair.",
-    explanation: "A one-to-one (1:1) multiplicity is one of the strongest constraints in modeling. It dictates that for every 'Patient' object, there must exist exactly one 'Patient record' object, and vice-versa. In a medical system, this is a non-negotiable requirement for clinical safety and privacy; mixing patient records would be a catastrophic failure. This structural constraint will eventually be implemented as a database 'unique' key or a shared primary key. By modeling this at the structural level, the architect ensures that this integrity rule is baked into the system's DNA from the start. It represents a 'safety-critical invariant' of the data architecture. This level of precision is what distinguishes professional system modeling from casual sketching."
-  },
-  {
-    id: 343,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the MHC-PMS diagram, what is the relationship between 'General Practitioner' (GP) and 'Patient'? (Select the most accurate architectural description)",
-    options: ["A GP is a subclass of the Patient class.", "A GP has a 'referred-by' association with a Patient, with a multiplicity indicating a patient has exactly one referring GP.", "A GP runs the internal consultations for the patient.", "There is no relationship; GPs are external systems in the context model."],
-    correct: [1],
-    hint: "Check the line between Patient and GP in the MHC-PMS diagram.",
-    explanation: "The MHC-PMS diagram shows a line labeled 'referred-by' between 'Patient' and 'General Practitioner'. The multiplicity '1' is at the GP end, and '1..*' is at the Patient end. This architectural choice models the real-world requirement that every patient must have a single primary referring doctor. This is critical for medical coordination and billing. While a GP might be an external person, within the *model of the system*, they are represented as a class to store their contact and professional details. This allows the system to send reports back to the GP. This illustrates how the structural model captures the 'social and professional network' of the system. It ensures the software can handle the real-world context of patient care."
-  },
-  {
-    id: 344,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "An architect is transitioning from the structural MHC-PMS diagram to a behavioral model of a consultation. What is the most important piece of information from the class diagram that must be preserved to ensure behavioral consistency?",
-    options: ["The number of Rodents in the generalization.", "The associations and multiplicities, as they define which objects can interact and in what quantity.", "The choice of whether the system will be implemented in J2EE or .NET.", "The list of internal system boundaries."],
-    correct: [1],
-    hint: "Think about how a sequence diagram (behavioral) relies on classes (structural).",
-    explanation: "Behavioral models, such as sequence diagrams, show interactions between objects. However, these objects *must* belong to the classes defined in the structural model. Furthermore, the 'associations' in the class diagram define the 'legal' communication paths between those objects. If two classes are not associated, their objects cannot send messages to each other in a sequence diagram. Similarly, multiplicities must be respected: if a consultation is run by '1..4' doctors, a sequence diagram showing 5 doctors would be architecturally invalid. This 'cross-model consistency' is a primary responsibility of the system architect. It ensures that the dynamic behavior of the system is constrained by its static structure. This rigor is essential for a reliable system design."
-  },
-  {
-    id: 345,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the MHC-PMS diagram, 'Condition' is associated with 'Patient' via 'diagnosed-with'. Why is this better than having 'Condition' as a text attribute of 'Patient'?",
-    options: ["It reduces the influence of the Mentcare department.", "It allows the system to treat 'Condition' as a complex object that can have its own attributes (e.g., severity, date of onset) and its own associations.", "Associations are required for all data-driven models, while attributes are for event-driven models.", "It ensures that conditions are automatically rodent-like."],
-    correct: [1],
-    hint: "Consider the 'early stages' slide regarding domain entities.",
-    explanation: "Modeling 'Condition' as a separate class is a hallmark of a high-maturity domain model. In a mental health system, a 'condition' is not just a label; it has a history, a severity level, and links to specific treatments. By making it a class, the architect can capture all this metadata. This structural choice also enables complex queries, such as 'find all patients with a specific condition who are also prescribed a specific medication.' If it were just a text attribute, these advanced features would be impossible to implement reliably. This follows the source context's principle of modeling real-world entities. It provides the system with the 'knowledge' required for clinical decision support. Thus, class-level granularity is a strategic investment in the system's long-term utility."
-  },
-  {
-    id: 346,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "What does a line with no arrows in the MHC-PMS diagram represent?",
-    options: ["A state transition that has been disabled for safety.", "An association, indicating a relationship where objects can potentially interact or navigate to each other.", "A generalization where both classes are superclasses.", "A transformation between a CIM and a PIM."],
-    correct: [1],
-    hint: "Refer to the definition of 'association' in the 'Class diagrams' slide.",
-    explanation: "The source context defines an association as 'a link between classes that indicates that there is some relationship between these classes.' In UML, a simple line (without the hollow triangle of generalization) is the standard notation for an association. While arrows can be added to show 'navigability' (which object knows about the other), a plain line is a general indicator of a link. For example, the line between 'Patient' and 'Consultation' means they are structurally related. This association is the basis for all dynamic interactions that will be modeled later. It establishes the 'topology' of the system's data. Understanding these links is essential for defining how data will flow through the system."
-  },
-  {
-    id: 348,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Based on the MHC-PMS diagram, how many 'Medications' can be prescribed during a single 'Consultation'?",
-    options: ["Exactly 1", "Zero or more (0..*)", "One or more (1..*)", "Exactly 4"],
-    correct: [2],
-    hint: "Check the multiplicity at the 'Medication' end of the 'prescribes' association.",
-    explanation: "The association line between 'Consultation' and 'Medication' is labeled 'prescribes' and has the multiplicity '1..*' at the Medication end. This is a formal architectural requirement: every consultation in the system *must* result in at least one medication being prescribed, and it allows for many. While this might seem restrictive for a general clinic, in the specific context of the MHC-PMS, it may reflect a business rule where these consultations are specifically for medication management. If a consultation could happen without medication, the model would need to be '0..*'. The architect uses these numbers to enforce the system's clinical focus. This ensures that the data collected by the system is always relevant to its purpose. It is a fundamental part of the system's structural integrity."
-  },
-  {
-    id: 349,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Which class in the MHC-PMS diagram is at the center of the 'referral' logic for incoming patients?",
-    options: ["Patient", "General Practitioner", "Consultant", "Hospital Doctor"],
-    correct: [0],
-    hint: "Identify the class that has associations named 'referred-by' and 'referred-to'.",
-    explanation: "The 'Patient' class is the pivot point for all referral associations. It is 'referred-by' a General Practitioner and 'referred-to' a Consultant. This positioning highlights that the system's primary goal is the management of the patient's care journey. Architecturally, the Patient object serves as the 'aggregate root' that links external medical professionals (GPs) with internal specialists (Consultants). This structural arrangement ensures that every piece of referral data is anchored to a specific patient. It is a clean and logical design that accurately reflects the medical domain. By centering the model on the patient, the architect ensures the system's data structure is aligned with its clinical objectives. This alignment is a key goal of domain-driven modeling."
-  },
-  {
-    id: 350,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Review the MHC-PMS diagram. Why is there a multiplicity of '1..*' at BOTH ends of the 'attends' association between 'Patient' and 'Consultation'?",
-    options: ["It indicates that many patients can attend many consultations, but every consultation must have at least one patient and every patient must have at least one consultation.", "It's a mistake; UML only allows '1..*' at one end of an association.", "It means that consultations are a generalization of patients.", "It ensures the system uses an event-driven model."],
-    correct: [0],
-    hint: "Recall what 'many-to-many' (M:N) associations represent.",
-    explanation: "A '1..*' to '1..*' multiplicity represents a many-to-many relationship with a 'at least one' constraint. In the MHC-PMS, this means that a patient is not just a one-off visitor; they must attend at least one consultation to be in the system. Conversely, a consultation is not a valid event unless at least one patient is present. This is a critical clinical rule: you can't have a consultation with no patient, and you don't have a patient record with no visits. In a database, this would be implemented via a 'link table.' The architect uses this structural link to define the core 'operational unit' of the system: the patient-visit interaction. It is the foundation of the system's transactional logic. This precision ensures the system's data is both valid and meaningful."
-  },
-  {
-    id: 351,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Evaluate the following statement: 'The MHC-PMS structural model is essentially a map of the system's database schema.' Is this accurate according to the source persona?",
-    options: ["Yes, as classes directly map to tables and associations map to foreign keys.", "No, because in the early stages, classes represent real-world entities and are intended for understanding the domain rather than implementation details.", "Yes, because structural models are part of the Platform Specific Model (PSM).", "No, because the MHC-PMS diagram is a behavioral model, not a structural one."],
-    correct: [1],
-    hint: "Check the last bullet point on the 'Class diagrams' slide.",
-    explanation: "The source context emphasizes that 'when you are developing models during the early stages... objects represent something in the real world.' While a structural model *will eventually* inform the database schema, its primary purpose during analysis is to capture the domain's logic and business rules. For example, the link between 'Patient' and 'Condition' represents a clinical fact, not just a row in a table. Treating a class diagram purely as a database map is a common 'junior' error that misses the system's richer domain logic. A senior architect uses these diagrams to communicate with stakeholders and ensure the software 'speaks the language' of the business. Thus, the model is a conceptual blueprint, not just a technical one. This distinction is vital for a robust, domain-driven architecture."
-  },
-  {
-    id: 352,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "In the MHC-PMS diagram, 'Treatment' is 'prescribed' during a 'Consultation'. If the clinic adds 'Physical Therapy' as a new type of treatment, how does the structural model accommodate this?",
-    options: ["The 'Consultation' class must be deleted and replaced with a 'Therapy' class.", "A new 'Physical Therapy' class can be created as a subclass of 'Treatment' using generalization, inheriting all common treatment attributes.", "The system must be transformed from a data-driven model to an event-driven model.", "The multiplicity of the 'Hospital Doctor' must be increased to '1..10'."],
-    correct: [1],
-    hint: "Think about how generalization handles 'specific vs. general' entities.",
-    explanation: "This scenario perfectly illustrates the 'complexity management' power of generalization mentioned in the source. Instead of cluttering the main MHC-PMS diagram with every possible treatment, the architect can use generalization. 'Physical Therapy' is-a 'Treatment.' It inherits the basic association to 'Consultation' but can add its own specific attributes (like equipment used or session duration). This 'extensibility' is a key goal of structural modeling. It allows the system to grow and adapt to new clinical requirements without a major redesign of its core architecture. This modularity is what makes the system 'future-proof.' The architect uses generalization to keep the high-level model clean while providing a path for low-level detail. It is a hallmark of an expert-level design."
-  },
-  {
-    id: 354,
-    category: "Context Models & Mentcare",
-    difficulty: "expert",
-    type: "single",
-    question: "Analyze the relationship between the MHC-PMS diagram and the Mentcare context diagram. What is the most fundamental difference in their 'levels of abstraction'?",
-    options: ["The context model is for Java, while the MHC-PMS is for C#.", "The context model shows the system's position in its environment, while the MHC-PMS diagram shows the internal static structure of the system itself.", "The context model is a Platform Specific Model, while the MHC-PMS is a Computation Independent Model.", "There is no difference; they are both structural models of the same system."],
-    correct: [1],
-    hint: "Think about 'black-box' vs 'white-box' views.",
-    explanation: "The context model and the class diagram offer two different 'perspectives,' as described in the source's 'Key points.' The context model is a 'black-box' view; it treats Mentcare as a single unit and shows its neighbors. The MHC-PMS class diagram is a 'white-box' view; it opens up the Mentcare system to show its internal components like 'Patient,' 'Consultation,' and 'Hospital Doctor.' An architect needs both perspectives: one to understand the system's environment and one to understand its construction. Confusing these levels of abstraction leads to cluttered, unreadable models. A professional architect maintains a clear separation between environmental and internal modeling. This ensures that stakeholders get the right level of detail for their needs. It is a fundamental part of the 'multi-perspective' approach."
-  },
-  {
-    id: 391,
+    id: 67,
     category: "Context Models & Mentcare",
     difficulty: "expert",
     type: "single",
@@ -1415,7 +763,7 @@ const QUIZ_DATA = [
 
 ,
   {
-    id: 31,
+    id: 68,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1426,7 +774,7 @@ const QUIZ_DATA = [
     explanation: "Structural models provide a snapshot of the system's organization. They describe the components (classes) and their relationships (associations) without concerning themselves with execution timing. This static view is essential for understanding the underlying architecture and data organization."
   },
   {
-    id: 32,
+    id: 69,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1437,7 +785,7 @@ const QUIZ_DATA = [
     explanation: "An object class defines the shared attributes and operations for a specific type of object. It serves as the blueprint from which individual objects (instances) are created during system execution. Defining these classes is a core task in object-oriented design."
   },
   {
-    id: 33,
+    id: 70,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1448,7 +796,7 @@ const QUIZ_DATA = [
     explanation: "Associations represent the logical connections between classes in a system model. They define how objects of one class relate to objects of another, such as a patient being 'diagnosed-with' a condition. These links are the basis for data navigation and rule enforcement in the software."
   },
   {
-    id: 34,
+    id: 71,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "multi",
@@ -1460,51 +808,7 @@ const QUIZ_DATA = [
     explanation: "In early modeling, classes represent 'real-world things' that the system needs to manage. Items like patients, doctors, and prescriptions are domain concepts that stakeholders can easily understand. Low-level technical concepts like memory addresses are ignored at this high level of abstraction."
   },
   {
-    id: 35,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "Based on the MHC-PMS class diagram, a 'Consultation' is specifically 'run' by which class?",
-    options: ["Patient", "Medication", "Hospital Doctor", "General Practitioner"],
-    correct: [2],
-    hint: "Examine the label on the association line connecting to the Consultation class.",
-    explanation: "The MHC-PMS diagram shows a 'runs' association between Hospital Doctor and Consultation. This implies that only Hospital Doctors—not General Practitioners or Patients—are responsible for conducting consultations within this specific system's logic. Identifying these specific roles is crucial for system security and workflow design."
-  },
-  {
-    id: 36,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "What is the multiplicity for the 'Hospital Doctor' class on the 'runs' association with 'Consultation'?",
-    options: ["1", "1..", "1..4", "0..1"],
-    correct: [2],
-    hint: "Locate the numeric range next to the Hospital Doctor box on the 'runs' line.",
-    explanation: "The multiplicity of 1..4 indicates that every consultation must be run by at least one doctor, but no more than four. This is a business rule realized through the model, likely reflecting hospital policy for clinical sessions. In professional practice, these constraints are used to validate system states and prevent invalid data entry."
-  },
-  {
-    id: 37,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "In the detailed Consultation class diagram, 'Voice notes' is categorized as a(n):",
-    options: ["Operation", "Association", "Attribute", "Multiplicity"],
-    correct: [2],
-    hint: "Attributes are found in the middle section of a UML class box and represent data.",
-    explanation: "Attributes represent the data properties of a class. 'Voice notes' is a data field within the Consultation class used to store audio recordings of a session. It is distinguished from operations, which are the actions the class can perform."
-  },
-  {
-    id: 38,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "According to the Consultation class diagram, 'RecordNotes()' is categorized as a(n):",
-    options: ["Attribute", "Relationship", "Operation", "Domain constraint"],
-    correct: [2],
-    hint: "Operations are found in the bottom section and are usually followed by parentheses.",
-    explanation: "Operations (also called methods) define the behavior of the class. 'RecordNotes()' is an action that can be performed during a consultation to process or save clinical findings. Defining operations early helps identify the functional requirements of each system object."
-  },
-  {
-    id: 39,
+    id: 72,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1515,18 +819,7 @@ const QUIZ_DATA = [
     explanation: "Multiplicity defines the allowed number of instances in an association. '1..' means that for the association to be valid, there must be at least one object at that end, but there can be infinitely many. This is commonly used for relationships where an entity can have multiple related items, like a patient having many conditions."
   },
   {
-    id: 40,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "In the MHC-PMS diagram, which class is connected to 'Patient' via the 'referred-by' association?",
-    options: ["Consultant", "General practitioner", "Medication", "Condition"],
-    correct: [1],
-    hint: "Look for the GP box and trace the 'referred-by' label to the Patient box.",
-    explanation: "The diagram indicates that Patients are 'referred-by' a General Practitioner (GP). This captures the healthcare workflow where a community doctor refers a patient to a specialized psychiatric center. Structural models like this are essential for understanding the organizational flow the software must support."
-  },
-  {
-    id: 41,
+    id: 73,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1537,29 +830,7 @@ const QUIZ_DATA = [
     explanation: "The 'diagnosed-with' association connects the Patient class to the Condition class. This allows the system to track which medical issues are associated with which individual patient. This structural relationship is the basis for querying patient history and clinical reporting."
   },
   {
-    id: 42,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "Which attribute in the Consultation class is used to store the written conversion of audio notes?",
-    options: ["Transcript", "Reason", "Date", "Clinic"],
-    correct: [0],
-    hint: "This is the text version of a spoken conversation.",
-    explanation: "The 'Transcript' attribute is defined within the Consultation class to hold the text data generated from voice recordings. This attribute is essential for clinical documentation and searchability. In a real system, this field would likely be populated by the 'Transcribe()' operation."
-  },
-  {
-    id: 43,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "Which operation in the Consultation class allows a doctor to authorize a new medication?",
-    options: ["New()", "RecordNotes()", "Prescribe()", "Transcribe()"],
-    correct: [2],
-    hint: "This is the standard clinical term for ordering medicine.",
-    explanation: "The 'Prescribe()' operation is the functional interface for ordering drugs within a consultation. When this operation is executed, it likely creates an association with the Medication class. Operations like this define the core functionality that the development team must implement."
-  },
-  {
-    id: 44,
+    id: 74,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1570,18 +841,7 @@ const QUIZ_DATA = [
     explanation: "The diagram labels the Patient-Consultant relationship as 'referred-to.' This distinguishes the relationship with specialists (Consultants) from the relationship with primary care (GPs). These precise labels prevent ambiguity during the implementation of the system's business logic."
   },
   {
-    id: 45,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "Based on the MHC-PMS diagram, which two classes are 'prescribed' via the Consultation class?",
-    options: ["Doctor and Patient", "Condition and Treatment", "Medication and Treatment", "Consultant and GP"],
-    correct: [2],
-    hint: "Look at the outgoing 'prescribes' associations from the Consultation class.",
-    explanation: "The Consultation class has two 'prescribes' associations leading to 'Medication' and 'Treatment' respectively. This structure implies that a consultation is the point of origin for both pharmaceutical and therapeutic orders. This logical grouping is vital for tracking the outcomes of a clinical session."
-  },
-  {
-    id: 46,
+    id: 75,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1592,40 +852,7 @@ const QUIZ_DATA = [
     explanation: "The diagram shows a '1' at both ends of the line connecting Patient and Patient record. This represents a mandatory one-to-one relationship, meaning every patient must have exactly one record, and every record must belong to exactly one patient. This is a critical data integrity rule for healthcare software."
   },
   {
-    id: 47,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "Which specific attribute in the Consultation class identifies the physical meeting location?",
-    options: ["Doctors", "Clinic", "Reason", "Transcript"],
-    correct: [1],
-    hint: "A clinic is a physical site or facility.",
-    explanation: "The 'Clinic' attribute stores the location where the consultation takes place. This information is necessary for facility management and logistical reporting. Attributes like this are identified during the structural modeling phase to ensure all necessary data points are captured."
-  },
-  {
-    id: 48,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "In the Consultation class box, 'Doctors' is listed in the middle section, identifying it as a(n):",
-    options: ["Operation", "Association", "Attribute", "Method"],
-    correct: [2],
-    hint: "The middle section of a class box is reserved for data fields.",
-    explanation: "Listing 'Doctors' as an attribute indicates that the Consultation class maintains a record of the doctors involved as internal data. While there is also an association to the Hospital Doctor class, this attribute may store names or IDs for quick access. This distinction between data storage (attribute) and relationship (association) is a key part of class design."
-  },
-  {
-    id: 49,
-    category: "Structural Models & UML",
-    difficulty: "easy",
-    type: "single",
-    question: "Which operation is used to finalize the text version of audio notes in the Consultation class?",
-    options: ["New()", "Transcribe()", "Prescribe()", "RecordNotes()"],
-    correct: [1],
-    hint: "Transcription is the process of converting speech to text.",
-    explanation: "The 'Transcribe()' operation is the behavior that processes the 'Voice notes' attribute and populates the 'Transcript' attribute. By defining this as an operation, the model identifies the need for speech-to-text functionality. This helps the development team plan for specific technical capabilities like natural language processing."
-  },
-  {
-    id: 50,
+    id: 76,
     category: "Structural Models & UML",
     difficulty: "easy",
     type: "single",
@@ -1636,7 +863,7 @@ const QUIZ_DATA = [
     explanation: "Multiplicities are the mechanism UML uses to define the cardinality of associations. They ensure that the software's state remains valid according to business rules (e.g., preventing a patient from having zero records). Enforcing these numbers at the model level prevents architectural errors during implementation."
   },
   {
-    id: 126,
+    id: 77,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
@@ -1647,40 +874,7 @@ const QUIZ_DATA = [
     explanation: "In UML, an object class is a general definition or template that describes a set of objects with shared attributes and operations. An object is a concrete, individual realization of that class. For example, 'Patient' is a class, but 'Jane Smith' is an object of that class. Understanding this distinction is foundational for object-oriented design and database schema mapping."
   },
   {
-    id: 127,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "In the MHC-PMS class diagram (Image 27), analyze the 'referred-by' association. What is the mandatory minimum number of General Practitioners required for each Patient?",
-    options: ["Zero, as indicated by the 0..* notation.", "Exactly one, as indicated by the '1' multiplicity at the General Practitioner end.", "At least four, as indicated by the 1..4 notation.", "One or more, as indicated by the 1..* notation."],
-    correct: [1],
-    hint: "Look at the number closest to the General Practitioner box on the referred-by line.",
-    explanation: "The 'referred-by' association links Patient to General Practitioner. The number '1' at the GP end means that for every instance of a Patient, there must be exactly one associated General Practitioner. Conversely, the '1..*' at the Patient end means a GP can be associated with one or many patients. These multiplicity constraints are essential for enforcing business rules within the software's data layer."
-  },
-  {
-    id: 128,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Examine the 'Consultation' class box in Image 28. Which of the following is an 'Attribute' that characterizes the state of a consultation?",
-    options: ["New ()", "Prescribe ()", "Voice notes", "Transcribe ()"],
-    correct: [2],
-    hint: "Attributes are in the middle section of the class box; operations are in the bottom.",
-    explanation: "In a UML class box, the middle section contains attributes—the data fields that define the object's state. 'Voice notes' is listed here, along with Date, Time, and Reason. The bottom section contains operations (methods), which are functions the class can perform, such as 'New ()' or 'Prescribe ()'. Distinguishing between data (attributes) and behavior (operations) is key to proper object-oriented encapsulation."
-  },
-  {
-    id: 129,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "In the MHC-PMS diagram (Image 27), how many Hospital Doctors are permitted to run a single Consultation session according to the multiplicities?",
-    options: ["Exactly one doctor.", "Between one and four doctors.", "An unlimited number of doctors (1..*).", "No more than one doctor."],
-    correct: [1],
-    hint: "Check the multiplicity labeled 'runs' next to the Hospital Doctor box.",
-    explanation: "The association labeled 'runs' connects Hospital Doctor and Consultation. The multiplicity '1..4' is at the Doctor end, and '1..*' is at the Consultation end. This specific rule indicates that a consultation must be run by at least one doctor but cannot exceed four. Capturing these real-world constraints in the structural model prevents the system from entering invalid states during execution."
-  },
-  {
-    id: 130,
+    id: 78,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
@@ -1691,106 +885,18 @@ const QUIZ_DATA = [
     explanation: "Generalization allows us to manage complexity by placing common characteristics in a general superclass. By adding the 'SecurityClearance' attribute to the 'Staff' class, all subclasses (like Doctor and Nurse) automatically inherit it. This reduces redundancy and ensures that changes are localized, meaning you don't have to update every individual class in the system. This is a primary benefit of using generalization in structural modeling."
   },
   {
-    id: 131,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "In the MHC-PMS diagram, what is the relationship between 'Patient' and 'Condition'?",
-    options: ["A patient may have zero or more conditions.", "A patient must be diagnosed with at least one condition, and a condition must be associated with at least one patient.", "A condition is a specialized subclass of a patient.", "Exactly one patient can be diagnosed with exactly one condition."],
-    correct: [1],
-    hint: "Look for the '1..*' notation on both ends of the 'diagnosed-with' association.",
-    explanation: "The 'diagnosed-with' association shows '1..*' at both the Patient and Condition ends. This represents a many-to-many relationship where every patient in the system must have at least one recorded condition, and every condition tracked must belong to at least one patient. These integrity constraints ensure that the database does not contain orphaned records, enhancing system reliability."
-  },
-  {
-    id: 132,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Based on Image 28, what is the purpose of the 'Transcribe ()' operation in the Consultation class?",
-    options: ["To create a new instance of the Consultation class.", "To convert the 'Voice notes' attribute into the 'Transcript' attribute.", "To prescribe a new medication to a patient.", "To delete an old consultation record from the database."],
-    correct: [1],
-    hint: "Look at the related attributes 'Voice notes' and 'Transcript'.",
-    explanation: "The Consultation class contains both 'Voice notes' (audio) and 'Transcript' (text) attributes. The 'Transcribe ()' operation is the functional behavior that processes the audio data to produce the text record. This illustrates how operations in a class are designed to manipulate or process the internal attributes of that same class, maintaining the principle of encapsulation."
-  },
-  {
-    id: 133,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "What happens to the subclasses of 'Hospital Doctor' if the 'Hospital Doctor' class is deleted from the MHC-PMS model?",
-    options: ["They automatically become subclasses of 'Consultant'.", "They remain in the model but lose all inherited attributes and operations.", "They are effectively orphaned or invalidated because their generalization source is gone.", "Nothing; subclasses are independent of their superclasses in UML."],
-    correct: [2],
-    hint: "Subclasses 'inherit' their identity from the parent.",
-    explanation: "In a generalization hierarchy, subclasses depend on their superclass for their inherited attributes and operations. If the superclass is removed, the structural integrity of the hierarchy is destroyed. This highlights the importance of generalization in system maintenance: changes at the top level have a cascading impact on all lower levels. This is why architects must carefully manage generalization hierarchies."
-  },
-  {
-    id: 134,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Analyze the association between 'Consultation' and 'Medication' in Image 27. Which statement is correct?",
-    options: ["A patient prescribes medication directly to a doctor.", "A medication can exist in the system without being part of a consultation.", "A consultation prescribes one or more medications.", "Exactly four medications must be prescribed in every consultation."],
-    correct: [2],
-    hint: "Check the multiplicity next to the Medication box.",
-    explanation: "The 'prescribes' association links Consultation and Medication. The multiplicity '1..*' at the Medication end means that for every consultation that involves prescribing, at least one (and potentially many) medications are recorded. This structural choice ensures that a prescription event is always linked to specific medication data, supporting medical safety and auditing requirements."
-  },
-  {
-    id: 135,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Why does the lecture describe generalization as an 'everyday technique' used to 'manage complexity'?",
-    options: ["Because it allows us to group entities into general classes and learn their common characteristics.", "Because it is the only way to write code in Java or C#.", "Because it forces all systems to use the same database schema.", "Because it eliminates the need for behavioral modeling entirely."],
-    correct: [0],
-    hint: "Think of how we group animals like squirrels and rats as 'rodents'.",
-    explanation: "Generalization is a cognitive tool that allows humans and engineers to simplify complex environments. By grouping similar entities (like different types of doctors) into a single general class, we can define common behaviors once and apply them to all members. This 'abstraction' means we don't have to learn the unique details of every single entity, making the system much easier to model and maintain."
-  },
-  {
-    id: 136,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "In the structural model of MHC-PMS, which class serves as the central hub for the 'attends', 'diagnosed-with', and 'referred-to' associations?",
-    options: ["Consultant", "Patient", "Consultation", "General Practitioner"],
-    correct: [1],
-    hint: "Find the box that has the most lines connecting to it in Image 27.",
-    explanation: "The Patient class is the central entity in this diagram, with associations to Condition, Consultant, General Practitioner, and Consultation. This reflects the system's purpose: a patient-centered medical record system. In structural modeling, identifying these central hubs is crucial for understanding the data flow and the most important entities in the domain."
-  },
-  {
-    id: 137,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Multiplicity in a class diagram (like the '1..1' between Patient and Patient Record in Image 26) is primarily used to:",
-    options: ["Define the number of lines of code in the class.", "Define the number of instances of one class that can be associated with an instance of another.", "Define the time it takes for an operation to execute.", "Show the sequence of events in a use case."],
-    correct: [1],
-    hint: "Multiplicity is about 'how many'.",
-    explanation: "Multiplicities define the constraints on the number of objects that can participate in a relationship. A 1-to-1 (1..1) multiplicity means that for every object of class A, there must be exactly one object of class B. This is critical for maintaining data integrity, such as ensuring every patient has exactly one medical record and that no record exists without a patient."
-  },
-  {
-    id: 138,
+    id: 79,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
     question: "True or False: In UML notation, the name of a class is always placed in the bottom compartment of the class box.",
     options: ["True", "False"],
     correct: [1],
-    hint: "Look at the Consultation class box in Image 28.",
+    hint: "Look at the Consultation class box in.",
     explanation: "False. In UML class boxes, the name of the class is placed in the top compartment. The middle compartment is for attributes, and the bottom compartment is for operations. Standardizing this notation allows engineers to quickly read and interpret the static structure of any system. Mixing these up would lead to serious misinterpretations of the software's design."
   },
   {
-    id: 139,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Which association in Image 27 connects a 'Patient' to a 'Consultant' for specialist care?",
-    options: ["referred-by", "diagnosed-with", "referred-to", "attends"],
-    correct: [2],
-    hint: "Follow the line from Patient to the box at the very top.",
-    explanation: "The 'referred-to' association represents the link between a patient and a specialist consultant. The diagram shows a 1-to-many relationship (1 at the Consultant end, 1..* at the Patient end), meaning a consultant can have many referred patients, but this specific link tracks the patient's referral to one consultant. Identifying these specific roles (GP vs. Consultant) is a key part of domain modeling."
-  },
-  {
-    id: 140,
+    id: 80,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
@@ -1801,40 +907,18 @@ const QUIZ_DATA = [
     explanation: "When changes are proposed to elements common to multiple classes, generalization ensures you don't have to look at all classes in the system. By localizing the attribute in the higher-level superclass, the change is automatically inherited by all lower-level subclasses. This reduces the risk of errors and inconsistencies that occur when the same change must be made manually in multiple places."
   },
   {
-    id: 141,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Consultation class (Image 28), which operation would be used to create a new record for a patient visit?",
-    options: ["Prescribe ()", "RecordNotes ()", "New ()", "Transcribe ()"],
-    correct: [2],
-    hint: "This is a standard operation for object creation.",
-    explanation: "The 'New ()' operation is the constructor for the class. It is the action that initializes a new instance of a consultation. In a real-world system, this would be the first step in the workflow when a doctor starts a session with a patient. Once 'New ()' is called, other operations like 'RecordNotes ()' can be used to populate the consultation's attributes."
-  },
-  {
-    id: 142,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Look at the MHC-PMS diagram. What is the multiplicity between 'Consultation' and 'Medication'?",
-    options: ["1..* to 1..*", "1 to 1", "1..* to 1", "1..4 to 1"],
-    correct: [0],
-    hint: "Check both ends of the 'prescribes' line for Medication.",
-    explanation: "The 'prescribes' association between Consultation and Medication shows '1..*' at both ends. This means that a single consultation can result in the prescription of many medications, and a specific type of medication can be prescribed across many different consultations. This many-to-many relationship is common in healthcare systems where treatments and encounters are heavily interconnected."
-  },
-  {
-    id: 143,
+    id: 81,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
     question: "When developing models during the 'early stages' of the software process, what do UML objects primarily represent?",
     options: ["Specific rows in a SQL database.", "Real-world entities such as patients, prescriptions, or doctors.", "Binary data packets on a network.", "The specific lines of Java code for an interface."],
     correct: [1],
-    hint: "Recall the slide on 'Class diagrams' (Image 25).",
+    hint: "Recall the slide on 'Class diagrams'.",
     explanation: "In the early stages of requirements and design, UML is used as a tool for domain modeling. Objects are not yet seen as data structures or code snippets, but as representations of real-world things that the system must track or interact with. This helps ensure that the software's structure aligns with the actual business or medical processes it is intended to support."
   },
   {
-    id: 144,
+    id: 82,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
@@ -1845,40 +929,18 @@ const QUIZ_DATA = [
     explanation: "Subclasses are the lower-level, more specialized versions of a general class. They inherit all the properties of the superclass but can add their own unique attributes or operations. For example, in a medical system, 'Surgeon' would be a lower-level subclass of the higher-level 'Doctor' class. This hierarchy is the fundamental structure of generalization."
   },
   {
-    id: 145,
+    id: 83,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
     question: "True or False: An association link in a class diagram indicates that there is some functional or structural relationship between classes.",
     options: ["True", "False"],
     correct: [0],
-    hint: "Review the definition of 'association' in Image 25.",
+    hint: "Review the definition of 'association' in.",
     explanation: "True. An association is a formalized way of showing that two classes are linked in the system's logic. Whether it is a doctor 'running' a consultation or a patient being 'referred-to' a consultant, the association defines the existence of this link. Without these links, classes would be isolated, and the system would have no way to navigate or relate its data objects."
   },
   {
-    id: 146,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Which attribute in the 'Consultation' class (Image 28) likely records the clinical reason for the visit?",
-    options: ["Clinic", "Reason", "Medication prescribed", "Transcript"],
-    correct: [1],
-    hint: "The attribute names are usually self-explanatory in domain models.",
-    explanation: "The 'Reason' attribute is explicitly included in the Consultation class to store the patient's symptoms or the purpose of the encounter. Capturing this data is a core requirement of any clinical record system. In a structural model, identifying these attributes ensures that the necessary data storage is planned for during the implementation phase."
-  },
-  {
-    id: 147,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "What multiplicity exists between 'Patient' and 'Consultation' in the MHC-PMS diagram?",
-    options: ["1..* to 1..*", "1 to 1", "1..4 to 1", "1..* to 1"],
-    correct: [0],
-    hint: "Look at the 'attends' association in Image 27.",
-    explanation: "The 'attends' association shows '1..*' at both ends. This indicates that one patient can attend many consultations over their lifetime, and a single consultation session could potentially involve multiple patients (e.g., in family therapy). Multiplicities like this are essential for defining the flexibility and constraints of the system's data architecture."
-  },
-  {
-    id: 148,
+    id: 84,
     category: "Structural Models & UML",
     difficulty: "medium",
     type: "single",
@@ -1889,29 +951,7 @@ const QUIZ_DATA = [
     explanation: "Structural models, such as class diagrams, show the static organization of the system. This perspective focuses on what the system *is* rather than what it *does* over time. It identifies the core components and how they are rigidly linked together. This is a fundamental viewpoint in software engineering, providing the base upon which dynamic behaviors are built."
   },
   {
-    id: 149,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "In the 'Order processing' sequence diagram (Image 39), which class is responsible for the 'Validate ()' operation?",
-    options: ["Purchase officer", "Budget", "Order", "Supplier"],
-    correct: [2],
-    hint: "Look for the object that has a self-call arrow labeled 'Validate ()'.",
-    explanation: "The sequence diagram shows a self-call arrow labeled 'Validate ()' pointing back to the ':Order' object. This means the Order class has an internal operation to check its own data validity before the process continues. In structural modeling, this would be represented as an operation in the Order class box. This illustrates how structural and behavioral models are complementary."
-  },
-  {
-    id: 150,
-    category: "Structural Models & UML",
-    difficulty: "medium",
-    type: "single",
-    question: "Based on the provided MHC-PMS model, which class is associated with the 'prescribes' relationship for 'Treatment'?",
-    options: ["Patient", "Hospital Doctor", "Consultation", "Condition"],
-    correct: [2],
-    hint: "Trace the 'prescribes' line from the Treatment box in Image 27.",
-    explanation: "The diagram shows that the 'prescribes' association for Treatment originates from the Consultation class. This implies that in this system, a treatment can only be prescribed as part of an official consultation event. This structural rule ensures that there is always a clinical record (the consultation) linked to any medical action taken (the treatment). It is a key safety and auditing requirement."
-  },
-  {
-    id: 232,
+    id: 85,
     category: "Structural Models & UML",
     difficulty: "hard",
     type: "single",
@@ -1919,10 +959,10 @@ const QUIZ_DATA = [
     options: ["To ensure they can be automatically converted into a CIM.", "Because they represent a single real-world domain entity with related data and behaviors.", "To satisfy the stimulus-response requirements of the insulin pump activity model.", "Because the 'Consultation' class inherits from the 'Medication' subclass."],
     correct: [1],
     hint: "",
-    explanation: "The lecture defines an object class as a 'general definition of one kind of system object.' In the early stages of software engineering, these objects represent real-world entities like patients or consultations. By grouping the relevant data (attributes) and behaviors (operations) into one class, the architect accurately models the domain. This encapsulation is a core principle of object-oriented modeling. Separating them would create an unnatural and fragile design that does not reflect the domain reality."
+    explanation: "an object class as a 'general definition of one kind of system object.' In the early stages of software engineering, these objects represent real-world entities like patients or consultations. By grouping the relevant data (attributes) and behaviors (operations) into one class, the architect accurately models the domain. This encapsulation is a core principle of object-oriented modeling. Separating them would create an unnatural and fragile design that does not reflect the domain reality."
   },
   {
-    id: 238,
+    id: 86,
     category: "Structural Models & UML",
     difficulty: "hard",
     type: "single",
@@ -1933,7 +973,7 @@ const QUIZ_DATA = [
     explanation: "The source context notes that during early stages, 'objects represent something in the real world.' This approach bridges the gap between the complex system logic and the domain reality of the hospital. If classes were modeled as abstract software structures (like 'DataBuffer' or 'SocketManager') early on, it would be difficult to validate the requirements with medical staff. Using real-world entities as class names ensures the model is an accurate 'abstract view' of the business domain. This is a foundational step in requirements engineering and structural design."
   },
   {
-    id: 241,
+    id: 87,
     category: "Structural Models & UML",
     difficulty: "hard",
     type: "single",
@@ -1944,7 +984,7 @@ const QUIZ_DATA = [
     explanation: "This is a classic application of generalization. Instead of repeating data across similar entities, the architect places shared traits in a higher-level class. The source notes that generalization 'allows us to infer that different members... have some common characteristics.' By using inheritance, the Specialist and the Doctor both share the ID attribute without the risk of data duplication errors. It also makes future changes easier, as the ID field only needs to be updated in one place. This reflects a mature approach to structural modeling."
   },
   {
-    id: 245,
+    id: 88,
     category: "Structural Models & UML",
     difficulty: "hard",
     type: "multi",
@@ -1956,7 +996,7 @@ const QUIZ_DATA = [
     explanation: "Changes to a superclass automatically affect its subclasses through inheritance. Furthermore, any class associated with Doctor (like Patient) may be affected by changes to data integrity or logic. In Model-Driven Engineering, structural changes in the PIM (where class diagrams often reside) cascade down through the PSM to the final code. The CIM is generally a higher-level domain abstraction and may not be affected by specific attribute changes unless they alter fundamental domain definitions. This cascade effect is why structural precision is critical in architectural planning."
   },
   {
-    id: 247,
+    id: 89,
     category: "Structural Models & UML",
     difficulty: "hard",
     type: "multi",
@@ -1968,19 +1008,7 @@ const QUIZ_DATA = [
     explanation: "Associations show the static links between classes, including their names and multiplicity constraints. They are part of structural modeling. Dynamic message sequences are shown in behavioral models, specifically sequence diagrams, not in the static structural class diagram. Understanding the limits of each diagram type prevents model clutter and confusion. The association is the primary tool for defining how the organization's entities are connected. It establishes the rules of engagement between different types of data."
   },
   {
-    id: 252,
-    category: "Structural Models & UML",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Which of the following are explicitly listed as 'Operations' for the Consultation class in the provided UML example? (Select all that apply)",
-    options: ["New()", "Prescribe()", "RecordNotes()", "Calculate insulin delivery()"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The 'Consultation class' image shows New(), Prescribe(), RecordNotes(), and Transcribe() in the operations (bottom) section. 'Calculate insulin delivery' is an activity from the insulin pump behavioral model, not an operation of the Mentcare Consultation class. Mixing operations between different system models is a common error in cross-system design. Architects must stay focused on the specific class they are defining. Operations represent the 'behaviors' that an object can perform. They are the functional interface of the class."
-  },
-  {
-    id: 254,
+    id: 90,
     category: "Structural Models & UML",
     difficulty: "hard",
     type: "multi",
@@ -1992,19 +1020,7 @@ const QUIZ_DATA = [
     explanation: "Associations are the 'links' that define the static organization of a system. They inform the engineer about the required data structures and object interactions needed to satisfy clinical logic. The choice of translator (J2EE vs .NET) is a platform decision in the MDA process, not a direct result of identifying a class association. Associations are the structural 'glue' of the system. Without them, classes would be isolated islands of data. They represent the architectural commitments of the design."
   },
   {
-    id: 255,
-    category: "Structural Models & UML",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "The structural model shows a Patient 'attends' a Consultation. If the multiplicity is '1..*' on the Patient side and '1..*' on the Consultation side, what does this imply? (Select all that apply)",
-    options: ["A patient must attend at least one consultation to exist in the system.", "A consultation cannot happen without at least one patient being present.", "A patient can attend multiple consultations over time.", "A consultation is a subclass of the Patient class."],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "Multiplicity '1..*' on both ends creates a mandatory, many-to-many relationship. Both entities must have at least one link to the other, and both can have many. This is a common pattern in clinical systems where you track recurring interactions. A consultation is an entity, not a subclass of a patient; inheritance (is-a) is different from association (has-a or attends). Mastering these distinctions is fundamental to professional modeling. It ensures the system's logic matches the real-world healthcare workflow."
-  },
-  {
-    id: 270,
+    id: 91,
     category: "Structural Models & UML",
     difficulty: "hard",
     type: "multi",
@@ -2016,31 +1032,7 @@ const QUIZ_DATA = [
     explanation: "Activity diagrams are a behavioral tool used to model 'the processing of data, where each activity represents one process step.' They show the flow of actions and data. Inheritance hierarchies are a structural concept shown in class diagrams, not activity diagrams. Mixing these 'views' would violate the principle of complementary system models mentioned in the 'Key Points.' Activity diagrams are the primary way to document business processes. They ensure that every step in a complex workflow is accounted for. They are the 'procedural' view of the system."
   },
   {
-    id: 287,
-    category: "Structural Models & UML",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "In the 'Operation' state, which of the following physical and display actions occur according to the state table? (Select all that apply)",
-    options: ["Interior oven light is on.", "Display shows the timer countdown.", "Buzzer is sounded for five seconds on completion.", "Display shows 'Half power' to indicate current wattage."],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The state table for 'Operation' explicitly confirms the oven light is on, the timer countdown is displayed, and the buzzer sounds at the end. 'Half power' is the display for the 'Half power' state, not the 'Operation' state. Behavioral modeling involves mapping internal states to observable outputs. This ensures the user is aware of the system's status. These actions are the 'behaviors' that define the state. They provide the sensory feedback necessary for a functional user interface."
-  },
-  {
-    id: 294,
-    category: "Structural Models & UML",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "In a UML state diagram, what do the 'arcs' between 'nodes' represent according to the lecture? (Select all that apply)",
-    options: ["Events that trigger a transition.", "Stimuli from the system's environment.", "The static inheritance of the state.", "The change from one system state to another."],
-    correct: [0, 1, 3],
-    hint: "",
-    explanation: "The lecture states that 'State machine models show system states as nodes and events as arcs.' These events are the stimuli that 'cause a transition from one state to another.' Inheritance is a concept from structural class diagrams and does not apply to state transitions. The arcs are the 'verbs' of the behavioral model, indicating how the system moves. They define the permissible paths through the system's logic. Without these arcs, the states would be static and unreachable. They are the dynamic links in the behavior."
-  },
-  {
-    id: 334,
+    id: 92,
     category: "Structural Models & UML",
     difficulty: "expert",
     type: "single",
@@ -2051,18 +1043,7 @@ const QUIZ_DATA = [
     explanation: "The 'Consultation' class is designed to hold data specific to a single clinical visit, such as the date, time, and 'Voice notes' taken *during* that visit. A patient, over their lifetime, will have many consultations. If 'Voice notes' were moved to the 'Patient' class, the system could only store one set of notes for the entire patient history, or it would require a complex internal list, breaking the clean separation of concerns. The current structural model correctly places visit-specific data within the Consultation object. This ensures that the clinical history is preserved as a sequence of distinct events. Modeling this 'temporal' data correctly is a critical skill for an architect. It ensures the data model accurately reflects the reality of medical practice."
   },
   {
-    id: 336,
-    category: "Structural Models & UML",
-    difficulty: "expert",
-    type: "single",
-    question: "Evaluate the 'Consultation' class box. Which set of items represents its 'Operations' (behavioral interface) rather than its 'Attributes' (static data)?",
-    options: ["Doctors, Medication prescribed, Voice notes", "Date, Time, Clinic, Reason", "New (), Prescribe (), RecordNotes (), Transcribe ()", "Condition, Patient, Consultant"],
-    correct: [2],
-    hint: "Recall the standard three-part structure of a UML class box.",
-    explanation: "A standard UML class box is divided into three sections: Name (top), Attributes (middle), and Operations (bottom). The 'Consultation' class image clearly lists data fields like 'Doctors' and 'Clinic' in the middle section—these are the attributes. The bottom section lists functions followed by parentheses, such as 'New ()' and 'Prescribe ()'—these are the operations. Operations define what an object of the class can *do* or the services it provides. In a mastery-level assessment, the distinction between 'what an object knows' (attributes) and 'what an object does' (operations) is fundamental. This blueprint directly informs the implementation of methods in an object-oriented programming language like Java. Thus, operations represent the behavioral interface of the class."
-  },
-  {
-    id: 339,
+    id: 93,
     category: "Structural Models & UML",
     difficulty: "expert",
     type: "single",
@@ -2073,29 +1054,7 @@ const QUIZ_DATA = [
     explanation: "By modeling 'Treatment' and 'Medication' as distinct classes, the architect treats them as 'real-world entities' rather than just static text. This allows for far more sophisticated functionality. For example, a 'Medication' object can be linked to a drug database for allergy checks, and a 'Treatment' object can have its own scheduling logic. If they were just text attributes, these interactions would be impossible to model or implement cleanly. This approach follows the source context's point that objects in early modeling stages represent important domain concepts. It provides a flexible foundation that can support future requirements, such as automated drug-interaction warnings. Thus, structural granularity is key to building an extensible and 'intelligent' system. It raises the system's capability beyond simple record-keeping."
   },
   {
-    id: 342,
-    category: "Structural Models & UML",
-    difficulty: "expert",
-    type: "single",
-    question: "Review the 'Consultation' class box. If an architect adds a 'Transcribe ()' operation, what is the most likely 'state transition' this operation would trigger in a corresponding behavioral model?",
-    options: ["A transition from 'Waiting' to 'Full power'.", "A transformation of the 'Voice notes' attribute into a 'Transcript' attribute.", "An update to the multiplicity of the 'Hospital Doctor' class.", "A change from a Platform Independent Model to a Platform Specific Model."],
-    correct: [1],
-    hint: "Think about the logical relationship between the data attributes and the operation's name.",
-    explanation: "The 'Consultation' class contains both 'Voice notes' and 'Transcript' as attributes. The 'Transcribe ()' operation is the functional mechanism that links them. In a behavioral view, this operation represents a process step where raw audio data is converted into structured text. This is a clear example of 'data-driven' processing, where an input (voice) is transformed into an output (text). Modeling this operation in the class diagram ensures that the development team recognizes the need for transcription logic early on. It also defines the 'post-condition' of the operation: the 'Transcript' attribute must be populated. This clarity is essential for both structural and behavioral consistency. It bridges the gap between what the system 'has' and what the system 'does.'"
-  },
-  {
-    id: 347,
-    category: "Structural Models & UML",
-    difficulty: "expert",
-    type: "single",
-    question: "In the 'Consultation' class, what is the 'New ()' operation likely used for?",
-    options: ["To create a new 'Patient' record.", "The 'constructor' or factory method used to instantiate a new consultation object in the system.", "To transform the consultation into a Platform Specific Model.", "To delete an old consultation from the database."],
-    correct: [1],
-    hint: "Think about the lifecycle of an object in software.",
-    explanation: "The 'New ()' operation in the Consultation class box represents the behavioral start of the object's life cycle. In object-oriented programming, this would map to a constructor. By including it in the class diagram, the architect specifies that the system must have a formal mechanism for creating these objects, likely triggered by an 'Admission' event. This operation ensures that all required attributes (like date and patient ID) are initialized correctly. It is the 'entry point' for a consultation. Modeling these lifecycle operations is part of a complete structural specification. It ensures that the system can properly manage the creation and destruction of its data entities. This level of detail is necessary for a professional development blueprint."
-  },
-  {
-    id: 353,
+    id: 94,
     category: "Structural Models & UML",
     difficulty: "expert",
     type: "single",
@@ -2109,7 +1068,7 @@ const QUIZ_DATA = [
 
 ,
   {
-    id: 51,
+    id: 95,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2120,7 +1079,7 @@ const QUIZ_DATA = [
     explanation: "Generalization manages complexity by grouping similar items together, allowing us to think about a category rather than every individual member. In software, this prevents engineers from being overwhelmed by hundreds of unique but similar classes. It is a core principle of manageable software architecture."
   },
   {
-    id: 52,
+    id: 96,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2131,7 +1090,7 @@ const QUIZ_DATA = [
     explanation: "Inference is the primary benefit of generalization. If you know a class is a 'Rodent,' you can infer it has certain rodent-like characteristics without re-defining them. This logical deduction makes the system model more efficient and easier to understand."
   },
   {
-    id: 53,
+    id: 97,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2142,7 +1101,7 @@ const QUIZ_DATA = [
     explanation: "The text uses the rodent example to show that if we know the general characteristics of a rodent, we don't have to relearn them for squirrels and rats. This illustrates how high-level classes provide a foundation for understanding more specific subclasses. It is a classic pedagogical tool for explaining inheritance logic."
   },
   {
-    id: 54,
+    id: 98,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2153,7 +1112,7 @@ const QUIZ_DATA = [
     explanation: "Inheritance is the technical realization of the conceptual generalization model. It allows a 'subclass' to automatically gain the properties of a 'superclass.' This is the primary way that object-oriented code stays clean and follows the 'Don't Repeat Yourself' (DRY) principle."
   },
   {
-    id: 55,
+    id: 99,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2164,7 +1123,7 @@ const QUIZ_DATA = [
     explanation: "Inheritance ensures that both data (attributes) and behavior (operations) are passed down the hierarchy. This means a subclass like 'Consultant' automatically possesses all the traits of a 'Doctor.' This promotes consistency and ensures that common behaviors are implemented in only one place."
   },
   {
-    id: 56,
+    id: 100,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2175,7 +1134,7 @@ const QUIZ_DATA = [
     explanation: "Generalization allows engineers to assess the impact of a change at the highest relevant level. If a change only affects the 'Rodent' class, you know it affects all rodents without checking each subclass individually. This significantly reduces the effort required for impact analysis and system maintenance."
   },
   {
-    id: 57,
+    id: 101,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2186,7 +1145,7 @@ const QUIZ_DATA = [
     explanation: "Subclasses are the more specific entities in a generalization relationship. They 'inherit' from a superclass and often add their own unique attributes or operations. This hierarchical relationship is the foundation of object-oriented architecture."
   },
   {
-    id: 58,
+    id: 102,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2197,7 +1156,7 @@ const QUIZ_DATA = [
     explanation: "Generalization is actually the opposite of learning every entity individually; it's about learning the group traits and applying them to all members. This efficiency is why humans and software engineers use it to process large amounts of information. It allows for faster modeling and easier understanding of complex systems."
   },
   {
-    id: 59,
+    id: 103,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "single",
@@ -2208,7 +1167,7 @@ const QUIZ_DATA = [
     explanation: "Object-oriented (OO) languages are designed specifically to support the generalization/specialization paradigm. Inheritance is the core OO mechanism that enables this data and behavior reuse. Without this feature, developers would have to manually duplicate code across hundreds of related classes."
   },
   {
-    id: 60,
+    id: 104,
     category: "Generalization & Inheritance",
     difficulty: "easy",
     type: "multi",
@@ -2220,7 +1179,7 @@ const QUIZ_DATA = [
     explanation: "The source identifies 'animals, cars, and houses' as everyday examples of generalization that the human brain uses to manage complexity. These are used to explain the concept before applying it to technical software classes. This helps relate abstract software engineering principles to real-world cognitive habits."
   },
   {
-    id: 236,
+    id: 105,
     category: "Generalization & Inheritance",
     difficulty: "hard",
     type: "single",
@@ -2231,7 +1190,7 @@ const QUIZ_DATA = [
     explanation: "Using generalization, common attributes and operations are defined in a higher-level class. Subclasses then 'inherit the attributes and operations associated with higher-level classes.' By placing the signature in a superclass, the architect ensures that all medical staff types receive the attribute without duplicating work. The source notes that this approach helps when 'changes are proposed,' as you don't have to check every class in the system. It is the most efficient and maintainable way to handle system-wide structural changes."
   },
   {
-    id: 249,
+    id: 106,
     category: "Generalization & Inheritance",
     difficulty: "hard",
     type: "multi",
@@ -2243,7 +1202,7 @@ const QUIZ_DATA = [
     explanation: "Generalization is described as a complexity management technique. It facilitates inheritance and allows us to infer common traits (e.g., all doctors have an ID because they are Medical Staff). It has no direct impact on whether a system can enter a specific behavioral state like 'Disabled,' which is governed by state machine logic. Generalization is about the 'organization and architecture' of the system's data. It is an 'everyday technique' applied to high-stakes engineering. These benefits combine to make the model more readable and less prone to duplication errors."
   },
   {
-    id: 253,
+    id: 107,
     category: "Generalization & Inheritance",
     difficulty: "hard",
     type: "multi",
@@ -2255,7 +1214,7 @@ const QUIZ_DATA = [
     explanation: "Subclasses are the key to generalization/specialization. They inherit common data but allow for the addition of specialized features. They can also refine the constraints of the parent class to suit specific roles (like the Emergency Surgeon example). Inheriting and specializing are not related to the MDA stage (PSM vs. PIM); a subclass can exist in any model type. This refinement is how architects handle the 'exceptions to the rule' in complex domains. It maintains structural coherence while allowing for necessary variation."
   },
   {
-    id: 333,
+    id: 108,
     category: "Generalization & Inheritance",
     difficulty: "expert",
     type: "single",
@@ -2266,7 +1225,7 @@ const QUIZ_DATA = [
     explanation: "The source context explains that generalization is an 'everyday technique' for managing complexity. In modeling, it allows us to 'infer that different members of these classes have some common characteristics.' For a system architect, this means attributes and operations can be centralized in a higher-level class. This reduces the size and complexity of the model, making it easier to maintain. If a change is needed for a common attribute, it only needs to be updated in one place. This 'principle of reuse' is fundamental to object-oriented design and is directly supported by languages like Java through inheritance. Generalization thus serves as a primary mechanism for creating clean, modular, and scalable system architectures."
   },
   {
-    id: 337,
+    id: 109,
     category: "Generalization & Inheritance",
     difficulty: "expert",
     type: "single",
@@ -2280,7 +1239,7 @@ const QUIZ_DATA = [
 
 ,
   {
-    id: 61,
+    id: 110,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2291,7 +1250,7 @@ const QUIZ_DATA = [
     explanation: "Behavioral models show the system's responses to stimuli during execution. Unlike structural models, they focus on the sequence of operations and state changes. This is essential for verifying that the system correctly implements the required business processes."
   },
   {
-    id: 62,
+    id: 111,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "multi",
@@ -2303,7 +1262,7 @@ const QUIZ_DATA = [
     explanation: "Stimuli are either 'Data' (information to be processed) or 'Events' (triggers for action). Some stimuli may involve both, but the model distinguishes between the arrival of information and the triggering of a process. This distinction helps engineers design appropriate input handling for the system."
   },
   {
-    id: 63,
+    id: 112,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2314,7 +1273,7 @@ const QUIZ_DATA = [
     explanation: "Data-driven modeling is ideal for showing the flow of data through a system from input to output. This helps stakeholders visualize how a business process is realized through software. It is particularly useful during the requirements phase to ensure no processing steps are missed."
   },
   {
-    id: 64,
+    id: 113,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2325,7 +1284,7 @@ const QUIZ_DATA = [
     explanation: "Event-driven systems react to specific triggers (events) from the environment. Examples include telecommunication systems or simple hardware controllers where the 'what happened' is more important than the 'what data was sent.' Event-driven models use states and transitions to capture this reactivity."
   },
   {
-    id: 65,
+    id: 114,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2336,7 +1295,7 @@ const QUIZ_DATA = [
     explanation: "Event-driven modeling (using state machines) assumes the system exists in one of a countable (finite) number of states. Transitions between these states occur only in response to specific stimuli. This mathematical foundation makes the system's behavior predictable and verifiable."
   },
   {
-    id: 66,
+    id: 115,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2347,29 +1306,7 @@ const QUIZ_DATA = [
     explanation: "States remain constant until a specific stimulus (event) occurs to trigger a transition. In a UML statechart, these are represented as the labels on the arcs connecting the nodes. Without a stimulus, the system remains in its current state, ensuring stability."
   },
   {
-    id: 67,
-    category: "Behavioral Models",
-    difficulty: "easy",
-    type: "single",
-    question: "In the insulin pump activity model, what is the initial hardware component in the processing sequence?",
-    options: ["Insulin pump actuator", "Compute sugar level module", "Blood sugar sensor", "Pump command calculator"],
-    correct: [2],
-    hint: "The sequence starts with the device that reads physical data from the body.",
-    explanation: "The insulin pump model is a data-driven sequence that begins with the 'Blood sugar sensor.' This sensor provides the raw data that the rest of the system then processes. This illustrates a clear flow from environmental input to software calculation."
-  },
-  {
-    id: 68,
-    category: "Behavioral Models",
-    difficulty: "easy",
-    type: "single",
-    question: "In the insulin pump's data flow, what action immediately follows the 'Sensor data' node?",
-    options: ["Get sensor value", "Compute sugar level", "Control pump actuator", "Calculate insulin requirement"],
-    correct: [1],
-    hint: "After the raw data is received, the system must interpret its meaning.",
-    explanation: "Once 'Sensor data' is available, the system transitions to 'Compute sugar level.' This step transforms raw electrical signals into a meaningful medical value. This sequence is a classic example of data-driven processing in a safety-critical system."
-  },
-  {
-    id: 69,
+    id: 116,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2380,18 +1317,7 @@ const QUIZ_DATA = [
     explanation: "The 'Calculate insulin delivery' step produces 'Insulin requirement' as its output. This value is then passed to the next stage to be converted into physical pump commands. This illustrates how high-level models track the transformation of data through a system."
   },
   {
-    id: 70,
-    category: "Behavioral Models",
-    difficulty: "easy",
-    type: "single",
-    question: "What is the final physical component in the insulin pump activity model that performs the system's mission?",
-    options: ["Blood sugar sensor", "Insulin pump", "Control pump module", "Sensor data gateway"],
-    correct: [1],
-    hint: "This is the very last box in the diagram that interacts with the user's body.",
-    explanation: "The processing sequence concludes with the activation of the physical 'Insulin pump.' This hardware component delivers the medicine based on all the preceding software calculations. This end-to-end model ensures that every logical step from sensing to delivery is accounted for."
-  },
-  {
-    id: 71,
+    id: 117,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2402,7 +1328,7 @@ const QUIZ_DATA = [
     explanation: "Activity diagrams are a type of behavioral model that shows the sequence of process steps. They are particularly effective for documenting data-driven workflows like the insulin pump's operation. Each 'activity' node represents a distinct task performed by the system."
   },
   {
-    id: 72,
+    id: 118,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2410,10 +1336,10 @@ const QUIZ_DATA = [
     options: ["A modern microwave oven", "A landline phone switching system", "A portable insulin pump", "The Mentcare patient database"],
     correct: [1],
     hint: "Think of a traditional telecommunications system.",
-    explanation: " Sommerville uses the landline phone system to explain event-driven modeling. The event (lifting the receiver) triggers a specific response (generating a dial tone) with almost no data processing involved. This is the quintessence of a reactive, event-driven architecture."
+    explanation: "Sommerville uses the landline phone system to explain event-driven modeling. The event (lifting the receiver) triggers a specific response (generating a dial tone) with almost no data processing involved. This is the quintessence of a reactive, event-driven architecture."
   },
   {
-    id: 73,
+    id: 119,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2424,7 +1350,7 @@ const QUIZ_DATA = [
     explanation: "While many events carry data, the source explicitly states that this is not always the case. Some events are simple triggers that signal a state change without passing extra information. Distinguishing between data-carrying and non-data-carrying events is important for interface design."
   },
   {
-    id: 74,
+    id: 120,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2435,7 +1361,7 @@ const QUIZ_DATA = [
     explanation: "The standard UML notation for state machines uses nodes for the states and arcs for the transitions. This visual language allows engineers to trace the possible paths through a system's logic. This mapping is fundamental to understanding statechart diagrams."
   },
   {
-    id: 75,
+    id: 121,
     category: "Behavioral Models",
     difficulty: "easy",
     type: "single",
@@ -2446,7 +1372,7 @@ const QUIZ_DATA = [
     explanation: "Statecharts are the specific UML implementation of state machine modeling. they allow for the representation of complex, nested states and conditional transitions. Mastering statecharts is essential for designing real-time or reactive software systems."
   },
   {
-    id: 151,
+    id: 122,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
@@ -2457,62 +1383,18 @@ const QUIZ_DATA = [
     explanation: "Behavioral models show what happens when a system responds to a stimulus. Stimuli come in two types: Data and Events. A blood sugar reading is a piece of 'Data' that arrives and must be processed to determine an output (the insulin dose). This distinguishes it from an 'Event' (like a button press), which might trigger a state change without providing a variable input value."
   },
   {
-    id: 152,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "Analyze the Insulin Pump activity model (Image 38). Which processing step directly follows the production of the 'Blood sugar level' data?",
-    options: ["Get sensor value", "Compute sugar level", "Calculate insulin delivery", "Insulin requirement"],
-    correct: [2],
-    hint: "Follow the arrow pointing down from the 'Blood sugar level' box.",
-    explanation: "In the activity model, the flow proceeds sequentially. Once the 'Blood sugar level' has been calculated, the next process is to 'Calculate insulin delivery.' This step represents the medical logic of the system, taking the raw sugar value and determining how much insulin is needed. Understanding this linear progression is essential for verifying that the system logic correctly transforms inputs into meaningful results."
-  },
-  {
-    id: 153,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the 'Order processing' sequence diagram (Image 39), what is the function of the '[validation ok]' notation?",
-    options: ["It is a class attribute that stores the validation status.", "It is a guard condition that must be true for the 'Update (amount)' message to be sent.", "It is an operation that automatically fixes errors in the order.", "It is a state in the Budget state machine."],
-    correct: [1],
-    hint: "Brackets [] in UML sequence diagrams denote conditional logic.",
-    explanation: "The notation '[validation ok]' is a guard condition. In a sequence diagram, this indicates that the following message ('Update (amount)') is only sent if the preceding 'Validate ()' operation returns a successful result. This allows engineers to model conditional logic and business rules within a chronological interaction flow, ensuring the system only commits funds to valid orders."
-  },
-  {
-    id: 154,
+    id: 123,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
     question: "When is an Activity Model generally more appropriate than a Sequence Diagram during requirements analysis?",
     options: ["When modeling the exact timeline of messages between three different objects.", "When showing the end-to-end processing of a system to stakeholders.", "When defining the generalization hierarchy of medical staff.", "When modeling the 'finite states' of a microwave oven."],
     correct: [1],
-    hint: "Recall the 'Data-driven modeling' slide (Image 37).",
+    hint: "",
     explanation: "Activity models are particularly useful during requirements analysis because they show the end-to-end sequence of actions involved in processing data. They are easier for non-technical stakeholders to understand than sequence diagrams, which focus on more technical object-to-object interactions. Activity models provide a high-level 'flow' view of the system's functional purpose."
   },
   {
-    id: 155,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Insulin Pump activity model, what is the 'Insulin requirement'?",
-    options: ["A hardware component that stores insulin.", "A data output from the 'Calculate insulin delivery' process.", "An event that triggers the blood sugar sensor.", "A command sent directly to the hardware pump."],
-    correct: [1],
-    hint: "Look at the bubble that creates this item in Image 38.",
-    explanation: "The 'Insulin requirement' is a piece of data produced by the 'Calculate insulin delivery' step. It serves as the input for the next step: 'Calculate pump commands.' This illustrates the 'data-driven' nature of the model, where the output of one process becomes the stimulus for the next, eventually leading to a physical action. This step-by-step transformation is the core of activity modeling."
-  },
-  {
-    id: 156,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "According to the Order Processing diagram (Image 39), which actor is the last to receive information in the sequence?",
-    options: ["Purchase officer", "Budget", "Orders Datastore", "Supplier"],
-    correct: [3],
-    hint: "Find the actor on the far right of the diagram.",
-    explanation: "The sequence diagram shows the 'Supplier' receiving the final 'Send ()' message. This occurs after the order has been filled in, validated, the budget updated, and the record saved. Sequence diagrams are effective at showing these 'inter-actor' interactions, confirming that the system correctly completes its external communication goals after internal processing is finished."
-  },
-  {
-    id: 157,
+    id: 124,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
@@ -2523,73 +1405,29 @@ const QUIZ_DATA = [
     explanation: "A sensor signal carries a variable value (the sugar level) that requires processing and calculation. This fits the definition of a 'Data' stimulus. In contrast, 'Cancel' or 'Door open' are discrete occurrences that trigger a specific, often pre-defined response or state change, making them 'Event' stimuli. Distinguishing between these helps designers choose the right modeling technique (e.g., Activity vs State Machine)."
   },
   {
-    id: 158,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Insulin Pump model, what is the role of the 'Control pump' process?",
-    options: ["To sense the blood sugar level.", "To calculate the medical insulin requirement.", "To take 'Pump control commands' and physically drive the 'Insulin pump'.", "To update the hospital's budget for medication."],
-    correct: [2],
-    hint: "Look at the final stages of the flow in Image 38.",
-    explanation: "The 'Control pump' process is the final software layer that interacts with the physical hardware. It takes the logical 'Pump control commands' and translates them into the actual signals that move the pump. This demonstrates how activity models can bridge the gap between high-level medical logic and low-level hardware control, providing a complete view of the system's behavior."
-  },
-  {
-    id: 159,
+    id: 125,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
     question: "True or False: Sequence diagrams are 'white-box' models because they show the internal object interactions that realize a use case.",
     options: ["True", "False"],
     correct: [0],
-    hint: "Check the 'Key points' about interactions in Image 57.",
+    hint: "Check the 'Key points' about interactions in.",
     explanation: "True. While a use case is a 'black-box' view that shows only external actors and the system's goals, a sequence diagram is a 'white-box' view. It reveals the 'internals'—the specific objects and the messages they exchange to achieve those goals. This makes sequence diagrams indispensable for developers who need to implement the detailed logic of a system's behavior."
   },
   {
-    id: 160,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Order processing diagram, why is there a self-call arrow on the ':Order' lifeline?",
-    options: ["To show that the order is being sent to the supplier.", "To represent an internal operation where the order validates itself.", "To show that the budget is checking the order.", "To indicate that the order has failed."],
-    correct: [1],
-    hint: "The arrow starts and ends on the same object.",
-    explanation: "A self-call arrow (like 'Validate ()') indicates that an object is executing an operation on itself. In this scenario, the Order object is responsible for checking its own data consistency before it allows the process to move to the 'Budget' or 'Datastore'. This illustrates how behavioral models assign specific responsibilities to individual objects during system execution."
-  },
-  {
-    id: 161,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "What does the «datastore» stereotype on the 'Orders' box in Image 39 imply?",
-    options: ["That 'Orders' is a human actor.", "That 'Orders' represents persistent storage, such as a database.", "That 'Orders' is a temporary state in a state machine.", "That 'Orders' is a platform-independent model (PIM)."],
-    correct: [1],
-    hint: "Recall common UML stereotypes for data storage.",
-    explanation: "The «datastore» stereotype is used to identify objects that provide persistent storage for system data. In the sequence diagram, the 'Save ()' message is sent to this object, confirming that the system records the order information permanently. Identifying datastores in behavioral models helps engineers plan for database interactions and data persistence requirements."
-  },
-  {
-    id: 162,
+    id: 126,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
     question: "A business system primarily processes batches of invoices with very little interaction from users once the process starts. Which modeling style is most appropriate?",
     options: ["Event-driven modeling with state machines.", "Data-driven modeling with activity diagrams.", "Structural modeling with generalization hierarchies.", "External perspective modeling with context diagrams."],
     correct: [1],
-    hint: "Check the 'Data-driven modeling' slide (Image 37).",
+    hint: "Check the 'Data-driven modeling' slide.",
     explanation: "Many business systems are data-processing systems primarily driven by data input with relatively little external event processing. For such systems, activity diagrams are superior because they clearly map the sequence of actions needed to transform a batch of inputs (invoices) into an output (payment records). This provides a clear, logical flow for developers and business analysts alike."
   },
   {
-    id: 163,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "Based on the Insulin Pump model, what would happen if the 'Compute sugar level' step failed to produce a 'Blood sugar level'?",
-    options: ["The system would skip to 'Control pump'.", "The sequence would stop, as 'Calculate insulin delivery' would have no stimulus.", "The system would automatically use the last known budget value.", "The insulin pump would enter the 'Waiting' state."],
-    correct: [1],
-    hint: "Activity models represent a sequential flow of data.",
-    explanation: "In an activity model, each step depends on the data output from the previous step. If 'Compute sugar level' fails, the 'Blood sugar level' data is never created, and the subsequent 'Calculate insulin delivery' process is never triggered. This illustrates the vulnerability of sequential processing systems and the need for robust error handling in behavioral design."
-  },
-  {
-    id: 164,
+    id: 127,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
@@ -2600,18 +1438,7 @@ const QUIZ_DATA = [
     explanation: "Sequence diagrams are a type of interaction model that shows the chronological order of messages exchanged between objects and actors. They are used to model the dynamic behavior of a specific use case, highlighting which object is responsible for which action at each point in the timeline. This level of detail is essential for the implementation and testing of complex system features."
   },
   {
-    id: 165,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Order processing diagram, what does the message 'Update (amount)' sent to the 'Budget' object represent?",
-    options: ["A change in the system's boundary.", "A behavioral interaction where the Order object requests the Budget to deduct funds.", "A structural association between the Order and the Budget.", "A data-driven stimulus from an external sensor."],
-    correct: [1],
-    hint: "Messages in sequence diagrams represent operation calls.",
-    explanation: "The 'Update (amount)' message is a functional call from the Order object to the Budget object. It indicates that the order processing logic requires the budget to be modified by a specific 'amount'. This behavioral interaction captures the business rule that every order must be accounted for in the budget. It demonstrates how objects collaborate to fulfill a complex business process."
-  },
-  {
-    id: 166,
+    id: 128,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
@@ -2622,29 +1449,7 @@ const QUIZ_DATA = [
     explanation: "True. Sequence diagrams are read chronologically from top to bottom. The first message (like 'Fillin ()') appears at the top, and subsequent messages (like 'Save ()' or 'Send ()') appear lower down. This temporal representation is why they are called 'sequence' diagrams, as they explicitly show the order in which behaviors occur during system execution."
   },
   {
-    id: 167,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "Which of the following is an 'Event' stimulus in a real-time microwave oven system?",
-    options: ["The power level being set to 600 watts.", "The user pressing the 'Start' button.", "The timer counting down from 10 to 9.", "The display showing 'Not ready'."],
-    correct: [1],
-    hint: "Events are triggers that cause a reaction or state change.",
-    explanation: "A button press is a discrete occurrence that triggers the system to transition from an idle state (Enabled) to an active state (Operation). This is a classic 'Event' stimulus. While the timer counting down is a continuous behavior and the power level is a setting, the 'Start' event is the asynchronous trigger that initiates the cooking process. Identifying these triggers is the first step in event-driven modeling."
-  },
-  {
-    id: 168,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Insulin Pump activity model (Image 38), which component represents the final mechanical action of the system?",
-    options: ["Calculate pump commands", "Control pump", "Pump control commands", "Insulin pump"],
-    correct: [3],
-    hint: "Look for the final box at the end of the sequence.",
-    explanation: "The 'Insulin pump' box represents the physical hardware that delivers the medication. The entire behavioral sequence—from sensing to calculating to controlling—is designed to reach this final output. Activity models are excellent for showing how software logic ultimately drives physical world outcomes, a key concern in embedded systems engineering."
-  },
-  {
-    id: 169,
+    id: 129,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
@@ -2655,62 +1460,18 @@ const QUIZ_DATA = [
     explanation: "Activity models focus on the 'flow' of steps but often group them generically. Sequence diagrams use lifelines for specific objects (like :Order or Budget), making it crystal clear which component of the software is performing which action. For developers who need to write the code for these specific classes, the sequence diagram provides much more actionable information."
   },
   {
-    id: 170,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "A system must respond to a 'Receiver off hook' signal on a phone switch. Which modeling approach is the lecture's primary recommendation for this type of system?",
-    options: ["Data-driven modeling", "Event-driven modeling", "Structural modeling", "Context modeling"],
-    correct: [1],
-    hint: "Recall the 'landline phone switching system' example (Image 40).",
-    explanation: "Real-time systems like phone switches have minimal data processing but high event-driven behavior. They spend most of their time waiting for a stimulus like 'Receiver off hook' to trigger a transition (like generating a dial tone). Event-driven modeling using state machines is the most effective way to capture this reactive, stimulus-response logic."
-  },
-  {
-    id: 171,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Order Processing diagram, what happens after the ':Order' object receives the 'Fillin ()' message?",
-    options: ["It immediately sends 'Send ()' to the Supplier.", "It executes an internal 'Validate ()' operation.", "It updates the 'Budget' regardless of validation.", "It transitions to the 'Disabled' state."],
-    correct: [1],
-    hint: "Look at the sequence of messages from top to bottom.",
-    explanation: "The sequence diagram shows that 'Validate ()' is the next step after 'Fillin ()'. This ensures that the data entered by the Purchase Officer is checked for errors before any financial or storage actions (like 'Update' or 'Save') are taken. This chronological flow ensures that business rules are enforced in the correct order."
-  },
-  {
-    id: 172,
+    id: 130,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
     question: "True or False: Behavioral models are used to describe what happens when a system responds to a stimulus from its environment.",
     options: ["True", "False"],
     correct: [0],
-    hint: "Review the definition of 'Behavioral models' in Image 36.",
+    hint: "Review the definition of 'Behavioral models' in.",
     explanation: "True. Behavioral models capture the dynamic reaction of a system to its environment. Whether it is a data-driven system processing a stream of sensor values or an event-driven system reacting to a button press, behavioral modeling identifies the sequence of internal actions and state changes that fulfill the system's purpose. This perspective is vital for ensuring the system behaves correctly during execution."
   },
   {
-    id: 173,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "Which processing step in the Insulin Pump model is responsible for translating medical needs into hardware commands?",
-    options: ["Calculate insulin delivery", "Calculate pump commands", "Control pump", "Get sensor value"],
-    correct: [1],
-    hint: "Look for the step that produces 'Pump control commands'.",
-    explanation: "The 'Calculate pump commands' process takes the 'Insulin requirement' (a medical value) and transforms it into 'Pump control commands' (a mechanical value). This is a critical transition in behavioral modeling, where high-level domain logic is converted into technical implementation details. Capturing this transformation step helps prevent errors in how the hardware executes the medical requirements."
-  },
-  {
-    id: 174,
-    category: "Behavioral Models",
-    difficulty: "medium",
-    type: "single",
-    question: "In the Order processing diagram, what does the message 'Save ()' represent?",
-    options: ["A structural association between Order and Datastore.", "A behavioral interaction where order data is committed to persistent storage.", "A guard condition for the supplier message.", "An event that triggers the 'Operation' state."],
-    correct: [1],
-    hint: "Messages represent actions or function calls.",
-    explanation: "The 'Save ()' message is the action of writing the validated and budget-approved order data to the «datastore» Orders. This behavioral step ensures that the transaction is not lost if the system fails or is shut down. Modeling these storage interactions is a key part of behavioral design for business systems."
-  },
-  {
-    id: 175,
+    id: 131,
     category: "Behavioral Models",
     difficulty: "medium",
     type: "single",
@@ -2721,40 +1482,7 @@ const QUIZ_DATA = [
     explanation: "The type of stimulus dictates the most effective modeling tool. Systems that are primarily data-driven are best represented by activity diagrams that show the flow of processing. Systems that are primarily event-driven are better represented by state machines that show the transitions between states. Understanding this distinction allows engineers to choose the perspective that most clearly communicates the system's dynamic logic."
   },
   {
-    id: 257,
-    category: "Behavioral Models",
-    difficulty: "hard",
-    type: "single",
-    question: "Data-driven modeling is specifically highlighted in the lecture as being most useful during which architectural phase?",
-    options: ["During the manual coding phase of PSM development.", "During the analysis of requirements to show end-to-end processing.", "During the definition of state transition arcs in microwave ovens.", "During the negotiation of political boundaries for workload distribution."],
-    correct: [1],
-    hint: "",
-    explanation: "The source explicitly states that data-driven models are 'particularly useful during the analysis of requirements.' They help architects and stakeholders visualize the 'sequence of actions' needed to process input and produce output. This 'end-to-end' view is essential for complex business systems that handle large volumes of data. Unlike state models, which focus on events, data-driven models focus on the transformation of data. This distinction ensures the requirements capture the full processing lifecycle. It is a strategic tool for requirement validation."
-  },
-  {
-    id: 259,
-    category: "Behavioral Models",
-    difficulty: "hard",
-    type: "single",
-    question: "In the 'Order processing' sequence diagram, a message 'Update (amount)' is sent to the 'Budget' object. Under what specific condition does this interaction occur?",
-    options: ["Immediately after the 'Fillin()' call from the Purchase officer.", "Only if the self-call for 'Validate()' satisfies the '[validation ok]' guard condition.", "After the 'Supplier' sends the order confirmation.", "When the 'Orders' datastore sounds a buzzer for 5 seconds."],
-    correct: [1],
-    hint: "",
-    explanation: "Sequence diagrams show interactions between objects over time. In the 'Order processing' example, the ':Order' object performs a 'Validate()' self-call. The subsequent 'Update (amount)' message is protected by a guard condition: '[validation ok].' If the validation fails, the budget is not updated. This illustrates the precision needed in behavioral modeling to enforce business rules. Distractors involving the supplier or buzzer are incorrect applications of the provided diagram's logic. This shows how sequence diagrams model conditional behavior."
-  },
-  {
-    id: 262,
-    category: "Behavioral Models",
-    difficulty: "hard",
-    type: "single",
-    question: "In the order processing sequence diagram, the message 'Save()' is sent to the «datastore» Orders. Which object is responsible for initiating this specific data update?",
-    options: ["Purchase officer", "Supplier", "Budget", ":Order"],
-    correct: [3],
-    hint: "",
-    explanation: "The sequence diagram visually indicates the source and target of every message. The arrow for 'Save()' originates from the lifeline of the ':Order' object and points to the '«datastore» Orders' object. Therefore, the ':Order' object is the initiator. This shows how behavioral models assign responsibility for actions to specific system components. The Purchase officer and Supplier are external actors, and the Budget object has its own separate interaction. Correctly assigning operations to objects is a key skill in object-oriented design. It ensures the system follows the intended logic."
-  },
-  {
-    id: 266,
+    id: 132,
     category: "Behavioral Models",
     difficulty: "hard",
     type: "multi",
@@ -2766,31 +1494,7 @@ const QUIZ_DATA = [
     explanation: "The source context on 'Data-driven modeling' explicitly lists the first three points as characteristics. Real-time systems that respond primarily to events are categorized under event-driven/state machine modeling, which is a different behavioral approach. Data-driven models are the 'bread and butter' of business information systems. They ensure that every piece of input data has a valid path to becoming a useful output. This makes them indispensable during the requirements phase. They provide a 'functional trace' of the system's logic."
   },
   {
-    id: 268,
-    category: "Behavioral Models",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 2,
-    question: "In the order processing sequence diagram, which of the following are internal objects rather than external actors? (Select all that apply)",
-    options: ["Purchase officer", ":Order", "Budget", "Supplier"],
-    correct: [1, 2],
-    hint: "",
-    explanation: "The diagram uses the standard actor icon (stick figure) for the Purchase officer and Supplier, indicating they are external to the system. The rectangular boxes for ':Order' and 'Budget' represent system objects. Behavioral models like sequence diagrams are excellent for showing the interaction across the system boundary between actors and internal logic. This reinforces the 'inside vs. outside' distinction established in the context model. It also helps define the system's 'interface' with the real world. Understanding this boundary is key to secure and functional design."
-  },
-  {
-    id: 271,
-    category: "Behavioral Models",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "In the order processing sequence diagram, which of the following are shown as types of object interactions? (Select all that apply)",
-    options: ["Self-calls (e.g., Validate())", "Synchronous messages with guard conditions (e.g., [validation ok])", "Asynchronous transfers to external actors (e.g., Send())", "Political boundary negotiations between departments."],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The diagram shows all three technical interaction types: internal logic (self-call), conditional logic (guard condition), and external communication (message to Supplier). Political boundary negotiation is a socio-technical process mentioned in context modeling, not a message in a sequence diagram. Sequence diagrams provide a high-fidelity 'trace' of system execution. They are used to validate that the design can actually fulfill the required use cases. They are the 'interaction' view of the system's behavioral architecture. Accuracy here is essential for successful implementation."
-  },
-  {
-    id: 272,
+    id: 133,
     category: "Behavioral Models",
     difficulty: "hard",
     type: "multi",
@@ -2802,7 +1506,7 @@ const QUIZ_DATA = [
     explanation: "The source identifies data-driven and event-driven models as the two main types of behavioral models. Class diagrams are 'Structural models' (showing organization/architecture), and context models show the 'environment.' Mastering the taxonomy of UML diagrams is a prerequisite for professional architecture. Each diagram provides a different 'abstract view' of the system. Together, they form a complete description of the software. This categorization ensures that architects use the right tool for the right job. It prevents the 'over-modeling' of irrelevant details."
   },
   {
-    id: 274,
+    id: 134,
     category: "Behavioral Models",
     difficulty: "hard",
     type: "multi",
@@ -2814,7 +1518,7 @@ const QUIZ_DATA = [
     explanation: "Sequence diagrams model 'interactions between system objects' and actors over time. Chronology is shown from top to bottom. Multiplicity is a structural rule found in class diagrams, not sequence diagrams. Using sequence diagrams, architects can 'walk through' a use case to ensure the logic is sound. They provide the dynamic counter-point to the static structural model. They are the 'narrative' of the system's execution. This makes them a primary tool for design validation."
   },
   {
-    id: 282,
+    id: 135,
     category: "Behavioral Models",
     difficulty: "hard",
     type: "single",
@@ -2825,40 +1529,7 @@ const QUIZ_DATA = [
     explanation: "The source explicitly defines event-driven modeling as being 'based on the assumption that a system has a finite number of states.' Transitions between these nodes are triggered by discrete 'events' or 'stimuli.' This finite nature allows architects to mathematically verify that all possible states are safe and that no invalid transitions exist. Distractors suggesting infinite paths or universal stimuli contradict the core logic of a Finite State Machine (FSM). This assumption makes the behavior of real-time systems predictable and testable. It is the foundation of dependable system design."
   },
   {
-    id: 355,
-    category: "Behavioral Models",
-    difficulty: "expert",
-    type: "single",
-    question: "According to the 'Behavioral models' slide, what is the primary objective when modeling the 'dynamic behavior of a system as it is executing'?",
-    options: ["To define the static database schema for the MHC-PMS.", "To show how the system responds to internal and external stimuli like data arrival or events.", "To calculate the organizational influence of the Mentcare department.", "To transform a Platform Specific Model into a Java program."],
-    correct: [1],
-    hint: "Look at the first diamond bullet point and the red sub-bullets in the 'Behavioral models' section.",
-    explanation: "Behavioral models are designed to capture the 'dynamic behavior' of the system. This means moving beyond 'what the system is' (structure) to 'how the system works' (behavior). The source context explicitly identifies two types of stimuli: 'Data' (information arrival) and 'Events' (occurrences that trigger processing). For example, in the insulin pump, the 'Data' stimulus is the sensor reading, and the system behavior is the resulting calculation. In the microwave, the 'Event' is pressing the 'Start' button, and the behavior is the transition to the 'Operation' state. Understanding these stimuli is the core of behavioral modeling. It allows the architect to specify the system's logic and real-time responses. This is essential for ensuring the system behaves correctly under operational conditions."
-  },
-  {
-    id: 359,
-    category: "Behavioral Models",
-    difficulty: "expert",
-    type: "single",
-    question: "In the 'Order processing' sequence diagram, identify the 'guard condition' that prevents the 'Budget' from being updated if the order is invalid.",
-    options: ["Fillin ()", "Validate ()", "[validation ok]", "Save ()"],
-    correct: [2],
-    hint: "Look for text in square brackets in the sequence diagram.",
-    explanation: "In UML sequence diagrams, text in square brackets is a 'guard condition.' It represents a boolean check that must be true for the message to be sent. In the order processing diagram, the '[validation ok]' guard appears before the 'Update (amount)' message is sent to the Budget object. This ensures that the system doesn't spend money on an order that hasn't been properly filled in or validated. Sequence diagrams are powerful because they show these 'conditional interactions' over time. This helps the architect define the 'logic flow' between different system objects (the Purchase officer, the Order, the Budget, and the Datastore). It bridges the gap between high-level requirements and low-level code logic. This level of detail is necessary for a complete behavioral specification."
-  },
-  {
-    id: 362,
-    category: "Behavioral Models",
-    difficulty: "expert",
-    type: "single",
-    question: "Based on the 'Order processing' sequence diagram, which object is responsible for the final 'Send ()' message to the 'Supplier'? Is this architectural choice justified?",
-    options: ["The Purchase officer; no, because the officer shouldn't handle technical dispatch.", "The «datastore» Orders; yes, because it ensures the order is only sent *after* it has been successfully persisted in the database.", "The :Order object; no, because the order object is just a domain entity.", "The Budget object; yes, because the budget must be updated before sending."],
-    correct: [1],
-    hint: "Follow the arrow to the 'Supplier' actor and check its origin.",
-    explanation: "In the sequence diagram, the 'Send ()' message to the Supplier originates from the '«datastore» Orders' vertical bar. This is a sophisticated architectural decision. It implies that the system follows a 'transactional' logic: an order is only officially 'sent' if the system has confirmed it can be 'saved' to the database. This prevents 'ghost orders' where a supplier receives a request that the internal system has no record of. Sequence diagrams are the primary tool for clarifying these 'responsibilities' and 'sequences.' By showing the datastore as the final actor, the architect builds reliability into the core business process. This level of interaction detail is what makes sequence diagrams so valuable. They clarify the 'who' and 'when' of system behavior."
-  },
-  {
-    id: 367,
+    id: 136,
     category: "Behavioral Models",
     difficulty: "expert",
     type: "single",
@@ -2869,7 +1540,7 @@ const QUIZ_DATA = [
     explanation: "Business systems, such as billing or medical record management, are often built around data pipelines. They take a large volume of input (like patient files or insurance claims) and perform a set of sequential transformations to produce an output. These systems have few 'states'; they are either processing data or they aren't. Real-time systems, like a microwave or a car's engine controller, are different—they have many states and must respond instantly to external events. An architect uses data-driven models for business systems to visualize 'end-to-end processing' and ensure functional completeness. It is the best tool for modeling 'information flows.' Choosing the right model type based on the system's 'driver' (data vs. events) is a hallmark of an expert-level architect."
   },
   {
-    id: 369,
+    id: 137,
     category: "Behavioral Models",
     difficulty: "expert",
     type: "single",
@@ -2878,78 +1549,12 @@ const QUIZ_DATA = [
     correct: [1],
     hint: "Check the third bullet point in the first 'Key points' slide for Module III.",
     explanation: "Use case diagrams provide a high-level, 'user-centric' view of what the system does. They are great for communicating with non-technical stakeholders about functional goals. However, they don't show *how* the system achieves those goals. Sequence diagrams bridge this gap by showing the 'dynamic behavior'—the messages and interactions between the internal 'system objects' (like the Order and Budget objects) required to fulfill a use case. An architect needs both: the use case to define the 'what' and the sequence diagram to define the 'how.' This 'multi-level' modeling ensures that the user's requirements are correctly translated into a technical design. It is a key part of the 'multi-perspective' approach recommended in the source."
-  },
-  {
-    id: 374,
-    category: "Behavioral Models",
-    difficulty: "expert",
-    type: "single",
-    question: "In the 'Order processing' sequence diagram, what does the vertical bar (lifeline) under an object like ':Order' represent?",
-    options: ["The object's organizational influence.", "The period of time during which the object is active in the interaction.", "The object's position in the system boundary.", "The transformation of the object into a Platform Specific Model."],
-    correct: [1],
-    hint: "Think about the 'timing' aspect of sequence diagrams.",
-    explanation: "In a UML sequence diagram, the vertical dimension represents time. The dashed line under an object is its 'lifeline,' and the thin vertical bars (called 'activation bars') show when the object is actually performing an action or waiting for a response. For example, the ':Order' object's bar starts when the 'Fillin ()' message is received and continues through the 'Validate ()' and 'Save ()' steps. This visualization allows an architect to see the 'duration' and 'overlap' of activities. It helps in identifying potential performance bottlenecks or logical errors in the sequence. Sequence diagrams are unique among behavioral models because they explicitly incorporate this time dimension. This clarity is essential for a thorough understanding of system behavior."
-  },
-  {
-    id: 376,
-    category: "Behavioral Models",
-    difficulty: "expert",
-    type: "single",
-    question: "According to the 'Behavioral models' slide, what is a key difference between 'Data' and 'Events' as stimuli?",
-    options: ["Data stimuli are only for business systems, while events are only for microwaves.", "Data stimuli involve information arrival for processing, while events are occurrences that trigger processing and may (but not always) carry data.", "Events are structural, while data is dynamic.", "There is no difference; they are both part of the Platform Specific Model."],
-    correct: [1],
-    hint: "Check the two sub-bullets under the second diamond bullet point on the 'Behavioral models' slide.",
-    explanation: "The source context makes a subtle but important distinction. 'Data' is information that 'has to be processed' (like a lab result or a sensor reading). An 'Event' is an occurrence that 'triggers system processing' (like a button press or a timer expiring). The source notes that 'Events may have associated data, although this is not always the case.' This distinction helps an architect choose the right modeling style: systems driven by a flow of data items are best modeled with activity diagrams, while systems driven by discrete occurrences are best modeled with statecharts. Understanding the nature of the primary stimulus is essential for choosing the correct 'behavioral perspective.' It ensures the architecture is a natural fit for the problem it's solving."
   }
   // ═══ State Machines ═══
 
 ,
   {
-    id: 76,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "In the 'Waiting' state, what information does the microwave oven provide to the user via the display?",
-    options: ["'Ready to cook'", "'Half power setting'", "The current time", "'Cooking complete'"],
-    correct: [2],
-    hint: "Check the description for the 'Waiting' state in Table (a).",
-    explanation: "When the oven is in the 'Waiting' state, it is not currently processing a cooking request. Therefore, it displays the current time to the user, acting as a simple clock. This is the default idle state for the system."
-  },
-  {
-    id: 77,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "What is the specific wattage output when the microwave is in the 'Half power' state?",
-    options: ["600 watts", "300 watts", "100 watts", "0 watts"],
-    correct: [1],
-    hint: "Refer to the power level description in Table (a).",
-    explanation: "The 'Half power' state is defined as 300 watts, which is exactly half of the 'Full power' 600-watt setting. This clear definition of power levels is essential for the system to control the microwave generator hardware. It demonstrates how software states map directly to hardware power settings."
-  },
-  {
-    id: 78,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "What does the microwave display in the 'Disabled' state to signal a safety condition?",
-    options: ["'Ready'", "'Not ready'", "Current time", "Timer countdown"],
-    correct: [1],
-    hint: "Look at the state description associated with the open door safety protocol.",
-    explanation: "The 'Disabled' state exists primarily to prevent the oven from operating while the door is open. To communicate this to the user, the display shows 'Not ready.' This is a critical safety feedback loop that prevents user confusion and potential injury."
-  },
-  {
-    id: 79,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "According to the state description, what is the status of the interior oven light during the 'Enabled' state?",
-    options: ["It is turned on", "It is turned off", "It flashes to indicate readiness", "It turns red for safety"],
-    correct: [1],
-    hint: "Verify the light status in the 'Enabled' row of Table (a).",
-    explanation: "In the 'Enabled' state (door closed, but cooking hasn't started), the light is kept off to save energy. It only turns on once the door is opened or when the oven is actively cooking. This logic ensures the light is only on when it serves a functional purpose for the user."
-  },
-  {
-    id: 80,
+    id: 138,
     category: "State Machines",
     difficulty: "easy",
     type: "single",
@@ -2960,19 +1565,7 @@ const QUIZ_DATA = [
     explanation: "The state diagram shows that a 'Door closed' event moves the system from 'Set time' to 'Enabled.' This ensures the user has finished interacting with the interior of the oven before the system becomes ready to cook. It is a fundamental part of the system's safety sequencing."
   },
   {
-    id: 81,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "multi",
-    selectCount: 4,
-    question: "Which of the following are the four nested operation states within the 'Operation' state? (Select all that apply)",
-    options: ["Checking", "Cook", "Alarm", "Done"],
-    correct: [0, 1, 2, 3],
-    hint: "Consult the 'Microwave oven operation' diagram with the large box and four sub-states.",
-    explanation: "The 'Operation' state is a composite state containing four sub-states: Checking (hardware validation), Cook (active generator), Alarm (fault handling), and Done (completion). This hierarchical modeling allows for complex internal logic to be contained within a single high-level state. It is a key feature of advanced UML statecharts."
-  },
-  {
-    id: 82,
+    id: 139,
     category: "State Machines",
     difficulty: "easy",
     type: "single",
@@ -2983,7 +1576,7 @@ const QUIZ_DATA = [
     explanation: "The model specifies that upon reaching 'Done,' the buzzer sounds for five seconds. This provides an audible signal to the user that their task is complete. Precise timing in states like this is essential for a consistent user experience."
   },
   {
-    id: 83,
+    id: 140,
     category: "State Machines",
     difficulty: "easy",
     type: "single",
@@ -2994,18 +1587,7 @@ const QUIZ_DATA = [
     explanation: "The 'Start' stimulus is the final trigger that initiates cooking. It moves the system from 'Enabled' into the 'Operation' state, where the generator begins to run. This transition only occurs if all preceding safety conditions (like the door being closed) are met."
   },
   {
-    id: 84,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "During the 'Set time' state, what does the microwave display show to the user?",
-    options: ["The current power level", "The cooking time selected by the user", "The current time of day", "A 'Ready to cook' message"],
-    correct: [1],
-    hint: "The display updates in real-time as the user inputs the duration.",
-    explanation: "In 'Set time', the display shows the duration the user has chosen for cooking. As the user presses number keys, this value updates accordingly. This feedback ensures the user knows exactly how long the oven will run before they press 'Start'."
-  },
-  {
-    id: 85,
+    id: 141,
     category: "State Machines",
     difficulty: "easy",
     type: "single",
@@ -3016,51 +1598,7 @@ const QUIZ_DATA = [
     explanation: "A 'Turntable fault' is a hardware error that prevents safe or effective cooking. The system transitions to 'Alarm' to display the event to the user and halt the process. This demonstrates how state machines handle error conditions gracefully."
   },
   {
-    id: 86,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "Which stimulus must occur to move the microwave from 'Full power' to 'Set time'?",
-    options: ["Full power button press", "Half power button press", "Timer button press", "Start button press"],
-    correct: [2],
-    hint: "After selecting power, the user must initiate the time-setting sequence.",
-    explanation: "The state diagram indicates that after choosing 'Full power,' a 'Timer' stimulus leads the system to 'Set time.' This follows a logical user workflow: select power level, then select duration. Modeling these sequences prevents users from entering data in an invalid order."
-  },
-  {
-    id: 87,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "True or False: If the door is opened while the microwave is in the 'Operation' state, it transitions immediately to 'Disabled'.",
-    options: ["True", "False"],
-    correct: [0],
-    hint: "Check the outer boundary of the Operation box for an arrow labeled 'Door open'.",
-    explanation: "The model shows a 'Door open' transition that exits the entire 'Operation' composite state and enters 'Disabled.' This is a safety override that immediately stops the cooking process if the user opens the door. It is the most critical safety feature in the oven's state logic."
-  },
-  {
-    id: 88,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "In the 'Operation' state, what is the status of the interior oven light?",
-    options: ["It remains off", "It is turned on", "It flashes rhythmically", "It turns green to signal success"],
-    correct: [1],
-    hint: "The user needs to monitor their food while it is cooking.",
-    explanation: "The description for the 'Operation' state confirms the light is on during cooking. This allows the user to see the food and ensures the oven doesn't appear 'dead' while it is running. Once cooking completes or is cancelled, the light state may change again."
-  },
-  {
-    id: 89,
-    category: "State Machines",
-    difficulty: "easy",
-    type: "single",
-    question: "What is the consequence of pressing the 'Cancel' button while the oven is in the 'Operation' state?",
-    options: ["Transition to 'Waiting'", "Transition to 'Disabled'", "Transition to 'Checking'", "Transition to 'Done'"],
-    correct: [0],
-    hint: "Follow the 'Cancel' arrow from the Operation box to its destination.",
-    explanation: "Pressing 'Cancel' during operation resets the system to the 'Waiting' state. This stops the generator and returns the display to showing the current time. It provides a quick way for the user to abort a cooking task and start over."
-  },
-  {
-    id: 90,
+    id: 142,
     category: "State Machines",
     difficulty: "easy",
     type: "single",
@@ -3071,73 +1609,18 @@ const QUIZ_DATA = [
     explanation: "The 'Cook' sub-state contains the 'do: run generator' action, which is what actually produces the microwave radiation. This state is only entered after the 'Checking' state returns an 'OK' result. This ensures the hardware is safe before power is applied."
   },
   {
-    id: 176,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "A microwave oven is in the 'Enabled' state. A user presses the 'Start' button, but the door is currently open. Based on the safety logic in Image 42, what is the resulting state?",
-    options: ["Operation", "Waiting", "Disabled", "Half power"],
-    correct: [2],
-    hint: "Follow the 'Door open' arrow from the 'Enabled' box.",
-    explanation: "In the microwave state machine, the 'Door open' stimulus is a primary safety trigger. Even if the 'Start' button is pressed, if the door switch is not closed, the system cannot transition to 'Operation'. Instead, it must move to (or stay in) the 'Disabled' state, where the display shows 'Not ready'. This illustrates how state machines explicitly model safety constraints by controlling the available transitions."
-  },
-  {
-    id: 177,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "What is the strategic significance of using a 'Composite State' like 'Operation' in the microwave model (Image 43)?",
-    options: ["It allows the system to operate without using any electricity.", "It manages complexity by nesting internal state machines (Checking, Cook, Done) within a higher-level state.", "It eliminates the need for any external stimuli like 'Cancel'.", "It makes the system platform-specific rather than platform-independent."],
-    correct: [1],
-    hint: "Think about hierarchical modeling in UML.",
-    explanation: "A composite state is a powerful abstraction tool. It allows engineers to hide the detailed internal logic of a complex phase (like cooking) while showing its relationship to external events (like opening the door). This hierarchical approach keeps top-level diagrams clear while still providing the necessary detail for implementation. It is a key technique for managing the complexity of real-time software."
-  },
-  {
-    id: 178,
+    id: 143,
     category: "State Machines",
     difficulty: "medium",
     type: "single",
     question: "While in the 'Checking' sub-state of the 'Operation' composite state, an 'Emitter fault' is detected. Describe the sequence of state transitions.",
     options: ["Checking → Cook → Done", "Checking → Alarm → Disabled", "Checking → Waiting → Full power", "Checking → Enabled → Operation"],
     correct: [1],
-    hint: "Follow the fault arrows in the internal 'Operation' diagram (Image 43).",
+    hint: "Follow the fault arrows in the internal 'Operation' diagram.",
     explanation: "If a fault (Emitter or Turntable) is detected during the initial 'Checking' phase, the system transitions to the internal 'Alarm' state. From there, it immediately exits the 'Operation' composite state and moves to the 'Disabled' state. This tiered response ensures that hardware failures are properly handled and that the system enters a safe, non-operational mode to protect the user."
   },
   {
-    id: 179,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "What is the 'exit' action defined for the 'Set time' state in Image 42, and when does it occur?",
-    options: ["display 'Ready'; occurs when the door is opened.", "set time; occurs immediately upon leaving the 'Set time' state.", "get number; occurs when the user presses a numeric key.", "buzzer on; occurs when the timer reaches zero."],
-    correct: [1],
-    hint: "Look for the 'exit:' keyword inside the 'Set time' box.",
-    explanation: "In UML statecharts, an 'exit' action is performed automatically when the system transitions out of a state. In this case, the 'set time' action saves the user's input as the official cooking duration at the exact moment the system moves to the 'Enabled' or 'Disabled' state. This ensures that the data is captured and confirmed before the next phase of the process begins."
-  },
-  {
-    id: 180,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "In the state description table (Image 44), how is the 'Disabled' state characterized for the user?",
-    options: ["Display shows 'Ready to cook' and interior light is off.", "Display shows 'Not ready' and interior light is on.", "Display shows the countdown timer and interior light is on.", "Display shows the current time and interior light is off."],
-    correct: [1],
-    hint: "This state is triggered when the door is open.",
-    explanation: "When the microwave is 'Disabled' (usually because the door is open), the interior light is on to assist the user, and the display clearly states 'Not ready'. This provided feedback is essential for a safe user experience. By defining these characteristics in the state table, engineers ensure that the implemented software correctly manages all user-facing outputs for every possible system condition."
-  },
-  {
-    id: 181,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "A user is in the middle of a cooking cycle ('Cook' sub-state) and presses 'Cancel'. Based on Image 43, what is the system's reaction?",
-    options: ["It moves to the 'Alarm' state.", "It exits the 'Operation' composite state and transitions back to 'Waiting'.", "It stays in 'Cook' but reduces the power level.", "It transitions to 'Disabled' and sounds the buzzer."],
-    correct: [1],
-    hint: "Follow the 'Cancel' arrow originating from the large 'Operation' box.",
-    explanation: "The 'Cancel' transition is defined at the level of the 'Operation' composite state. This means it applies regardless of which internal sub-state (Checking, Cook, Done) the system is currently in. Pressing 'Cancel' overrides all internal logic and returns the system to its idle 'Waiting' state, displaying the current time. This global transition is a hallmark of robust event-driven design."
-  },
-  {
-    id: 182,
+    id: 144,
     category: "State Machines",
     difficulty: "medium",
     type: "single",
@@ -3148,62 +1631,29 @@ const QUIZ_DATA = [
     explanation: "The 'Timeout' stimulus is an internal event generated by the system's timer logic. When the countdown reaches zero, the transition from 'Cook' to 'Done' is triggered. Upon entering 'Done', the system executes its 'do' action: 'buzzer on for 5 secs.' This demonstrates how state machines can manage both external user inputs and internal logical events."
   },
   {
-    id: 183,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "According to the Microwave Oven state machine (Image 42), what is the default state when the system is first powered on?",
-    options: ["Full power", "Set time", "Waiting", "Disabled"],
-    correct: [2],
-    hint: "Look for the black circle and arrow (start marker).",
-    explanation: "The black filled circle represents the initial state of the system. The arrow from this marker points to the 'Waiting' state. In this state, the system is idle and simply displays the current time. This standard UML notation identifies the entry point of the entire state machine, ensuring that the system always begins its execution in a predictable, safe condition."
-  },
-  {
-    id: 184,
+    id: 145,
     category: "State Machines",
     difficulty: "medium",
     type: "single",
     question: "True or False: Event-driven modeling is based on the assumption that a system has an infinite number of possible states.",
     options: ["True", "False"],
     correct: [1],
-    hint: "Check the core assumption of state machine modeling in Image 40.",
+    hint: "Check the core assumption of state machine modeling in.",
     explanation: "False. Event-driven modeling is specifically based on the assumption that a system has a *finite* number of states. This allows engineers to map every possible transition and reaction to every possible stimulus. An 'infinite' state system would be impossible to model using this technique. This 'finiteness' is what makes state machines so effective for verifying the reliability of real-time systems."
   },
   {
-    id: 185,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "In the state diagram (Image 42), which stimulus is required to transition from 'Waiting' to 'Full power'?",
-    options: ["Timer", "Full power", "Start", "Number"],
-    correct: [1],
-    hint: "Stimulus names often correspond to the buttons the user presses.",
-    explanation: "The user pressing the 'Full power' button provides the 'Full power' stimulus. This causes the system to transition from 'Waiting' to the 'Full power' state, where it sets the internal power level to 600 watts and updates the display. This is a classic example of an external event causing a state change in a reactive system."
-  },
-  {
-    id: 186,
+    id: 146,
     category: "State Machines",
     difficulty: "medium",
     type: "single",
     question: "What is the primary difference between a 'state' and a 'stimulus' in a state machine model?",
     options: ["A state is a node (behavioral condition); a stimulus is an arc (trigger for change).", "A stimulus is a node; a state is an arc.", "They are two names for the same thing in UML.", "States are only for business systems; stimuli are only for real-time systems."],
     correct: [0],
-    hint: "Check the definitions of 'nodes' and 'arcs' in Image 41.",
+    hint: "Check the definitions of 'nodes' and 'arcs' in.",
     explanation: "In UML statecharts, nodes (the rounded boxes) represent states, which are the various conditions the system can be in. Arcs (the arrows) represent stimuli or events that trigger transitions between those states. A state represents a duration of time where a certain condition is true, while a stimulus is a discrete event that causes an instantaneous change from one state to another."
   },
   {
-    id: 187,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "Based on Image 42, which stimulus is shared by both the 'Full power' and 'Half power' states as a way to transition to 'Set time'?",
-    options: ["Start", "Cancel", "Timer", "Door closed"],
-    correct: [2],
-    hint: "Find the common arrow leaving both power states.",
-    explanation: "Once the user has selected a power level (Full or Half), they must provide a 'Timer' stimulus (by pressing a timer button) to move into the 'Set time' state. This shared transition demonstrates how state machines can have common paths for different functional configurations. In 'Set time', the system then waits for numeric inputs to define the specific cooking duration."
-  },
-  {
-    id: 188,
+    id: 147,
     category: "State Machines",
     difficulty: "medium",
     type: "single",
@@ -3214,62 +1664,7 @@ const QUIZ_DATA = [
     explanation: "Real-time systems must react immediately to things that happen unpredictably in their environment (asynchronous events). State machines are designed specifically to map these events to appropriate reactions based on the system's current status. This ensures that every event is accounted for and that the system always behaves predictably and safely, which is critical for hardware control."
   },
   {
-    id: 189,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "In the internal operation diagram (Image 43), what does the transition 'OK' lead to?",
-    options: ["The system enters the 'Alarm' state.", "The system moves from the 'Checking' sub-state to the 'Cook' sub-state.", "The system sounds the buzzer for 5 seconds.", "The system exits the operation and returns to 'Waiting'."],
-    correct: [1],
-    hint: "OK means the status check was successful.",
-    explanation: "The 'Checking' state performs a hardware status check. If no faults are found, the 'OK' stimulus is generated, triggering the transition to the 'Cook' state. This is where the microwave generator is actually activated. This logical gate ensures that the system only begins high-power operation after verifying that the turntable and emitter are functioning correctly."
-  },
-  {
-    id: 190,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "What stimulus causes a transition from 'Set time' to 'Disabled' in the microwave oven model?",
-    options: ["Door closed", "Door open", "Start", "Number"],
-    correct: [1],
-    hint: "Opening the door is always a disabling event.",
-    explanation: "If the user is in the process of setting the time and opens the door, the system transitions to the 'Disabled' state. In 'Disabled', the display will show 'Not ready'. This ensures that the system cannot proceed to an 'Enabled' (ready to cook) state while the safety switch is triggered by an open door. It is a fundamental part of the system's hierarchical safety logic."
-  },
-  {
-    id: 191,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "Analyze the 'Done' sub-state in Image 43. What is the system's behavior while in this state?",
-    options: ["It displays 'Not ready'.", "It runs the generator and the turntable.", "It sounds the buzzer for 5 seconds.", "It waits for the user to press 'Start' again."],
-    correct: [2],
-    hint: "Look at the 'do' action inside the 'Done' box.",
-    explanation: "The 'Done' state has a specific 'do' action: 'buzzer on for 5 secs.' This is the final feedback provided to the user at the end of a successful cooking cycle. By specifying the duration within the state, the model provides a clear requirement for the implementation of the system's audio output. After the 5 seconds, the system transitions back to 'Waiting'."
-  },
-  {
-    id: 192,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "A microwave is in 'Full power' mode. The user presses the 'Half power' button. What does the state machine do?",
-    options: ["It stays in 'Full power' but sounds an alarm.", "It transitions to the 'Half power' state.", "It returns to the 'Waiting' state.", "It transitions to 'Disabled'."],
-    correct: [1],
-    hint: "Look for the cross-linking arrows between the two power states in Image 42.",
-    explanation: "The state machine allows the user to switch between 'Full power' and 'Half power' settings at any time before the timer is set. The arrows between these two states represent the system's ability to update its internal configuration based on the latest user stimulus. This provides a flexible and responsive user interface, as captured in the event-driven model."
-  },
-  {
-    id: 193,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "According to the stimulus table (Image 45), how is the 'Door open' event defined?",
-    options: ["The user has pressed the Door button.", "The oven door switch is not closed.", "The interior light is turned off.", "The display shows 'Cooking complete'."],
-    correct: [1],
-    hint: "This is a physical sensor state, not just a button press.",
-    explanation: "The 'Door open' stimulus is linked directly to the physical state of the door switch. If the switch is 'not closed', the system receives this stimulus and acts accordingly (usually by disabling operation). This highlights how event-driven models for embedded systems must account for physical hardware sensors as primary sources of behavioral triggers."
-  },
-  {
-    id: 194,
+    id: 148,
     category: "State Machines",
     difficulty: "medium",
     type: "single",
@@ -3280,29 +1675,7 @@ const QUIZ_DATA = [
     explanation: "False. For a state machine to be deterministic and reliable, a single stimulus from a specific state should lead to exactly one defined transition. If one event could lead to two different states at the same time, the system's behavior would be unpredictable and dangerous. State machine modeling is used precisely to eliminate this kind of ambiguity in real-time system design."
   },
   {
-    id: 195,
-    category: "State Machines",
-    difficulty: "medium",
-    type: "single",
-    question: "Based on Image 42, which stimulus allows the system to transition from 'Enabled' back to 'Set time'?",
-    options: ["Start", "Door open", "Number", "Cancel"],
-    correct: [2],
-    hint: "Find the arrow from Enabled to Set time.",
-    explanation: "If the system is in the 'Enabled' state (ready to cook) and the user presses a numeric key ('Number'), the system transitions back to the 'Set time' state. This allows the user to adjust the cooking time even after they have finished the initial setting, as long as the oven has not yet started operating. This behavioral path ensures the system remains user-friendly and flexible."
-  },
-  {
-    id: 214,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "single",
-    question: "In the Mentcare context model, the 'Patient record system' and 'Mentcare' are separated by a boundary. If the architect were to merge them, how would this affect the 'stimulus-response' modeling of the resulting system?",
-    options: ["External stimuli from the Patient record system would become internal object interactions, requiring more detailed sequence diagrams.", "The system would no longer require a behavioral model since all data is now internal.", "The multiplicity constraints on the 'Hospital Doctor' class would be automatically resolved.", "The system would move directly to the J2EE translator phase of Model-Driven Architecture."],
-    correct: [0],
-    hint: "",
-    explanation: "When an external system is brought inside the boundary, the interactions that were once 'external stimuli' become internal 'interactions between system objects.' The source explains that sequence diagrams are used to show these object-to-object interactions in detail. By merging the systems, the architect shifts from context modeling (environment) to structural and behavioral modeling of the internal components. This increases the internal complexity of the Mentcare system requirements. It also changes the nature of the 'abstract view' of the system, requiring more granular design work."
-  },
-  {
-    id: 264,
+    id: 149,
     category: "State Machines",
     difficulty: "hard",
     type: "single",
@@ -3313,73 +1686,7 @@ const QUIZ_DATA = [
     explanation: "The source identifies two types of stimuli: Data and Events. An event is described as 'some event happens that triggers system processing.' A button press is a discrete occurrence (event), whereas the information typed into the form would be 'Data.' Distinguishing between the 'trigger' (event) and the 'payload' (data) is vital for accurate modeling. Events drive transitions in state machines or steps in an activity flow. This categorization allows the architect to design the correct stimulus-response logic. It ensures the system reacts as expected to user actions."
   },
   {
-    id: 276,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "single",
-    question: "A microwave oven is in the 'Operation' state. A user suddenly pulls the 'Door open.' According to the provided state machine diagram, what is the resulting state and why?",
-    options: ["Waiting; to display the time.", "Disabled; as a safety-critical response to the door switch stimulus.", "Enabled; because the door switch allows cooking to be ready.", "Alarm; because opening the door during operation is a system fault."],
-    correct: [1],
-    hint: "",
-    explanation: "The microwave state diagram shows a direct transition from 'Operation' to 'Disabled' triggered by the 'Door open' stimulus. This is a safety-critical transition designed to stop oven operation immediately when the door is opened. Distractors like 'Waiting' or 'Enabled' are incorrect as they would violate the safety logic shown in the diagram. According to the state description, 'Oven operation is disabled for safety' in this state. Behavioral models like this are essential for verifying that a system fails safely. It is the architectural defense against physical harm."
-  },
-  {
-    id: 277,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "single",
-    question: "The microwave is in the 'Waiting' state. What is the logically necessary sequence of stimuli to reach the 'Operation' state, according to the statechart hierarchy?",
-    options: ["Start -> Timer -> Full power.", "Full power (or Half power) -> Timer -> Door closed -> Start.", "Door open -> Door closed -> Set time -> Operation.", "Number -> Start -> Cancel."],
-    correct: [1],
-    hint: "",
-    explanation: "The diagram shows a path from 'Waiting' to 'Full power' (or Half), then 'Timer' leads to the 'Set time' state. From 'Set time,' a 'Door closed' stimulus moves the system to 'Enabled,' and finally 'Start' triggers the 'Operation' state. This multi-step sequence ensures that the power level and time are set and the door is safely shut before the oven operates. Skipping any step (like the 'Door closed' check) would violate the system's safety assumptions. Behavioral models allow architects to enforce these mandatory sequences. This prevents the system from entering a dangerous state accidentally."
-  },
-  {
-    id: 278,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "single",
-    question: "A user is in the 'Disabled' state (displaying 'Waiting' per diagram or 'Not ready' per table). They close the door ('Door closed' stimulus). To which state does the system move, and what is the strategic 'So What?' of this transition?",
-    options: ["Waiting; to allow the user to select power again.", "Enabled; to signify that the system is now ready for the 'Start' command.", "Operation; to resume cooking immediately.", "Set time; to require the user to re-enter the numeric value."],
-    correct: [1],
-    hint: "",
-    explanation: "The diagram shows that the 'Door closed' stimulus moves the system from 'Disabled' to 'Enabled.' The 'Enabled' state description says 'Oven operation is enabled' and the display shows 'Ready to cook.' This is an important intermediate state—it doesn't start cooking immediately (which would be unsafe) but acknowledges that the safety condition (door shut) is met. The 'So What?' is that the architect has created a 'gatekeeper' state that separates safety checks from operational activation. This ensures intentionality in the system's behavior. It reflects a 'safety-first' design philosophy."
-  },
-  {
-    id: 280,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "single",
-    question: "The table for microwave oven states lists the 'Enabled' state as 'Interior oven light is off. Display shows Ready to cook.' Why is this state description architecturally distinct from the 'Waiting' state?",
-    options: ["Because 'Waiting' is a PIM state while 'Enabled' is a PSM state.", "Because 'Waiting' signifies that the power level and time have not yet been set.", "Because the light must be on in 'Waiting' and off in 'Enabled'.", "Because 'Enabled' is the only state that allows the buzzer to sound."],
-    correct: [1],
-    hint: "",
-    explanation: "In the 'Waiting' state, the oven is 'waiting for input' (power/time selection). Once those are set and the door is closed, the system reaches 'Enabled.' This state is the final safety checkpoint before 'Operation.' The architect uses these distinct states to manage the user's progress through the cooking sequence. The description confirms the system's physical configuration (light off, specific display). This precision prevents the system from being triggered before it is fully configured. It is the logic of a finite state machine in action."
-  },
-  {
-    id: 281,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "single",
-    question: "A user in the 'Set time' state presses several 'Number' keys. How is this modeled in the microwave state diagram, and what is its effect on the system state?",
-    options: ["It triggers a transition to 'Enabled' for every number pressed.", "It is modeled as a self-transition (arc) on the 'Set time' state where the action is 'do: get number.'", "It triggers an 'Emitter fault' if the numbers are too high.", "It moves the system to the 'Operation' state immediately."],
-    correct: [1],
-    hint: "",
-    explanation: "The state diagram shows a self-looping arc on the 'Set time' node triggered by the 'Number' stimulus. This means the system stays in the 'Set time' state while accumulating the numeric digits for the cooking duration. Each press executes the 'do: get number' action. The system only exits this state when another stimulus (like 'Door closed' or 'Timer') occurs. This is how state machines handle repetitive input within a single logical mode. It provides a clean way to model user interaction without creating dozens of identical states. It is a standard pattern for input management."
-  },
-  {
-    id: 283,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "single",
-    question: "In the microwave state diagram, there is an arc labeled 'Cancel' leading from 'Operation' back to 'Waiting.' What is the functional and action-oriented result of this transition?",
-    options: ["The system enters 'Disabled' and displays 'Not ready'.", "The operation stops immediately, the system returns to its initial input state, and the display shows the current time.", "The buzzer sounds for 5 seconds to notify the user of the cancellation.", "The 'Cook' sub-state is entered to finish the current second."],
-    correct: [1],
-    hint: "",
-    explanation: "The arc from 'Operation' to 'Waiting' is triggered by 'Cancel.' Once in the 'Waiting' state, the 'do: display time' action is performed, as defined in the state table. This provides the user with a 'reset' mechanism to abort cooking. It reflects the requirement for user control in interactive systems. The buzzer is only associated with the 'Done' state, not a cancellation. This transition demonstrates how state machines manage the 'unwinding' of active processes. It ensures the system returns to a known, safe starting point."
-  },
-  {
-    id: 284,
+    id: 150,
     category: "State Machines",
     difficulty: "hard",
     type: "single",
@@ -3390,7 +1697,7 @@ const QUIZ_DATA = [
     explanation: "The 'Operation' sub-diagram shows the 'Done' state with the action 'do: buzzer on for 5 secs.' The exit arrow from the 'Done' node leads out of the 'Operation' super-state and into the 'Waiting' state. This marks the completion of a successful cooking cycle. According to the state table, the display also shows 'Cooking complete' during this time. This is a clear example of a 'terminal' state within a sub-process returning control to the main loop. It provides the user with clear feedback that the operation is finished. It is a well-defined end-of-lifecycle event."
   },
   {
-    id: 285,
+    id: 151,
     category: "State Machines",
     difficulty: "hard",
     type: "single",
@@ -3401,43 +1708,7 @@ const QUIZ_DATA = [
     explanation: "The microwave state diagram clearly shows arcs labeled 'Timer' originating from both the 'Full power' and 'Half power' nodes. Both arcs lead to the 'Set time' state. This indicates that the power selection phase must be followed by a timer selection phase. 'Start' cannot be pressed yet because the cooking duration hasn't been defined. 'Number' is a stimulus used within 'Set time,' not to enter it. This rigid sequence enforces the correct setup procedure. It ensures the user provides all necessary parameters before the 'Operation' state becomes reachable."
   },
   {
-    id: 286,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Which of the following are valid states of the microwave system as modeled in the source? (Select all that apply)",
-    options: ["Waiting", "Enabled", "Full power", "Start"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "Waiting, Enabled, and Full power are all represented as nodes (rounded boxes) in the state diagram. 'Start' is an event (stimulus) that triggers a transition between states; it is not a state itself. Confusing states with stimuli is a major pitfall in behavioral modeling. A state is a 'mode' the system is in, while a stimulus is a 'thing that happens.' Precision here is required for correct system logic. The nodes represent the system's static conditions during its dynamic execution."
-  },
-  {
-    id: 289,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Which stimuli in the microwave system are categorized as being provided by the 'user' (external)? (Select all that apply)",
-    options: ["Half power", "Cancel", "Number", "Emitter fault"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The 'States and stimuli' table (b) lists Half power, Cancel, and Number as actions performed by the 'user.' 'Emitter fault' is a hardware-triggered stimulus from within the system. Distinguishing between external (user) and internal (hardware) stimuli is key for interface design and error handling. It allows the architect to separate user-facing logic from background monitoring. This ensures the system responds appropriately to both human intent and technical failure. It is a fundamental part of event-driven architecture."
-  },
-  {
-    id: 290,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "What specifically happens if the 'Door open' stimulus occurs during the 'Operation' state? (Select all that apply)",
-    options: ["The system transitions to the 'Disabled' state.", "The interior oven light remains on (according to the 'Disabled' description).", "The display shows 'Not ready' (per the state table description).", "The buzzer sounds immediately to warn the user."],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "The diagram shows the transition to 'Disabled' upon 'Door open' from the 'Operation' super-state. The state table for 'Disabled' confirms the interior light is on and the display shows 'Not ready.' The buzzer only sounds in the 'Done' state after a successful cook. This sequence is a safety mechanism. Reconciling diagrams and tables is a core diagnostic skill for system architects. It ensures that all parts of the model (visual and descriptive) are consistent. This prevents dangerous gaps in the safety logic."
-  },
-  {
-    id: 291,
+    id: 152,
     category: "State Machines",
     difficulty: "hard",
     type: "multi",
@@ -3449,65 +1720,7 @@ const QUIZ_DATA = [
     explanation: "The lecture highlights that event-driven modeling is based on the 'finite number of states' assumption and is used for real-time systems that 'respond to external and internal events.' It also notes that real-time systems often have 'minimal data processing.' Generating a dial tone is a specific example (the phone system) but is not a general reason why systems are event-driven. FSMs provide the deterministic behavior required for real-time responsiveness. This makes them the tool of choice for devices like microwaves or phone switches. They prioritize 'reaction' over 'calculation.'"
   },
   {
-    id: 292,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 4,
-    question: "In the microwave sub-diagram 'Operation,' which of the following are internal sub-states? (Select all that apply)",
-    options: ["Checking", "Cook", "Alarm", "Done"],
-    correct: [0, 1, 2, 3],
-    hint: "",
-    explanation: "All four are explicitly shown as nodes within the 'Operation' super-state box in the 'Microwave oven operation' diagram. Super-states allow architects to group related behaviors and define common exit stimuli (like 'Cancel' or 'Door open') for all of them at once. This reduces diagram clutter and ensures consistent handling of global events. 'Checking' and 'Cook' are the active modes, while 'Alarm' and 'Done' are the terminal sub-states. This hierarchy is a powerful way to manage complex behavioral logic. It represents the internal life-cycle of the cooking process."
-  },
-  {
-    id: 293,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Which of the following are categorized as stimuli in the microwave oven state model? (Select all that apply)",
-    options: ["Door closed", "Start", "Timer", "Enabled"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "Door closed, Start, and Timer are events that cause transitions (stimuli). 'Enabled' is a node in the diagram, which means it is a state. Confusing a state (Enabled) with the stimulus that gets you there (Door closed) is a basic structural error in state modeling. Stimuli are the 'inputs' to the state machine, while states are the 'modes' of the machine. Precision here is vital for developers who must implement the state transition logic in code. It ensures the system reacts correctly to every environmental trigger."
-  },
-  {
-    id: 295,
-    category: "State Machines",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 2,
-    question: "According to the state description, what actions occur when the microwave is in the 'Waiting' state? (Select all that apply)",
-    options: ["The oven waits for user input.", "The display shows the current time.", "The interior oven light turns on.", "The buzzer sounds to alert the user."],
-    correct: [0, 1],
-    hint: "",
-    explanation: "The 'Waiting' state description in the table confirms it 'is waiting for input' and 'The display shows the current time.' The light is explicitly 'off' in the 'Enabled' state and 'on' in 'Disabled' and 'Operation.' The buzzer is associated only with the completion of cooking. Behavioral modeling requires keeping track of these status indicators (light, display, buzzer) for every state. This ensures the physical system and the software model remain in sync. It provides a complete specification for hardware-software integration."
-  },
-  {
-    id: 358,
-    category: "State Machines",
-    difficulty: "expert",
-    type: "single",
-    question: "In the microwave oven state diagram, analyze the 'Disabled' state. Why is it structurally distinct from the 'Waiting' state, and what 'stimulus' triggers the transition between them?",
-    options: ["They are the same state; the distinction is purely political.", "'Disabled' is a safety state triggered by the 'Door open' event; 'Waiting' is an idle state where the system shows the time. The transition back to 'Enabled' requires a 'Door closed' event.", "A 'Full power' stimulus moves the system from 'Disabled' to 'Waiting'.", "The 'Disabled' state is a result of a faulty PIM-to-PSM transformation."],
-    correct: [1],
-    hint: "Check the 'States and stimuli (a)' table and the microwave state diagram.",
-    explanation: "The 'Disabled' state is a critical safety feature. According to the source table, in this state, 'Oven operation is disabled for safety' because the 'Door open' stimulus has occurred. This is fundamentally different from 'Waiting,' where the oven is ready for input. The state diagram shows that any 'Door open' event from the 'Waiting,' 'Enabled,' or 'Operation' states immediately moves the system into 'Disabled.' It can only leave this state and move to 'Enabled' when the 'Door closed' stimulus is received. This 'state-based safety logic' is a primary use case for event-driven modeling. It ensures the system invariants (like 'don't cook with the door open') are always enforced. Modeling these states is essential for building dependable real-time software. It provides a formal map of the system's safety requirements."
-  },
-  {
-    id: 361,
-    category: "State Machines",
-    difficulty: "expert",
-    type: "single",
-    question: "According to the 'Behavioral models' slide, what can 'Events' sometimes have associated with them, and how does the microwave model illustrate this?",
-    options: ["Events have associated PIMs; the 'Full power' event is a PIM.", "Events may have associated data; for example, the 'Number' event in the microwave model must carry the specific digit pressed.", "Events always have rodents; the 'Start' event is a squirrel.", "Events have no associations; they are purely arcs between nodes."],
-    correct: [1],
-    hint: "Check the second red sub-bullet on the 'Behavioral models' slide.",
-    explanation: "The source context notes that 'Events may have associated data, although this is not always the case.' In the microwave oven model, events like 'Start' or 'Door open' are simple triggers with no extra data. However, the 'Number' event is different—for it to be useful, the system must know *which* number was pressed. That digit is the 'associated data.' The 'Set time' state uses this data to update the cooking timer. An architect must identify which stimuli are simple events and which are 'data-bearing events.' This ensures that the system interfaces are designed with the correct data payloads. Failure to model this data would result in a UI that knows a button was pressed but doesn't know what it meant. This is a critical detail in behavioral modeling."
-  },
-  {
-    id: 364,
+    id: 153,
     category: "State Machines",
     difficulty: "expert",
     type: "single",
@@ -3518,18 +1731,7 @@ const QUIZ_DATA = [
     explanation: "The source context is specific: 'Statecharts are an integral part of the UML and are used to represent state machine models.' In these diagrams, 'states' are represented as 'nodes' (the rounded rectangles in the microwave example), and 'events' are shown as 'arcs' (the arrows connecting them). This graphical notation allows architects to visualize the complex 'state space' of a system. By looking at a statechart, one can quickly identify all possible conditions of the system and the triggers that cause it to change. This is far more effective for real-time logic than reading through a text-based specification. Statecharts provide a 'formal map' of behavior. This clarity is essential for both design and verification. It is the standard language for event-driven system architecture."
   },
   {
-    id: 365,
-    category: "State Machines",
-    difficulty: "expert",
-    type: "single",
-    question: "In the microwave oven state diagram, identify the 'stimulus' that moves the system from 'Full power' or 'Half power' to the 'Set time' state.",
-    options: ["Start", "Door closed", "Timer", "Number"],
-    correct: [2],
-    hint: "Look for the arc leading into the 'Set time' box.",
-    explanation: "The microwave state diagram shows that after a user selects 'Full power' or 'Half power,' the system remains in that state until the 'Timer' stimulus is received. Pressing a timer button triggers the transition into the 'Set time' state. This is a critical logical gate: you can't set the time until you've selected a power level (or the system has defaulted to one). This 'sequencing of events' is the core of user interface design. By modeling this as a state transition, the architect ensures the software logic enforces the correct UI flow. It prevents the user from trying to cook without a time or power setting. This 'event-driven' approach is ideal for modeling how a system handles a sequence of human actions. It turns a UI specification into a technical reality."
-  },
-  {
-    id: 366,
+    id: 154,
     category: "State Machines",
     difficulty: "expert",
     type: "single",
@@ -3540,29 +1742,7 @@ const QUIZ_DATA = [
     explanation: "The 'Done' activity is the final step in the 'Operation' state. The diagram shows that once 'Done' is completed (i.e., the buzzer has finished), the system follows an arc back to the 'Waiting' state. This resets the oven to its idle condition, where it displays the current time and waits for the next user interaction. This 'lifecycle completion' is a key part of behavioral modeling. It ensures the system always returns to a known, stable state after an action is finished. Modeling this transition prevents the system from getting 'stuck' in an operation state. This logic is fundamental to building a reliable and user-friendly product. It provides a formal definition of the system's operational lifecycle."
   },
   {
-    id: 368,
-    category: "State Machines",
-    difficulty: "expert",
-    type: "single",
-    question: "In the microwave oven's behavioral logic, what happens if the 'Cancel' stimulus occurs during the 'Operation' state?",
-    options: ["The system transitions to the 'Disabled' state.", "The system transitions to the 'Waiting' state, terminating the cooking cycle.", "The system transitions to the 'Set time' state to allow for a new time.", "The system ignores the stimulus to prevent a turntable fault."],
-    correct: [1],
-    hint: "Look for the 'Cancel' arc leading out of the 'Operation' box in both microwave diagrams.",
-    explanation: "The microwave state diagram shows a clear 'Cancel' arc leading from the 'Operation' state directly back to the 'Waiting' state. This is a critical functional requirement: the user must always have a way to stop the oven immediately. Modeling this as a state transition ensures that the 'stop' command is prioritized. If the 'Cancel' button is pressed, the software must instantly shut off the microwave generator and reset the UI. This is an example of an 'event-driven' response to a user's safety or convenience command. By explicitly modeling this in the statechart, the architect ensures that this 'interrupt' behavior is built into the system's core logic. It is a fundamental part of a responsive and safe product design."
-  },
-  {
-    id: 370,
-    category: "State Machines",
-    difficulty: "expert",
-    type: "single",
-    question: "In the microwave oven state diagram, what stimulus is required to move from 'Enabled' to the 'Operation' state?",
-    options: ["Door closed", "Number", "Timer", "Start"],
-    correct: [3],
-    hint: "Follow the arc between the 'Enabled' and 'Operation' rounded rectangles.",
-    explanation: "The microwave diagram shows that the system enters the 'Enabled' state after the door is closed and a time has been set. However, it doesn't start cooking automatically. It waits for the 'Start' stimulus from the user. This is a critical logical gate for safety: a microwave should only operate when specifically commanded to do so. This transition from 'Enabled' (ready) to 'Operation' (active) is a fundamental part of the system's event-driven logic. Modeling this as a discrete state change ensures that the software correctly separates 'readiness' from 'activity.' It provides a clear target for the developers implementing the start-button logic. This precision is what makes state machine models so effective for UI design."
-  },
-  {
-    id: 371,
+    id: 155,
     category: "State Machines",
     difficulty: "expert",
     type: "single",
@@ -3573,7 +1753,7 @@ const QUIZ_DATA = [
     explanation: "The 'Microwave oven operation' diagram shows that the 'Cook' activity (where the generator is running) continues until a 'Timeout' occurs. This is an 'internal event' generated by the system's timer. When it happens, the system moves to the 'Done' activity, which sounds a buzzer to notify the user. After 'Done' is finished, the system follows an arc back to 'Waiting.' This is the 'happy path' of the cooking cycle. Modeling this timeout ensures that the system doesn't run indefinitely, which is a major safety requirement. It provides a formal definition of the system's temporal behavior. This level of detail is necessary for any time-sensitive software. It is a hallmark of a professional engineering design."
   },
   {
-    id: 373,
+    id: 156,
     category: "State Machines",
     difficulty: "expert",
     type: "single",
@@ -3582,23 +1762,12 @@ const QUIZ_DATA = [
     correct: [1],
     hint: "Check the second bullet point on the 'State machine models' slide.",
     explanation: "Real-time systems, like a microwave or a flight controller, are defined by their interactions with the environment. They don't just process a bulk of data; they must react instantly and correctly to specific events (button presses, sensor spikes, timers). The source context notes that state machine models are ideal for this because they 'show the system’s responses to stimuli.' By modeling these as states and transitions, an architect can ensure that the system's logic is robust and that its responses are predictable. This is essential for safety-critical real-time software. State machines provide a formal framework for verifying that the system will behave correctly under all possible sequences of events. It is the gold standard for real-time architecture."
-  },
-  {
-    id: 375,
-    category: "State Machines",
-    difficulty: "expert",
-    type: "single",
-    question: "Based on the microwave oven state diagram, can the user press 'Start' and begin cooking while the door is open? Explain based on the model's 'arcs'.",
-    options: ["Yes, because the 'Start' arc exists.", "No, because the 'Start' arc only leads from the 'Enabled' state to the 'Operation' state, and the system is in the 'Disabled' state while the door is open.", "Yes, as long as the 'Number' has been set.", "No, because the 'Start' button is transformed into a 'J2EE specific model' when the door is open."],
-    correct: [1],
-    hint: "Follow the arcs leading into and out of the 'Disabled' and 'Enabled' states.",
-    explanation: "This is a perfect example of how state machines enforce safety invariants. The diagram shows that 'Start' is a stimulus that only causes a transition from the 'Enabled' state to the 'Operation' state. When the door is open, the system is in the 'Disabled' state. Looking at the 'Disabled' rounded rectangle, there is NO 'Start' arc leading out of it—the only exit is via a 'Door closed' stimulus, which leads to 'Enabled.' Therefore, pressing 'Start' in the 'Disabled' state has no defined transition and will be ignored by the software. This 'safety-by-design' is the primary goal of event-driven modeling. It ensures that the system *cannot* enter a dangerous state, no matter what buttons the user presses. This is how an architect builds dependability into the behavioral core of the system."
   }
   // ═══ Model-Driven Engineering ═══
 
 ,
   {
-    id: 91,
+    id: 157,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3609,7 +1778,7 @@ const QUIZ_DATA = [
     explanation: "MDE reverses the traditional code-first approach by making models the primary deliverables. Instead of humans writing code, they create models, and tools generate the code. This aims to shift focus from implementation details to high-level system design."
   },
   {
-    id: 92,
+    id: 158,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3620,7 +1789,7 @@ const QUIZ_DATA = [
     explanation: "The CIM models the business or domain logic without worrying about how a computer will actually run it. It is the highest level of abstraction in the MDA hierarchy. It ensures that the system's purpose is understood before any technical decisions are made."
   },
   {
-    id: 93,
+    id: 159,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3631,7 +1800,7 @@ const QUIZ_DATA = [
     explanation: "The PIM captures the static structure and dynamic behavior of the system using UML. It is 'platform independent' because it doesn't assume a specific operating system, database, or programming language. This allows the same PIM to be transformed into different versions for different technologies."
   },
   {
-    id: 94,
+    id: 160,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3642,7 +1811,7 @@ const QUIZ_DATA = [
     explanation: "The PSM is a more detailed version of the model that includes platform-specific technical choices. A single PIM might be transformed into a J2EE PSM and a .NET PSM. This transformation process is the core of how MDA achieves cross-platform portability."
   },
   {
-    id: 95,
+    id: 161,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "multi",
@@ -3654,7 +1823,7 @@ const QUIZ_DATA = [
     explanation: "MDE allows engineers to work at a higher level of abstraction, focusing on system logic rather than code syntax. Additionally, because code is generated automatically, it is significantly cheaper to move a system to a new platform. These benefits are the main drivers for companies considering MDA."
   },
   {
-    id: 96,
+    id: 162,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3665,7 +1834,7 @@ const QUIZ_DATA = [
     explanation: "Agile emphasizes iterative development and minimal up-front design. MDA, by contrast, requires detailed models to be completed before code can be generated. This cultural and procedural conflict makes many Agile teams reluctant to adopt MDE/MDA."
   },
   {
-    id: 97,
+    id: 163,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3676,7 +1845,7 @@ const QUIZ_DATA = [
     explanation: "Generic MDA tools rarely fit an organization's specific environment perfectly. Customizing these tools to generate the exact code patterns a company needs can be prohibitively expensive. This high 'barrier to entry' is a major reason why MDE remains in its early stages of development."
   },
   {
-    id: 98,
+    id: 164,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3687,7 +1856,7 @@ const QUIZ_DATA = [
     explanation: "MDA is an investment that pays off over long periods as the underlying technology changes. For a system meant to last 20 years, the ability to regenerate code for new platforms is highly valuable. For short-term products, the cost of the tools and modeling is usually greater than any potential savings."
   },
   {
-    id: 99,
+    id: 165,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3698,7 +1867,7 @@ const QUIZ_DATA = [
     explanation: "As Agile became the industry standard, the heavy-weight modeling approach of MDA became less attractive. Agile's focus on rapid iteration and working code was seen as more practical than the 'models-first' MDA approach. This shift in developer preference slowed the growth of MDE practice."
   },
   {
-    id: 100,
+    id: 166,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3709,7 +1878,7 @@ const QUIZ_DATA = [
     explanation: "A translator tool needs specific rules about a platform (like .NET or Java) to know how to turn a generic model into a specific one. These patterns define how abstract concepts like 'Data Storage' are realized in that specific platform. These rule-sets are the 'brains' of the MDA transformation process."
   },
   {
-    id: 101,
+    id: 167,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3720,7 +1889,7 @@ const QUIZ_DATA = [
     explanation: "CIM and 'Domain Model' are often used interchangeably because they both focus on the business environment. They define the vocabulary and rules of the area the system will serve. This ensures that the technical team and the business stakeholders are speaking the same language."
   },
   {
-    id: 102,
+    id: 168,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3731,7 +1900,7 @@ const QUIZ_DATA = [
     explanation: "By automating code generation, MDE allows engineers to spend more time on high-level design and requirements. They shouldn't have to worry about the specific syntax of Java or C# if the model can generate it correctly. This theoretical shift aims to improve software quality and engineer productivity."
   },
   {
-    id: 103,
+    id: 169,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3742,7 +1911,7 @@ const QUIZ_DATA = [
     explanation: "The source warns that the high cost of MDA tools and their customization often exceeds any savings from code generation. This is especially true for smaller or shorter-term projects. Organizations must carefully evaluate the long-term value before committing to an MDE approach."
   },
   {
-    id: 104,
+    id: 170,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3753,7 +1922,7 @@ const QUIZ_DATA = [
     explanation: "Writing the code (implementation) is often the easiest part of a complex project. The real difficulty lies in ensuring the system meets the user's needs, is secure from attack, and is dependable. MDE/MDA only solves the implementation part, which is why its impact is limited."
   },
   {
-    id: 105,
+    id: 171,
     category: "Model-Driven Engineering",
     difficulty: "easy",
     type: "single",
@@ -3764,51 +1933,18 @@ const QUIZ_DATA = [
     explanation: "Despite being an old idea, MDE is still considered to be in an early, evolving stage. It is not yet clear if it will ever become the dominant way software is made. Its adoption remains niche, primarily in industries with long-lifetime, safety-critical systems."
   },
   {
-    id: 196,
+    id: 172,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
     question: "A software company is building a long-lifetime healthcare system that must eventually run on J2EE, .NET, and mobile platforms. According to MDA principles, which model should they create first to define the domain-specific logic without any technical implementation details?",
     options: ["Platform Specific Model (PSM)", "Computation Independent Model (CIM)", "Java Code Generator", "Platform Independent Model (PIM)"],
     correct: [1],
-    hint: "CIMs are often called 'domain models' (Image 50).",
+    hint: "CIMs are often called 'domain models'.",
     explanation: "The MDA hierarchy begins with the Computation Independent Model (CIM). A CIM models the important domain abstractions (like 'Patient' or 'Consultation') without any reference to how they will be computed or implemented. This ensures that the core business logic is captured independently of technical trends. From a CIM, engineers then proceed to more technical models like the PIM and PSM."
   },
   {
-    id: 197,
-    category: "Model-Driven Engineering",
-    difficulty: "medium",
-    type: "single",
-    question: "In the MDA transformation process (Image 51), what is the specific role of a 'Translator'?",
-    options: ["To manually rewrite the PIM into a programming language like C#.", "To automatically convert a model from one level of abstraction (e.g., PIM) to another (e.g., PSM) using specific rules.", "To translate the system's user manual into different human languages.", "To fix faults in the executable code after it is generated."],
-    correct: [1],
-    hint: "Look at the boxes labeled 'Translator' in the MDA flow diagram.",
-    explanation: "Translators are specialized tools that automate the movement between MDA layers. For instance, a J2EE Translator takes a PIM and applies J2EE-specific patterns and rules to generate a J2EE PSM. This automation is the primary 'pro' of MDE, as it theoretically makes it cheaper to adapt a system to new platforms. However, the cost of developing or buying these translators is a significant 'con'."
-  },
-  {
-    id: 198,
-    category: "Model-Driven Engineering",
-    difficulty: "medium",
-    type: "single",
-    question: "Why does the lecture suggest that the 'widespread adoption of agile methods' has limited the success of Model-Driven Architecture (MDA)?",
-    options: ["Because agile methods are only used for very small systems.", "Because the notion of extensive up-front modeling in MDA contradicts the core agile principle of 'working software over comprehensive documentation'.", "Because MDA requires a specific type of hardware that is incompatible with agile teams.", "Because agile developers do not know how to use UML tools."],
-    correct: [1],
-    hint: "Recall the 'Agile methods and MDA' slide (Image 53).",
-    explanation: "Agile methodologies prioritize rapid iterations and working code, often viewing extensive up-front modeling as a waste of time. MDA, by contrast, requires heavy investment in detailed models before any code is produced. This fundamental philosophical difference has diverted industry attention away from model-driven approaches. While proponents argue that automated transformations could bridge this gap, the two remains uneasy partners in practice."
-  },
-  {
-    id: 199,
-    category: "Model-Driven Engineering",
-    difficulty: "medium",
-    type: "single",
-    question: "An engineer adds a block of code to a time-tracking system that adds 1 hour to a value without checking if the current time is 23:00. In reliability terminology (Lecture 9), this mistake in the source code is a:",
-    options: ["System Error", "System Failure", "System Fault", "Political Judgment"],
-    correct: [2],
-    hint: "A fault is a characteristic of the software code itself.",
-    explanation: "A 'System Fault' is the root cause of a potential problem—a flaw or 'bug' embedded in the code. In this example, the fault is the *inclusion* of the incorrect addition logic. The fault is passive; it exists in the source code even if the system is not currently running. It only becomes an active problem (an error) when that specific line of code is executed under the wrong conditions."
-  },
-  {
-    id: 200,
+    id: 173,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
@@ -3819,7 +1955,7 @@ const QUIZ_DATA = [
     explanation: "A 'System Error' is an incorrect internal state of the system. While the fault was the bad code itself, the error is the *result* of running that code: an impossible data value ('24:00') stored in memory. Errors can lead to unexpected behaviors, but they are still internal to the system. If the system can detect and correct this error before the user notices, a failure can be avoided."
   },
   {
-    id: 201,
+    id: 174,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
@@ -3830,84 +1966,62 @@ const QUIZ_DATA = [
     explanation: "A 'System Failure' is the ultimate external manifestation of an unhandled error. It is the moment when the software fails to perform its required function for the end-user (e.g., the service goes down). While faults and errors are internal technical details, failures are events that directly impact the user's ability to achieve their goals. Understanding this progression (Fault → Error → Failure) is essential for designing reliable systems."
   },
   {
-    id: 202,
+    id: 175,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
     question: "Proponents of MDE argue that it 'raises the level of abstraction.' What is the primary benefit of this higher abstraction?",
     options: ["It makes the software run faster on any given CPU.", "It allows engineers to focus on domain logic without being concerned with programming language details.", "It eliminates the need for any requirements engineering.", "It forces all systems to use the same user interface design."],
     correct: [1],
-    hint: "Check the 'Model-driven engineering' slide (Image 47).",
+    hint: "Check the 'Model-driven engineering' slide.",
     explanation: "By working at a higher level of abstraction, engineers can design the 'what' of a system (its business rules and workflows) without getting bogged down in the 'how' of specific languages like Java or C++. If the technical platform changes, the high-level models remain valid, and only the automated translators need to be updated. This separation of concerns is the core promise of MDE for long-lived systems."
   },
   {
-    id: 203,
+    id: 176,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
     question: "What is a major 'Con' or economic disadvantage of adopting MDA for a short-term software product?",
     options: ["It makes the system too easy to understand for competitors.", "The savings from automated code generation are likely to be outweighed by the high costs of specialized tooling and staff training.", "MDA prevents the use of any behavioral modeling.", "It requires the system to be computation-independent forever."],
     correct: [1],
-    hint: "Consider the 'Adoption of MDA' slide (Image 56).",
+    hint: "Consider the 'Adoption of MDA' slide.",
     explanation: "MDA requires a massive initial investment in specialized tools (translators, modelers) and the training of engineers to use them correctly. For large, 20-year systems, this pays off. However, for smaller software products with shorter lifespans, the up-front 'tooling overhead' is often much greater than the money saved by automating the code generation. This makes MDA economically unviable for many standard commercial projects."
   },
   {
-    id: 204,
+    id: 177,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
     question: "In the MDA model hierarchy, which model is 'usually described using UML models that show the static system structure and how it responds to events'?",
     options: ["Computation Independent Model (CIM)", "Platform Independent Model (PIM)", "Platform Specific Model (PSM)", "Executable Code"],
     correct: [1],
-    hint: "Look at the 'Types of model' slide (Image 50).",
+    hint: "Look at the 'Types of model' slide.",
     explanation: "The Platform Independent Model (PIM) is the core technical model of MDA. It uses standard UML (class diagrams, state machines, etc.) to define exactly how the system works, but it does so without referring to any specific implementation platform. This allows the PIM to serve as a 'universal' blueprint that can be translated into multiple different platform-specific models (PSMs) later."
   },
   {
-    id: 205,
+    id: 178,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
     question: "A 'Platform Specific Model' (PSM) for a J2EE environment would include which of the following details that were absent in the PIM?",
     options: ["The general concept of a 'Patient' entity.", "Specific J2EE communication protocols and database mapping rules.", "The high-level sequence of steps in the insulin pump activity model.", "The political judgment regarding the system's boundary."],
     correct: [1],
-    hint: "PSMs add 'platform-specific detail' (Image 50).",
+    hint: "PSMs add 'platform-specific detail'.",
     explanation: "A PSM is a transformation of the PIM that adds layers of technical detail for a specific application platform. While the PIM might simply say 'save data', the J2EE PSM specifies *how* that is done using J2EE standards. This tiered approach allows a single PIM to be the source for many different PSMs, each tailored to a different technical environment. This is the mechanism for MDA's platform-independence."
   },
   {
-    id: 206,
-    category: "Model-Driven Engineering",
-    difficulty: "medium",
-    type: "single",
-    question: "According to the critique of MDA (Image 55), why is implementation NOT considered the 'major problem' for most complex systems?",
-    options: ["Because implementation can be done entirely by AI now.", "Because requirements engineering, security, dependability, and legacy integration are all more significant and difficult challenges.", "Because implementation is only 1% of the total software development cost.", "Because all complex systems are now developed using microwave oven state machines."],
-    correct: [1],
-    hint: "MDE focuses on automating implementation, but is that the real bottleneck?",
-    explanation: "The lecture points out that while MDE focuses on automating the 'coding' (implementation) phase, the hardest parts of software engineering lie elsewhere. Understanding what the user needs (requirements), ensuring the system is safe (dependability), and making it work with old existing systems (legacy integration) are much bigger hurdles. This suggests that the 'savings' from MDE's code generation may be addressing the wrong part of the development problem."
-  },
-  {
-    id: 207,
+    id: 179,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
     question: "True or False: In MDA, there can be multiple layers of PSM, with each layer adding more platform-specific detail.",
     options: ["True", "False"],
     correct: [0],
-    hint: "Check the description of 'Platform specific models' in Image 50.",
+    hint: "Check the description of 'Platform specific models' in.",
     explanation: "True. The MDA framework allows for an incremental addition of detail. You might have a general 'Java PSM' that is then transformed into a more specific 'Mobile-Android Java PSM'. Each layer of transformation moves the model closer to executable code by adding specific technical constraints and implementation patterns. This tiered structure provides flexibility in the model-to-code pipeline."
   },
   {
-    id: 208,
-    category: "Model-Driven Engineering",
-    difficulty: "medium",
-    type: "single",
-    question: "The 'Cons' of MDE (Image 48) suggest that 'models for abstraction are not necessarily right for implementation'. What does this mean in a pedagogical context?",
-    options: ["Models are always more accurate than code.", "The high-level models used to discuss ideas with users may lack the technical rigor required for automated code generation.", "Models should only be used in the 'Waiting' state.", "Agile developers should never use models."],
-    correct: [1],
-    hint: "Think about the difference between a sketch and a blueprint.",
-    explanation: "A model used to facilitate a discussion with a hospital manager (like a context model) is intentionally abstract to be understandable. However, an automated translator needs precise, rigorous, and technical models (like a PIM) to generate working code. This 'gap' means that the models that are most useful for humans are often useless for machines, requiring significant extra work to refine them for MDE purposes."
-  },
-  {
-    id: 209,
+    id: 180,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
@@ -3918,18 +2032,18 @@ const QUIZ_DATA = [
     explanation: "The Computation Independent Model (CIM) is the highest level of abstraction. It focuses purely on the domain concepts—like the rules of medicine or the steps of a business process—without any thought to how a computer would handle it. By 'ignoring computation', it ensures that the model reflects the 'real-world' needs of the business, which is why it's frequently called a 'domain model'."
   },
   {
-    id: 210,
+    id: 181,
     category: "Model-Driven Engineering",
     difficulty: "medium",
     type: "single",
     question: "True or False: MDA and MDE are currently the dominant approaches for developing small mobile applications and web-based software products.",
     options: ["True", "False"],
     correct: [1],
-    hint: "Recall the 'Adoption of MDA' slide (Image 56).",
+    hint: "",
     explanation: "False. MDA is primarily valid and economically justifiable for large, long-lifetime systems (like aerospace or banking infrastructure). For small software products and modern web apps, the overhead of MDA is too high. Furthermore, the industry's shift toward Agile methods has significantly diverted attention away from these 'heavy' model-driven approaches. Currently, MDA remains a specialized rather than a mainstream approach."
   },
   {
-    id: 297,
+    id: 182,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "single",
@@ -3940,7 +2054,7 @@ const QUIZ_DATA = [
     explanation: "The 'MDA transformations' diagram shows that 'Platform specific patterns and rules' are inputs to the translator that converts a PIM into a PSM. This is where the model begins to adopt the characteristics of a specific technical stack (like J2EE or .NET). At this stage, the architect and the toolset are deciding how the abstract operations will be implemented on a real platform. This is the 'strategic' injection of technical detail. It bridges the gap between 'what it does' and 'how it does it.' Mastering this step is the core promise of model-driven engineering."
   },
   {
-    id: 298,
+    id: 183,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "single",
@@ -3951,7 +2065,7 @@ const QUIZ_DATA = [
     explanation: "A PIM describes the 'operation of the system without reference to its implementation.' This abstraction is valuable because it makes the model resilient to changes in technology; the same PIM could theoretically be translated into multiple PSMs (e.g., one for J2EE and one for .NET). It allows the architect to focus on the business logic and event-response behavior first. This decoupling of 'logic' from 'platform' is the key to managing long-lifetime systems. It prevents technological lock-in. It is the primary architectural benefit of the MDA approach."
   },
   {
-    id: 299,
+    id: 184,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "single",
@@ -3962,7 +2076,7 @@ const QUIZ_DATA = [
     explanation: "Model-Driven Engineering relies on specialized tool support. The 'Multiple platform-specific models' diagram shows PIMs being processed by a 'J2EE Translator' or '.NET Translator' to generate the respective programs. These tools 'raise the level of abstraction' so engineers don't have to be concerned with programming language details. If a translator is not available or is too expensive, the MDA approach loses its primary efficiency. This tool-centricity is why many companies are reluctant to adopt MDA. It moves the engineering focus from 'coding' to 'tool management.' It is the automated engine of the MDA process."
   },
   {
-    id: 300,
+    id: 185,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "single",
@@ -3973,7 +2087,7 @@ const QUIZ_DATA = [
     explanation: "The lecture on 'Agile methods and MDA' states: 'The notion of extensive up-front modeling contradicts the fundamental ideas in the agile manifesto.' Agile focuses on 'working software over comprehensive documentation,' while MDA makes models the 'principal outputs' of the process. This creates a philosophical and procedural friction. Few agile developers feel comfortable with the level of up-front design required for effective MDA. However, if transformations could be *completely* automated, the conflict might lessen. This tension is a major reason why MDA has not seen universal adoption. It is a clash of development cultures."
   },
   {
-    id: 304,
+    id: 186,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "multi",
@@ -3985,7 +2099,7 @@ const QUIZ_DATA = [
     explanation: "The 'Usage of MDE' section lists 'higher levels of abstraction' and 'cheaper adaptation' as primary benefits. The lecture specifically notes that requirements engineering and testing remain *more* significant than implementation in complex systems. It also states that MDE aims to *remove* the need for developers to worry about language details. This raises the professional level of software engineering. It moves the work from 'coding' to 'architecting.' This is the strategic promise of the MDE movement."
   },
   {
-    id: 305,
+    id: 187,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "multi",
@@ -3997,7 +2111,7 @@ const QUIZ_DATA = [
     explanation: "All four points are listed in the 'Adoption of MDA' and 'Usage of MDE' sections as significant barriers. These include financial, organizational, and philosophical hurdles. The lecture notes that while models are great for discussion, they may lack the 'right abstractions' for code generation. There is also a risk of tool-company bankruptcy in long-lifetime projects. Finally, the rise of Agile has created a procedural conflict that many teams cannot resolve. These factors combine to explain why MDA remains a specialized rather than universal practice."
   },
   {
-    id: 306,
+    id: 188,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "multi",
@@ -4009,7 +2123,7 @@ const QUIZ_DATA = [
     explanation: "The diagram 'Multiple platform-specific models' shows a single PIM being translated by a 'J2EE Translator' and a '.NET Translator' into their respective programs. Linux and Android are not used as examples in this diagram. This illustrates the 'one-to-many' potential of MDA: write the logic once (PIM) and generate for many platforms. This is the core of the 'cheaper to adapt' argument. It allows a company to pivot its technology stack without throwing away its entire design. It is the architectural path to platform independence."
   },
   {
-    id: 307,
+    id: 189,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "multi",
@@ -4021,7 +2135,7 @@ const QUIZ_DATA = [
     explanation: "The source identifies CIM, PIM, and PSM as the three core model types in MDA. 'Object Independent Model' is not a term used in the provided materials. CIM is the domain layer, PIM is the logic layer, and PSM is the technical layer. Together, they represent a structured path from abstract requirement to executable reality. This layered approach is the hallmark of the MDA philosophy. It ensures that every architectural decision is made at the appropriate level of abstraction. It provides a rigourous framework for software development."
   },
   {
-    id: 309,
+    id: 190,
     category: "Model-Driven Engineering",
     difficulty: "hard",
     type: "single",
@@ -4029,10 +2143,10 @@ const QUIZ_DATA = [
     options: ["If the models are discarded as 'documentation' after the first sprint.", "If transformations can be completely automated such that a complete program is generated from a PIM without separate coding.", "If the agile team agrees to stop using iterative development for the first six months.", "If the state machine models are only used for J2EE platforms."],
     correct: [1],
     hint: "",
-    explanation: "The lecture notes on 'Agile methods and MDA' state that if 'a complete program [can be] generated from a PIM,' then MDA could work in an agile process. In this ideal scenario, the PIM *is* the code, so no separate, slow manual coding would be required. This would satisfy agile's preference for 'working software.' Without this total automation, the 'up-front modeling' of MDA remains a bottleneck for iterative teams. This represents the 'holy grail' of Model-Driven Engineering. It is the point where design and implementation become one."
+    explanation: "if 'a complete program [can be] generated from a PIM,' then MDA could work in an agile process. In this ideal scenario, the PIM *is* the code, so no separate, slow manual coding would be required. This would satisfy agile's preference for 'working software.' Without this total automation, the 'up-front modeling' of MDA remains a bottleneck for iterative teams. This represents the 'holy grail' of Model-Driven Engineering. It is the point where design and implementation become one."
   },
   {
-    id: 378,
+    id: 191,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4043,7 +2157,7 @@ const QUIZ_DATA = [
     explanation: "The CIM (Computation Independent Model) is the highest level of abstraction in the MDA framework. As the source notes, it models 'important domain abstractions' and is 'sometimes called a domain model.' A CIM for Mentcare would describe patients, doctors, and treatments as they exist in the medical world, without even specifying that a computer system is involved. This ensures that the technical design is built on a solid understanding of the real-world business. If the CIM is wrong, the entire downstream transformation (PIM -> PSM -> Code) will be fundamentally flawed. This is why architects often start with a CIM to gain stakeholder agreement on the 'business reality.' It provides a 'computation-neutral' baseline for the entire project. This is the first step in the MDA journey."
   },
   {
-    id: 379,
+    id: 192,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4054,7 +2168,7 @@ const QUIZ_DATA = [
     explanation: "This is a fundamental point in MDA: a PIM must be platform-neutral. The source context states that a PIM models 'the operation of the system without reference to its implementation.' While it uses UML (which might look like Java), it does not include platform-specific details like J2EE enterprise beans or .NET libraries. The whole point of a PIM is that it can be transformed into *any* platform (Java, C#, etc.). If you bake Java-specific logic into your PIM, you've defeated the purpose of MDA and lost the ability to easily move to a new platform later. An architect must maintain this 'abstraction wall' between the PIM and the final implementation. This ensures the business logic is preserved in a reusable, technical-neutral form. This is the core 'value-add' of the PIM tier."
   },
   {
-    id: 380,
+    id: 193,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4065,7 +2179,7 @@ const QUIZ_DATA = [
     explanation: "This is the 'magic' inside the MDA automation. A PIM is a general model; a PSM is a specific one. To transform the former into the latter, the 'Translator' tool needs a set of rules. For example, a rule might say 'every UML class in the PIM should be transformed into an EJB in the J2EE PSM.' These 'Platform specific patterns and rules' are the technical expertise that has been codified into the tool. Without them, the translator wouldn't know how to produce a valid platform-specific design. This highlights the source's point that MDE requires 'specialized tool support.' Maintaining these complex rulesets is one of the major costs and challenges of the MDA approach. It is what allows the 'automatic generation' of software."
   },
   {
-    id: 381,
+    id: 194,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4076,7 +2190,7 @@ const QUIZ_DATA = [
     explanation: "This is a historical and cultural analysis of the software engineering field. While MDE was evolving as a rigorous, model-first approach, the 'Agile revolution' was happening simultaneously. Agile values 'working software over comprehensive documentation' and favors iterative, code-centric development. The source context explicitly states that 'few agile developers feel comfortable with model-driven engineering' because MDA's 'extensive up-front modeling' feels like the old 'Waterfall' style. This cultural clash has slowed MDA's adoption. Most modern teams prefer the flexibility of direct coding over the perceived rigidity of model transformations. An architect must recognize this cultural reality when proposing an MDE strategy. It's as much a human challenge as a technical one."
   },
   {
-    id: 382,
+    id: 195,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4087,7 +2201,7 @@ const QUIZ_DATA = [
     explanation: "The 'holy grail' of MDA is platform independence. For a system that might last 30 years, the technology platform is guaranteed to change several times (e.g., from J2EE to whatever comes next). If the business logic is trapped in 20-year-old Java code, migrating it is a nightmare. But if it's preserved in a Platform Independent Model (PIM), the architect can simply swap out the 'Translator' and generate a new PSM for the new platform. As the source notes, this makes it 'cheaper to adapt systems to new platforms.' This long-term 'future-proofing' is the primary economic argument for MDA. It protects the organization's investment in its core intellectual property. This is a strategic, mastery-level understanding of MDE's value."
   },
   {
-    id: 383,
+    id: 196,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4098,7 +2212,7 @@ const QUIZ_DATA = [
     explanation: "This diagram is the visual proof of MDA's core value proposition. The business logic—the 'what' the system does—is defined once in the PIM. Then, through different 'Translators' (J2EE and .NET), this logic is automatically branched into two different technical realities. This is a powerful way to manage consistency. If a business rule changes, you only update it once in the PIM, and both the J2EE and .NET versions of the system are updated automatically. This ensures they never get 'out of sync.' For an architect, this 'one-to-many' mapping is the key to building large-scale, cross-platform enterprise architectures. It raises the developer's focus from 'how do I code this in Java?' to 'what is the system's logic?'"
   },
   {
-    id: 384,
+    id: 197,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4109,7 +2223,7 @@ const QUIZ_DATA = [
     explanation: "This is a profound technical critique of MDE. High-level abstractions are great for human understanding; they hide details so we can see the 'big picture.' But a computer can't 'fill in the blanks.' To generate executable code, a model must be incredibly detailed and rigorous. This creates a 'gap' between the 'thinking model' and the 'execution model.' An architect who tries to use a simple 'discussion model' as the input for a code generator will likely fail. This is why MDA is so difficult to implement in practice—the models must be far more complex than the ones typically used in traditional design sessions. Recognizing this 'abstraction gap' is a key part of an expert-level assessment of MDE feasibility."
   },
   {
-    id: 386,
+    id: 198,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4120,7 +2234,7 @@ const QUIZ_DATA = [
     explanation: "This is a theoretical 'bridge' between two worlds. The conflict between Agile and MDA is that MDA requires 'up-front' modeling while Agile wants to start 'coding.' But if the MDA tool is so good that you can just 'sketch' a model and immediately 'run' it, then the model *is* the source code. In this world, the 'model-driven' approach becomes just as fast and iterative as 'code-driven' development. The source uses the phrase 'in principle' because this level of perfect, seamless automation is not yet a reality for most complex systems. But for an architect, this represents the 'vision' of MDE: a world where the level of abstraction is raised so high that modeling and development are the same thing. This would resolve the 'fundamental contradiction' between the two approaches."
   },
   {
-    id: 387,
+    id: 199,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4131,7 +2245,7 @@ const QUIZ_DATA = [
     explanation: "This is the 'paradigm shift' of MDE. In traditional development, the 'program' (the code) is the goal, and the model is just a sketch to help you get there. In MDE, the 'model' IS the goal—it is the 'principal output.' The programs are then 'generated automatically' from these models. This changes the software engineer's role from a 'coder' to a 'system designer.' Instead of worrying about semicolon syntax or memory management, they focus on the high-level logic and domain rules. As the source notes, this 'raises the level of abstraction.' This is the fundamental promise of MDE: that we can build better systems by working at a higher level of thought. This shift in 'principal output' is the core of the MDE philosophy."
   },
   {
-    id: 388,
+    id: 200,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4142,7 +2256,7 @@ const QUIZ_DATA = [
     explanation: "MDE is not a 'free lunch.' While you save time on manual coding, you have to spend a massive amount of time and money on everything else. You need to buy expensive MDA tools, customize them for your environment, and train your entire team to use them. You also have to maintain those models and 'Translators' over the long term. As the source notes, for many organizations, these 'up-front' costs are too high to justify the potential savings. This is a common economic reality in software engineering: the most 'advanced' technology is often not the most 'cost-effective' one for a given project. An architect must evaluate this 'Total Cost of Ownership' before recommending an MDE approach. It's an expert-level business evaluation."
   },
   {
-    id: 389,
+    id: 201,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4153,7 +2267,7 @@ const QUIZ_DATA = [
     explanation: "In the MDA transformation chain, 'Executable code' is the final 'leaf.' It is the result of the third and final transformation. The first transformation (CIM -> PIM) captures the logic; the second (PIM -> PSM) adds the platform detail; the third (PSM -> Code) adds the 'language specifics.' As the diagram shows, a 'Translator' (often called a 'Code Generator' at this stage) takes the PSM and the 'Language specific patterns' and spits out actual source code like Java or C#. This code is the 'by-product' of the model-driven process. Any changes to the system should be made in the models, not in this generated code. This ensures the architecture and the implementation are always perfectly aligned. This is the ultimate goal of the MDA framework."
   },
   {
-    id: 390,
+    id: 202,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4164,7 +2278,7 @@ const QUIZ_DATA = [
     explanation: "The MDA transformation process is a tiered journey down the ladder of abstraction. The first step, as shown in the diagram, is taking the CIM (Computation Independent Model) and 'translating' it into a PIM (Platform Independent Model). This translator uses 'Domain specific guidelines' to ensure the real-world business rules of the CIM are correctly mapped to the technical logic of the PIM. This is the stage where the 'human logic' of the domain starts to become 'system logic.' For an architect, this is the most critical transformation, as it defines the 'what' of the software. Any error here will propagate through every subsequent platform-specific tier. This tiered approach is the defining characteristic of the Model-Driven Architecture."
   },
   {
-    id: 392,
+    id: 203,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4175,7 +2289,7 @@ const QUIZ_DATA = [
     explanation: "This is a subtle but vital detail in the MDA diagram. The first transformation—from the 'Computation Independent' (business) world to the 'Platform Independent' (system) world—is the most 'human' one. It's the point where an architect or analyst takes the messy reality of the domain (the CIM) and uses their expertise to create a rigorous system model (the PIM). While later stages (PIM -> PSM -> Code) can be largely automated with 'rules' and 'patterns,' this first stage requires 'Domain specific guidelines' and human judgment. You can't automate the process of understanding what a 'consultation' is; you have to define it. This highlights that MDE is not about 'replacing' the architect; it's about giving them more powerful tools to express their design. It is a human-centric engineering process."
   },
   {
-    id: 393,
+    id: 204,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4186,7 +2300,7 @@ const QUIZ_DATA = [
     explanation: "This is a key economic reality of the MDA approach. Setting up an MDA infrastructure—the tools, the translators, the training—is a massive investment. You only get a 'Return on Investment' if that system lasts a long time and undergoes several platform migrations. If you're building a simple app that will only last 2 years, you'll never recover the up-front cost of the modeling. As the source notes, for 'software products and information systems' (which tend to be shorter-lived), the costs outweigh the savings. This is an 'expert' level insight: don't use a 'heavyweight' architectural approach for a 'lightweight' project. An architect must match the 'power' of the development methodology to the 'lifespan' and 'scale' of the system. This is the essence of professional engineering judgment."
   },
   {
-    id: 394,
+    id: 205,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4197,7 +2311,7 @@ const QUIZ_DATA = [
     explanation: "The PSM (Platform Specific Model) is the 'implementation-ready' tier of MDA. As the source notes, there is a 'separate PSM for each application platform' (e.g., one for J2EE, one for .NET). Each PSM takes the abstract logic of the PIM and adds the specific 'technical plumbing' required by the target technology. In principle, as the source states, there can be 'layers of PSM,' with each layer adding more detail (e.g., database specific, then OS specific). This 'separation of concerns' allows the architect to manage technical complexity in a structured way. The PSM is the final blueprint before the 'Code generator' takes over. It is the bridge between the 'system design' and the 'physical code.' This tiered structure is the core of the MDA philosophy."
   },
   {
-    id: 395,
+    id: 206,
     category: "Model-Driven Engineering",
     difficulty: "expert",
     type: "single",
@@ -4211,7 +2325,7 @@ const QUIZ_DATA = [
 
 ,
   {
-    id: 106,
+    id: 207,
     category: "Dependability & Safety",
     difficulty: "easy",
     type: "single",
@@ -4222,7 +2336,7 @@ const QUIZ_DATA = [
     explanation: "A fault is a defect within the system's code or design. It is the static cause that has the potential to cause trouble later. Identifying and removing faults before they are executed is the goal of software testing and verification."
   },
   {
-    id: 107,
+    id: 208,
     category: "Dependability & Safety",
     difficulty: "easy",
     type: "single",
@@ -4233,7 +2347,7 @@ const QUIZ_DATA = [
     explanation: "The fault was the missing logic check in the time-addition code. The developer forgot to handle the case where adding an hour would roll the time over into a new day. This latent bug remained hidden until the system was run at or after 11:00 PM."
   },
   {
-    id: 108,
+    id: 209,
     category: "Dependability & Safety",
     difficulty: "easy",
     type: "single",
@@ -4244,7 +2358,7 @@ const QUIZ_DATA = [
     explanation: "An error occurs when the system's internal data becomes incorrect because of a fault. For example, a variable holding the value '24:00' when it should be '00:00' is an error state. Errors are the internal bridge between a code bug and a visible system crash."
   },
   {
-    id: 109,
+    id: 210,
     category: "Dependability & Safety",
     difficulty: "easy",
     type: "single",
@@ -4255,7 +2369,7 @@ const QUIZ_DATA = [
     explanation: "The existence of the '24:XX' value is the error state. The fault (the bad code) has been triggered, resulting in this erroneous internal value. If the system continues to operate with this bad value, it will eventually lead to a failure."
   },
   {
-    id: 110,
+    id: 211,
     category: "Dependability & Safety",
     difficulty: "easy",
     type: "single",
@@ -4277,18 +2391,7 @@ const QUIZ_DATA = [
     explanation: "Context models are essential because they show which external systems 'depend on the system being developed.' If the boundary is positioned too narrowly, the architect risks neglecting the functional requirements necessary to serve those dependencies, such as specific data export formats for HC Statistics. The source highlights that the boundary position has a 'profound effect' on requirements. By ignoring the needs of an external dependent system, the resulting requirements specification will be incomplete. This is a common architectural pitfall where the 'political' desire to reduce workload leads to a failure in satisfying stakeholder needs."
   },
   {
-    id: 256,
-    category: "Dependability & Safety",
-    difficulty: "hard",
-    type: "single",
-    question: "In the insulin pump activity model, a blood sugar sensor provides corrupt data at the very beginning of the process. According to the logic flow, at which specific step will the system's insulin delivery calculation first produce an erroneous 'internal state' (System Error)?",
-    options: ["At the 'Pump control commands' step.", "At the 'Compute sugar level' step.", "At the 'Calculate insulin delivery' step.", "Only when the 'Insulin pump' physical hardware activates."],
-    correct: [1],
-    hint: "",
-    explanation: "The insulin pump activity model follows a linear data-driven sequence. The corrupt data enters via the 'Blood sugar sensor' and is passed to 'Compute sugar level.' This is the first activity that processes the data, so it will be the first point where an incorrect 'Blood sugar level' (erroneous state/System Error) is generated. This incorrect state then cascades through all subsequent steps. According to Lecture 9, an erroneous state is an Error. Identifying the 'first point of failure' is critical for building resilient safety-critical systems. This shows how behavioral models track the impact of data failure."
-  },
-  {
-    id: 260,
+    id: 213,
     category: "Dependability & Safety",
     difficulty: "hard",
     type: "single",
@@ -4299,42 +2402,7 @@ const QUIZ_DATA = [
     explanation: "The activity model is a strict sequence of processing steps. 'Calculate pump commands' produces the data ('Pump control commands') required by the 'Control pump' activity. If the predecessor fails, the successor cannot execute. This represents a break in the 'end-to-end processing' sequence mentioned in the lecture. For a safety-critical device, this failure would mean the patient receives no medication. Behavioral models allow architects to identify these critical points where a process break results in a failure of service delivery. It is the architectural visualization of the 'cause and effect' chain."
   },
   {
-    id: 263,
-    category: "Dependability & Safety",
-    difficulty: "hard",
-    type: "single",
-    question: "Why is an activity model particularly appropriate for representing the insulin pump's core operation compared to a state machine?",
-    options: ["Because the insulin pump has no finite states like 'Waiting'.", "Because it effectively models the data-driven sequence of processing steps from sensor input to mechanical output.", "Because activity models are the only ones used for Platform Specific Models (PSM).", "Because activity models allow for the use of .NET translators."],
-    correct: [1],
-    hint: "",
-    explanation: "The insulin pump example illustrates 'the sequence of actions involved in processing input data.' This is the definition of data-driven modeling. While a pump *could* have states, the primary architectural concern during analysis is the 'end-to-end processing' of blood sugar data into insulin delivery. Activity diagrams excel at showing this linear or branching flow of data transformations. The source links this approach to requirements analysis for systems that are 'primarily driven by data.' It provides a clear roadmap of how the system fulfills its primary purpose. It is a functional view of the system's mission."
-  },
-  {
-    id: 267,
-    category: "Dependability & Safety",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "Identify the data objects (represented by rectangular nodes) in the provided insulin pump activity model: (Select all that apply)",
-    options: ["Sensor data", "Blood sugar level", "Insulin requirement", "Compute sugar level"],
-    correct: [0, 1, 2],
-    hint: "",
-    explanation: "In an activity diagram, rounded nodes represent 'activities' (actions like 'Compute sugar level'), while rectangular nodes represent 'data objects' (the information being passed). The insulin pump image follows this UML standard. Correctly identifying data vs. activity is crucial for understanding the 'flow' of information. Activities transform data objects into new states or formats. This distinction allows architects to see exactly what information is needed for each step. It prevents design errors where an activity lacks the necessary input data. It is the syntax of process modeling."
-  },
-  {
-    id: 273,
-    category: "Dependability & Safety",
-    difficulty: "hard",
-    type: "multi",
-    selectCount: 3,
-    question: "In the insulin pump activity model, which items are rounded nodes indicating an 'activity'? (Select all that apply)",
-    options: ["Compute sugar level", "Calculate insulin delivery", "Insulin requirement", "Control pump"],
-    correct: [0, 1, 3],
-    hint: "",
-    explanation: "The insulin pump diagram uses rounded boxes for 'activities' like Compute, Calculate, and Control. 'Insulin requirement' is in a rectangular box, identifying it as a 'data object' produced or consumed by an activity. Distinguishing between actions (activities) and information (data) is the fundamental skill in process modeling. It allows the architect to see how data is transformed throughout the system's operation. This ensures that every activity has a purpose and every piece of data has an origin. It is the functional logic of the design."
-  },
-  {
-    id: 279,
+    id: 214,
     category: "Dependability & Safety",
     difficulty: "hard",
     type: "single",
@@ -4345,7 +2413,7 @@ const QUIZ_DATA = [
     explanation: "The 'Microwave oven operation' sub-diagram shows that from the 'Checking' state, an 'Emitter fault' leads directly to the 'Alarm' state. The internal action of the 'Alarm' state is 'do: display event' (to notify the user of the problem). This is a classic example of an event-driven system responding to an internal hardware stimulus. The system cannot proceed to 'Cook' because the checking step failed. This ensures the system does not operate with a broken component. It is the architectural implementation of error handling."
   },
   {
-    id: 301,
+    id: 215,
     category: "Dependability & Safety",
     difficulty: "hard",
     type: "single",
@@ -4356,7 +2424,7 @@ const QUIZ_DATA = [
     explanation: "According to the definitions from Lecture 9, the 'incorrectly set' value of 25:00 is a System Error. A System Error is specifically 'an erroneous system state that can lead to system behavior that is unexpected.' The faulty code itself is the System Fault. A failure hasn't occurred *yet* until the system actually fails to deliver its service (e.g., fails to deliver insulin). Distinguishing between these three is critical for root cause analysis in safety-critical systems. It allows the architect to trace the problem from the 'fault' in the code to the 'error' in the state. This is the foundation of dependability engineering."
   },
   {
-    id: 317,
+    id: 216,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4367,7 +2435,7 @@ const QUIZ_DATA = [
     explanation: "The source context states that context models show 'other systems that are used or depend on the system being developed.' If the 'Appointments system' is omitted, the project scope will effectively ignore a critical external dependency. This leads to a failure in requirements engineering, as the necessary data exchange protocols, authentication mechanisms, and synchronization rules for appointments will not be defined. Without these requirements, the final Mentcare system will be unable to schedule or retrieve patient visits, rendering it functionally incomplete. This illustrates why the context model is a foundational document; any omission at this level cascades through the entire development lifecycle. The architect uses this model to ensure every necessary 'neighbor' in the technical environment is accounted for."
   },
   {
-    id: 323,
+    id: 217,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4378,73 +2446,7 @@ const QUIZ_DATA = [
     explanation: "By removing the link to the statistics system, the Mentcare department effectively abdicates its responsibility—and its influence—over health care reporting. In many organizations, control over 'upward' reporting is a primary source of institutional power. If Mentcare no longer provides this data, some other department or system will, potentially leading to a decrease in Mentcare's perceived importance. This illustrates the source's point that boundaries are 'political judgments.' The architect must be aware that 'simplifying' the diagram can have real-world consequences for the department's standing and funding. Strategic boundary placement ensures the system remains a critical part of the organizational hierarchy."
   },
   {
-    id: 331,
-    category: "Dependability & Safety",
-    difficulty: "expert",
-    type: "single",
-    question: "Analyze the MHC-PMS class diagram. If the multiplicity between 'Patient' and 'Condition' were changed from '1..*' to '0..*', what is the primary risk to the system's clinical integrity?",
-    options: ["The system would be unable to store more than one condition per patient.", "The system could allow patient records to exist without any diagnosed psychiatric conditions, potentially leading to administrative errors.", "The 'Condition' class would automatically become a generalization of the 'Patient' class.", "The database would be forced to use a Platform Specific Model for J2EE."],
-    correct: [1],
-    hint: "Consider what '0' vs '1' means for the minimum number of associated objects.",
-    explanation: "The '1..*' multiplicity in the MHC-PMS diagram is a formal business rule: every patient in the system must have at least one diagnosed condition. If this is changed to '0..*', the system's integrity is compromised because it would allow 'empty' patient records with no clinical justification for being in the system. This could lead to billing errors, legal liability, or data quality issues in a mental health context. Structural modeling is the primary tool for capturing and enforcing these 'lower bound' constraints. As an architect, you must ensure that these multiplicities reflect the clinical reality and regulatory requirements of the domain. In this case, '1..*' serves as a safety invariant for the data model. Thus, structural models are key to ensuring data-level dependability."
-  },
-  {
-    id: 356,
-    category: "Dependability & Safety",
-    difficulty: "expert",
-    type: "single",
-    question: "In the insulin pump activity model, evaluate the risk of a 'race condition' if the 'Get sensor value' step is delayed. Based on the diagram's sequential flow, what is the immediate consequence?",
-    options: ["The system will automatically switch to an event-driven model to save time.", "The 'Compute sugar level' step will be stalled, as it cannot proceed without the 'Sensor data' input, delaying the entire insulin delivery chain.", "The 'Pump control commands' will be generated based on the previous year's data.", "The 'Blood sugar sensor' will be transformed into a Platform Specific Model for J2EE."],
-    correct: [1],
-    hint: "Follow the arrows in the Insulin Pump diagram. It is a strictly sequential process.",
-    explanation: "The insulin pump activity model is a 'data-driven' model, which the source describes as showing the 'sequence of actions involved in processing input data.' Each box in the diagram (like 'Get sensor value') represents a discrete process step. Crucially, these steps are sequential: 'Compute sugar level' depends on 'Sensor data,' which depends on 'Get sensor value.' If any step is delayed, the entire pipeline stops. In a safety-critical device like an insulin pump, this delay could be life-threatening. This 'sequential dependency' is a primary characteristic of data-driven systems. An architect uses these models to identify 'bottlenecks' and 'critical paths' in the system's primary workflows. It ensures the functional timing requirements are met. This level of rigor is essential for dependable system design."
-  },
-  {
-    id: 357,
-    category: "Dependability & Safety",
-    difficulty: "expert",
-    type: "single",
-    question: "Compare the 'Data-driven' insulin pump model with the 'Event-driven' microwave oven model. Which statement best reflects the 'Architectural Fit' according to the source?",
-    options: ["The microwave is better as a data-driven model because it processes a lot of numeric data.", "The insulin pump is a business system and therefore must use state machine modeling.", "The insulin pump's sequential processing of a single data stream makes it ideal for data-driven modeling, while the microwave's reliance on user actions makes it ideal for event-driven modeling.", "Both systems should be modeled using context diagrams only, as behavioral models are too complex for implementation."],
-    correct: [2],
-    hint: "Check the descriptions of data-driven vs. event-driven systems in the source.",
-    explanation: "The source context provides clear guidelines for choosing a modeling style. Data-driven models (like the insulin pump) are 'primarily driven by data' and show 'end-to-end processing.' This is a perfect fit for a system that takes a sensor reading and transforms it into a pump command. Event-driven models (like the microwave) are for 'real-time systems' that respond to 'external and internal events' like button presses. A microwave doesn't have a 'data pipeline'; it has a set of states (Waiting, Cooking, Disabled) and transitions triggered by events (Start, Door open). An architect must choose the right tool for the job. Misapplying these models (e.g., trying to model a microwave as a data pipeline) leads to designs that are confusing and difficult to implement. This choice is a key part of behavioral architecture."
-  },
-  {
-    id: 360,
-    category: "Dependability & Safety",
-    difficulty: "expert",
-    type: "single",
-    question: "Evaluate the 'Operation' state in the microwave oven's detailed behavioral model. What happens if a 'Turntable fault' stimulus occurs while the status is being checked?",
-    options: ["The system ignores the fault and transitions to the 'Cook' activity.", "The system transitions to the 'Alarm' activity to display the event, and then ultimately to the 'Disabled' state for safety.", "The system sounds a buzzer for 5 seconds and transitions to 'Waiting'.", "The system automatically increases the power to 600 watts to overcome the fault."],
-    correct: [1],
-    hint: "Follow the arrows coming out of the 'Checking' activity in the detailed microwave diagram.",
-    explanation: "The detailed 'Microwave oven operation' diagram is a 'nested statechart' that shows the internal logic of the 'Operation' state. It begins with a 'check status' activity. If a 'Turntable fault' or 'Emitter fault' is detected, the system does not proceed to 'Cook.' Instead, it follows the error path to the 'Alarm' activity. From there, it transitions out of the 'Operation' state and into the 'Disabled' state. This is a classic example of 'fault-tolerant' behavior modeling. It ensures that the software will not attempt to operate the hardware if a critical component is broken. By modeling these error paths, the architect ensures the system is robust and safe. This level of behavioral detail is necessary for any system that controls physical hardware. It turns a simple state machine into a professional engineering blueprint."
-  },
-  {
-    id: 363,
-    category: "Dependability & Safety",
-    difficulty: "expert",
-    type: "single",
-    question: "In the insulin pump activity model, what is the 'output' of the 'Calculate insulin delivery' activity, and how does it serve the next step?",
-    options: ["Insulin pump; it drives the hardware.", "Insulin requirement; it serves as the input data for the 'Calculate pump commands' activity.", "Blood sugar level; it resets the sensor.", "Pump control commands; it moves the system to the 'Operation' state."],
-    correct: [1],
-    hint: "Follow the data-flow boxes in the Insulin Pump diagram.",
-    explanation: "This is a classic data-driven sequence. The 'Calculate insulin delivery' activity processes the 'Blood sugar level' and produces an 'Insulin requirement.' This requirement is not yet a physical action; it's a piece of data that the next activity, 'Calculate pump commands,' needs to function. This step-by-step transformation—from raw sensor data to sugar level, to insulin need, to pump commands—is the defining feature of 'data-driven modeling.' As the source notes, these models are 'particularly useful during the analysis of requirements as they can be used to show end-to-end processing.' It ensures that the logic is broken down into modular, testable steps. For an architect, this granularity is essential for ensuring the system's accuracy and safety. It provides a clear roadmap for functional implementation."
-  },
-  {
-    id: 372,
-    category: "Dependability & Safety",
-    difficulty: "expert",
-    type: "single",
-    question: "In the insulin pump activity model, what represents the 'stimulus' that starts the whole data-processing chain, and what is its 'type' according to the source?",
-    options: ["Blood sugar level; Event", "Blood sugar sensor; Data", "Insulin pump; Event", "Pump control commands; Data"],
-    correct: [1],
-    hint: "Check the first box on the left of the Insulin Pump diagram and the types of stimuli on the 'Behavioral models' slide.",
-    explanation: "The insulin pump model begins with the 'Blood sugar sensor.' While the sensor is hardware, the software's process starts when 'Data' (the sensor value) arrives to be processed. The source context identifies 'Data' as one of the two types of behavioral stimuli: 'Some data arrives that has to be processed by the system.' The arrival of this reading triggers the 'Get sensor value' activity and starts the entire 'end-to-end' sequence. Identifying this primary stimulus is critical for understanding the system's driver. In this case, the pump's behavior is entirely determined by the incoming data stream from the sensor. This makes it a 'data-driven' system. Modeling this stimulus correctly is the first step in creating a reliable behavioral specification."
-  },
-  {
-    id: 377,
+    id: 218,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4455,18 +2457,7 @@ const QUIZ_DATA = [
     explanation: "This is a profound risk management concern for architects. MDE relies on complex, specialized 'Translators' to convert models into code. If an organization uses a tool from a small startup to build a 30-year system, and that startup goes bankrupt, the organization is left with a massive codebase they can no longer easily update or maintain. Developing internal tools is too expensive for most, as the source notes. This 'tool lock-in' fear is a major reason why many large companies avoid MDE despite its theoretical benefits. An architect must evaluate the 'durability' of the tooling ecosystem before committing to a model-driven approach. This is an example of an 'expert-level' evaluation of MDE's practical challenges. It balances technical vision with business reality."
   },
   {
-    id: 396,
-    category: "Dependability & Safety",
-    difficulty: "expert",
-    type: "single",
-    question: "In the 'Fault-Error-Failure' chain described in the 'Lecture 9.pdf' excerpt, distinguish between a 'System fault' and a 'System error'.",
-    options: ["A fault is an illegal state in memory, while an error is the bad code that caused it.", "A fault is a characteristic of the code (like missing a 23:00 check) that can lead to an error; an error is an 'erroneous system state' (like the time being 24:XX) that exists when the faulty code runs.", "A fault is an external event, while an error is a political judgment.", "A fault is a Computation Independent Model, while an error is a Platform Specific Model."],
-    correct: [1],
-    hint: "Read the first two definitions in the Module V source context carefully.",
-    explanation: "This is a fundamental distinction in system dependability modeling. The source context defines a 'System fault' as a 'characteristic... that can lead to a system error.' In the example, the fault is the actual text of the code that lacks a safety check. A fault is 'latent'—it sits there in the file. A 'System error' is 'an erroneous system state' that occurs *dynamically* when that faulty code is executed. In the example, the error is the specific moment when the system variable for 'time' holds the illegal value '24:XX.' An architect must understand this 'cause-and-effect' chain: Fault (code) -> Error (state) -> Failure (service). This precision allows for better debugging and fault-tolerance design. It is the foundation of dependable system architecture."
-  },
-  {
-    id: 397,
+    id: 219,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4477,7 +2468,7 @@ const QUIZ_DATA = [
     explanation: "A 'System error' is a state, which in software terms means the current values of variables in memory. The source context identifies the error as the 'incorrect' time value. If the code adds 1 to 23 without a wrap-around check, it produces '24.' Therefore, a variable holding '24:15' is an 'erroneous state' because that value is unexpected by system users and other system modules. This error state is the 'symptom' that exists *inside* the system after the 'fault' (the bad code) has been 'executed.' This error might then cascade and cause a 'failure' elsewhere. Understanding this state-based definition of an error is key to building error-detection mechanisms. It is a mastery-level application of the dependability model."
   },
   {
-    id: 398,
+    id: 220,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4488,7 +2479,7 @@ const QUIZ_DATA = [
     explanation: "A 'System failure' is the final stage in the chain. The source defines it as an 'event... when the system does not deliver a [service].' This is what the *user* sees. The user doesn't see the 'fault' (the code) or the 'error' (the 24 in memory); they see the 'failure' (the clock on the screen says 24:15, or the system crashes). The failure is the 'visible' consequence of the 'invisible' internal error state. This external vs. internal distinction is critical. An architect's goal is to prevent faults from becoming errors, and errors from becoming failures. This is the essence of dependable system modeling. It provides a complete map of how things go wrong. It is the final piece of the architectural puzzle."
   },
   {
-    id: 399,
+    id: 221,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4499,7 +2490,7 @@ const QUIZ_DATA = [
     explanation: "While the 'failure' is what is reported and the 'error' is what is detected, the 'System fault' is the actual 'root cause.' As the source notes, the fault is the 'characteristic of a software system' (the bad code) that *can lead* to the error. You don't fix a failure (that's just the symptom); you don't 'fix' an error (the bad value is already there); you fix the *fault* by correcting the code logic. In the example, adding the '23:00 check' removes the fault. Once the fault is removed, the system can no longer enter the erroneous '24:XX' state, and the 'failure' is prevented. This rigorous approach to root-cause analysis is what separates an expert architect from a developer who just 'patches' symptoms. It is the highest level of mastery in dependability theory."
   },
   {
-    id: 400,
+    id: 222,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4510,7 +2501,7 @@ const QUIZ_DATA = [
     explanation: "This is a vital distinction for architects. An 'error' (the internal 24:05 value) can exist for a long time without a 'failure' occurring. If the system calculates that value but never shows it to the user or uses it for another calculation, no 'failure' (loss of service) has happened yet. The failure is the *event* where the error state causes the system to stop working as expected. This 'delay' between the error and the failure is the 'window' where error-detection and recovery mechanisms (like a check that says 'if time > 23 then log error and reset') can save the system. This 'fault-tolerant' design is a primary goal of dependable architecture. It's about breaking the chain before the error becomes a failure. This represents a mastery-level understanding of system reliability."
   },
   {
-    id: 402,
+    id: 223,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4521,7 +2512,7 @@ const QUIZ_DATA = [
     explanation: "A 'characteristic' is something the system 'has.' This is why faults are so dangerous—they are 'baked into' the software. The source notes that the fault in the example is the *missing logic* in the code. It is an intrinsic property of the current system design. This is why architects use structural models and code reviews to find faults; they are looking at the system's 'characteristics' to see if any could lead to a 'dangerous state' (an error). This 'static' analysis of characteristics is a key part of building dependable systems. It's about finding the 'latent' problems before they manifest in a running system. This level of technical depth is essential for an expert architect. It provides a foundational understanding of system quality."
   },
   {
-    id: 404,
+    id: 224,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
@@ -4532,7 +2523,7 @@ const QUIZ_DATA = [
     explanation: "A System Fault is a 'characteristic' or a 'defect' in the system's structure or logic. The 'missing check' is the classic example provided in the source. Just as adding 1 to 23 without a 24-hour check is a fault, dividing by a variable without a zero-check is a fault. It's a 'latent' problem in the code that *can lead* to a crash (a failure). The 'blue screen' is a failure; the 'negative age' in the database is an error (a bad state). The 'political decision' is a boundary issue. An architect must be able to categorize problems correctly using these terms to communicate with the development team. This clarity ensures that everyone is focused on the right level of the problem. It is a fundamental skill for an expert system designer."
   },
   {
-    id: 405,
+    id: 225,
     category: "Dependability & Safety",
     difficulty: "expert",
     type: "single",
