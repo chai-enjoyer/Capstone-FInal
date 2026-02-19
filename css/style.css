@@ -37,12 +37,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Particle Canvas ─── */
+#particle-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
 a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
 a:hover { color: var(--accent-hover); }
 img { max-width: 100%; display: block; }
 
 /* ─── Layout ─── */
 .container {
+  position: relative;
+  z-index: 1;
   width: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
@@ -544,6 +554,11 @@ main > h1 {
 .quiz-option.correct .cb-check { opacity: 1; }
 .quiz-option.incorrect .rb-dot { r: 4; }
 .quiz-option.incorrect .cb-check { opacity: 1; }
+/* Radio circle fill for visual distinction */
+.quiz-option.selected .option-indicator circle:first-child { fill: rgba(255,255,255,.1); }
+.quiz-option.correct .option-indicator circle:first-child { fill: rgba(74,222,128,.15); }
+.quiz-option.incorrect .option-indicator circle:first-child { fill: rgba(248,113,113,.12); }
+/* Checkbox box fill */
 .quiz-option.correct .cb-box { fill: rgba(74,222,128,.15); }
 .quiz-option.incorrect .cb-box { fill: rgba(248,113,113,.12); }
 .quiz-option.selected .cb-box { fill: rgba(255,255,255,.1); }

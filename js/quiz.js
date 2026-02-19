@@ -198,16 +198,20 @@
 
     $("#q-text").textContent = q.question;
 
-    // Type badge
+    // Type badge + True/False detection
     const typeEl = $("#q-type");
-    if (q.type === "multi") {
+    const qText = $("#q-text");
+    const tfPrefix = /^True or False:\s*/i;
+    if (tfPrefix.test(q.question)) {
+      typeEl.textContent = "True or False";
+      qText.textContent = q.question.replace(tfPrefix, '');
+    } else if (q.type === "multi") {
       const count = q.selectCount || q.correct.length;
       typeEl.textContent = `Select ${count}`;
-      typeEl.style.display = "";
     } else {
       typeEl.textContent = "Select 1";
-      typeEl.style.display = "";
     }
+    typeEl.style.display = "";
 
     // Options
     const wrap = $("#options");
